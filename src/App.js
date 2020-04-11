@@ -5,7 +5,6 @@ import { Switch, Route } from 'react-router-dom';
 
 import Navbar from './components/navbar/navbar.component';
 import Footer from './components/footer/footer.component'
-import Drop from './components/drop/drop.component'
 import ShopPage from './pages/shop/shop.component'
 
 function App() {

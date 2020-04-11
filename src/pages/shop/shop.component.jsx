@@ -1,42 +1,40 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import Drop from '../../components/drop/drop.component'
 
 import WithSpinner from '../../components/with-spinner/with-spinner.component'
-import { setCurrentProducts } from '../../redux/product/product.actions'
+
+import { selectIsProductsFetching } from '../../redux/product/product.selectors'
+import { fetchProductsStartAsync } from '../../redux/product/product.actions'
 
 
 const DropWithSpinner = WithSpinner(Drop);
 
 class ShopPage extends React.Component {
-  state = {
-    loading: true
-  };
-
 
   componentDidMount(){
-    this.props.fetchProducts();
-    if (this.props.products){
-      this.setState({loading: false});
-    }
+    const { fetchProductsStartAsync } = this.props;
+    fetchProductsStartAsync();
+
   }
 
   render(){
-    const { match } = this.props;
-    const { loading } = this.state;
+    const { match, isProductsFetching } = this.props;
     return(
-      <Route path={`${match.path}/drops/:dropId`} render={(props) => <DropWithSpinner isLoading={loading} {...props}/>} />
+      <Route path={`${match.path}/drops/:dropId`} render={(props) => <DropWithSpinner isLoading={isProductsFetching} {...props}/>} />
       )
   }
 }
 
-const mapStateToProps = state => ({
-  products: state.product.products
+const mapStateToProps = createStructuredSelector({
+  isProductsFetching: selectIsProductsFetching
 })
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchProducts: () => dispatch(setCurrentProducts(), console.log(ownProps))
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchProductsStartAsync: () => dispatch(fetchProductsStartAsync())
 })
 
 

@@ -5,11 +5,12 @@ import './drop.styles.scss';
 
 import ShopItem from '../shop-item/shop-item.component'
 
-
-
-
 class Drop extends React.Component {
   render(){
+    const products = []
+    if (this.props.products.product.products != undefined){
+      products.push(this.props.products.product.products)
+    }
     console.log(this.props.products)
     // const { products } = this.props.products
     return (
@@ -27,7 +28,7 @@ class Drop extends React.Component {
 
 
 const mapStateToProps = state => ({
-  products: state.product.products
+  products: state
 })
 
 export default connect(mapStateToProps)(Drop);
