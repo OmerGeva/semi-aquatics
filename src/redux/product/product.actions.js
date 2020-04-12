@@ -19,13 +19,13 @@ export const fetchProductsFailure = errorMessage  => ({
   payload: errorMessage
 });
 
-export const fetchProductsStartAsync = () =>{
+export const fetchProductsStartAsync = (dropNumber) =>{
   return dispatch => {
     dispatch(fetchProductsStart());
 
     client.collection.fetchAllWithProducts().then((collections) => {
       // Do something with the collections
-      dispatch(fetchProductsSuccess(collections[2].products));
+      dispatch(fetchProductsSuccess(collections));
     }).catch(error =>
       dispatch(fetchProductsFailure(error.message))
     );
