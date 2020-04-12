@@ -13,13 +13,14 @@ class Drop extends React.Component {
         currentDrop.push(drop)
       }
     })
+    console.log(currentDrop[0].products[0]);
     return (
       <div className="drop-page">
-        <h2>Drop {this.props.match.params.dropId}</h2>
+        <h2>DROP {this.props.match.params.dropId}</h2>
         <div className="drop-products">
         {
            currentDrop[0].products.map((product) => (
-            <ShopItem image={product.images[0].src} title={product.title}key={product.id} />
+            <ShopItem image={product.images[0].src} available={product.availableForSale} title={product.title}key={product.id} />
           ))
         }
         </div>

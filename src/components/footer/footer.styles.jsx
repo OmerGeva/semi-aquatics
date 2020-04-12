@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.div`
- border-top: 1px solid black;
- width: 100%;
+ width: 90vw;
  height: 10vh;
+ text-align: right;
+ padding: 12px;
+ h4{
+  margin-right: 24px;
+ }
 `

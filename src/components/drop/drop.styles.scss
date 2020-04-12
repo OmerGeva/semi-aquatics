@@ -2,11 +2,21 @@
   text-align: center;
   padding: 16px;
   overflow: scroll;
-  height: 90%;
+  height: 85vh;
   h2{
-    height: 10%;
+    margin-top: 3%;
+    height: 15%;
   }
   .drop-products {
-    display: flex;
+    display: grid;
+    grid-gap: 1rem;
+
+    // display: flex;
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }

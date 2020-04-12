@@ -7,4 +7,13 @@
   h5{
     padding: 8px;
   }
+  position: relative;
+}
+.sold-out {
+  padding: 2px;
+  background-color: black;
+  width: 25%;
+  font-size: 14px;
+  position: absolute;
+  left: 65%;
 }
