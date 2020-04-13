@@ -5,25 +5,22 @@ export const CheckoutItemContainer = styled.div`
   padding: 24px 0px;
   align-items: center;
   .image-container {
-    width: 23%;
-    padding-right: 15px;
+    width: 17.8%;
+    padding-right: 10px;
 
     img {
-      width: 60%;
+      width: 80%;
     }
   }
+  .size,
   .name,
   .quantity,
   .price {
-    width: 23%;
-  }
-
-  .quantity {
-    padding-left: 20px;
+    width: 17.8%;
   }
 
   .remove-button {
-    padding-left: 8px;
+    padding-left: 5%;
     cursor: pointer;
   }
 `

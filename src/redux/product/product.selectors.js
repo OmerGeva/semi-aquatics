@@ -1,11 +1,20 @@
 import { createSelector } from 'reselect';
 
-export const selectProduct = state => {
+export const selectProducts = state => {
   return state.product;
+}
+
+export const selectChosenProduct = state => {
+  return state.product.chosenProduct;
 }
 
 
 export const selectIsProductsFetching = createSelector(
-  [selectProduct],
+  [selectProducts],
   products => products.isFetching
+  )
+
+export const selectProductSizes = createSelector(
+  [selectChosenProduct],
+  product => product.variants
   )

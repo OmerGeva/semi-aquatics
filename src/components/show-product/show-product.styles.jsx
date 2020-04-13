@@ -5,7 +5,7 @@ display: flex;
 height: 100%;
 width: 100%;
 overflow: hidden;
-padding: 42px;
+padding: 42px 10px;
 align-items: center;
 .product-info{
   width: 50%
@@ -15,7 +15,7 @@ img{
   width: 90%;
 }
 .buy-product{
-  width: 50%;
+  width: 40%;
   margin-top: 10%;
   padding: 42px;
   align-items: center;

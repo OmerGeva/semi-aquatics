@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const ButtonStyles = css`
+  font-family: 'VCROSDMono';
   background-color: white;
   color: #ABABAB;
   border: 1px solid #ABABAB;
@@ -22,7 +23,6 @@ export const InvertedButtonStyles = css`
 `;
 
 export const CustomButtonContainer= styled.button`
-  min-width: 165px;
   width: auto;
   height: 50px;
   letter-spacing: 0.5px;

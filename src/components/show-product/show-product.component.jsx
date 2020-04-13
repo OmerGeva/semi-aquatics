@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { ShowProductContainer } from './show-product.styles';
 import CustomButtom from '../custom-button/custom-button.component'
+import { createStructuredSelector } from 'reselect';
+import { selectChosenProduct, selectProductSizes } from '../../redux/product/product.selectors'
 
 import { addItemToCart } from '../../redux/cart/cart.actions'
 
@@ -21,8 +23,9 @@ const ShowProduct = ({ product, addToCart }) =>(
     </ShowProductContainer>
   )
 
-const mapStateToProps = state => ({
-  product: state.product.chosenProduct
+const mapStateToProps = createStructuredSelector({
+  product: selectChosenProduct,
+  sizes: selectProductSizes
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -5,27 +5,32 @@ export const CheckoutHeader = () => (
   <CheckoutHeaderContainer>
     <div className="header-block">
       <span>
-        Product
+        PRODUCT
       </span>
     </div>
     <div className="header-block">
       <span>
-        Description
+        ITEM
       </span>
     </div>
     <div className="header-block">
       <span>
-        Quantity
+        SIZE
       </span>
     </div>
     <div className="header-block">
       <span>
-        Price
+        QUANTITY
       </span>
     </div>
     <div className="header-block">
       <span>
-        Remove
+        PRICE
+      </span>
+    </div>
+    <div className="header-block">
+      <span>
+        REMOVE
       </span>
     </div>
   </CheckoutHeaderContainer>
