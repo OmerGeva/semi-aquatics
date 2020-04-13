@@ -1,19 +1,22 @@
 .shop-item {
   width: 100%;
   margin: auto;
+  position: relative;
+  align-items: center;
+
   img{
   width: 80%;
   }
+
   h5{
     padding: 8px;
   }
-  position: relative;
-}
-.sold-out {
-  padding: 2px;
-  background-color: black;
-  width: 25%;
-  font-size: 14px;
-  position: absolute;
-  left: 65%;
+  .sold-out {
+    padding: 2px;
+    background-color: black;
+    width: 25%;
+    font-size: 14px;
+    position: absolute;
+    left: 65%;
+  }
 }

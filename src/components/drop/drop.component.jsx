@@ -20,7 +20,7 @@ class Drop extends React.Component {
         <div className="drop-products">
         {
            currentDrop[0].products.map((product) => (
-            <ShopItem image={product.images[0].src} available={product.availableForSale} title={product.title}key={product.id} />
+            <ShopItem item={product} image={product.images[0].src} available={product.availableForSale} title={product.title}key={product.id} />
           ))
         }
         </div>

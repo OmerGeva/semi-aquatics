@@ -5,15 +5,12 @@ import { Switch, Route } from 'react-router-dom';
 
 import Navbar from './components/navbar/navbar.component';
 import Footer from './components/footer/footer.component'
+import Home from './pages/home/home.component'
 import ShopPage from './pages/shop/shop.component'
 import InfoPage from './pages/info-page/info-page.component'
 
-const Home = () => (
-  <div className="home-logo">
-    <h2>[Reverse Evolution]</h2>
-    <img src="https://cdn.shopify.com/s/files/1/0276/3305/7867/files/big3_1410x.png?v=1575617303" alt="logo"/>
-  </div>
-  )
+
+
 function App() {
   return (
     <div className="App">
