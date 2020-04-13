@@ -1,14 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { selectCartItemCount } from '../../redux/cart/cart.selectors';
+import { NavbarContainer, LinkContainer } from './navbar.styles';
+import { createStructuredSelector } from 'reselect';
 
-import { NavbarContainer, LinkContainer } from './navbar.styles'
-
-const Navbar = () => (
+const Navbar = ({ numberOfCartItems }) => (
   <NavbarContainer >
     <LinkContainer to="/" className="home-link">
       HOME
     </LinkContainer>
-    <LinkContainer to="/" className="cart-link">
-      CART (0)
+    <LinkContainer to="/checkout" className="cart-link">
+      CART ({numberOfCartItems})
     </LinkContainer>
     <LinkContainer to="/shop/drops/6">
       DROP 6
@@ -36,4 +38,7 @@ const Navbar = () => (
   </NavbarContainer>
 )
 
-export default Navbar;
+const mapStateToProps = createStructuredSelector({
+  numberOfCartItems: selectCartItemCount
+})
+export default connect(mapStateToProps)(Navbar);

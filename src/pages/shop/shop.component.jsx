@@ -24,6 +24,7 @@ class ShopPage extends React.Component {
   }
 
   render(){
+    console.log(this.props)
     const { match, isProductsFetching } = this.props;
     return(
       <ShopPageContainer>

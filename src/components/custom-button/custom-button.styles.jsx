@@ -1,14 +1,12 @@
 import styled, { css } from 'styled-components';
 
 export const ButtonStyles = css`
-  background-color: #ABABAB;
-  color: white;
-  border: none;
+  background-color: white;
+  color: #ABABAB;
+  border: 1px solid #ABABAB;
 
   &:hover {
-    background-color: white;
-    color: #ABABAB;
-    border: 1px solid #ABABAB;
+    opacity: 0.7;
   }
 `
 export const InvertedButtonStyles = css`

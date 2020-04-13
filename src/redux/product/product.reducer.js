@@ -32,10 +32,7 @@ const productReducer = (state = INITIAL_STATE, action) => {
         errorMessage: action.payload
       }
     default:
-      return{
-        state
-      }
-
+      return state;
   }
 }
 

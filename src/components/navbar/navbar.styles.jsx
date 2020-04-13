@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 export const NavbarContainer = styled.div`
   width: 10vw;
-  height: 100vh;
-  padding: 12px;
+  height: 95vh;
+  padding: 16px;
   text-align: left;
   display: flex;
   flex-direction: column;
