@@ -15,3 +15,10 @@
 .page {
   height: 90vh;
 }
+.home-logo{
+  padding: 32px;
+}
+.home-logo img{
+  width: 50%;
+  margin: auto;
+}

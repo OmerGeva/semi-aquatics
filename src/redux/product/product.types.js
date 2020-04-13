@@ -1,8 +1,8 @@
-const ProductActionTypes = {
+const productActionTypes = {
   SET_DROP_PRODUCTS_START: 'SET_DROP_PRODUCTS_START',
   SET_DROP_PRODUCTS_SUCCESS: 'SET_DROP_PRODUCTS_SUCCESS',
   SET_DROP_PRODUCTS_FAILURE: 'SET_DROP_PRODUCTS_FAILURE'
 
 }
 
-export default ProductActionTypes;
+export default productActionTypes;

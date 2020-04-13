@@ -1,4 +1,4 @@
-import ProductActionTypes from './product.types'
+import productActionTypes from './product.types'
 
 const INITIAL_STATE = {
   products: null,
@@ -8,18 +8,18 @@ const INITIAL_STATE = {
 
 const productReducer = (state = INITIAL_STATE, action) => {
   switch(action.type){
-    case ProductActionTypes.SET_DROP_PRODUCTS_START:
+    case productActionTypes.SET_DROP_PRODUCTS_START:
       return{
         ...state,
         isFetching: true
       }
-    case ProductActionTypes.SET_DROP_PRODUCTS_SUCCESS:
+    case productActionTypes.SET_DROP_PRODUCTS_SUCCESS:
       return{
         ...state,
         isFetching: false,
         products: action.payload
       }
-    case ProductActionTypes.SET_DROP_PRODUCTS_FAILURE:
+    case productActionTypes.SET_DROP_PRODUCTS_FAILURE:
       return{
         ...state,
         isFetching: false,
