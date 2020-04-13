@@ -1,9 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import './drop.styles.scss';
 
+
 import ShopItem from '../shop-item/shop-item.component'
+import { selectChosenProduct } from '../../redux/product/product.actions'
 
 class Drop extends React.Component {
   render(){
@@ -13,14 +16,17 @@ class Drop extends React.Component {
         currentDrop.push(drop)
       }
     })
-    console.log(currentDrop[0].products[0]);
     return (
       <div className="drop-page">
         <h2>DROP {this.props.match.params.dropId}</h2>
         <div className="drop-products">
         {
            currentDrop[0].products.map((product) => (
-            <ShopItem item={product} image={product.images[0].src} available={product.availableForSale} title={product.title}key={product.id} />
+            <Link to={`${this.props.match.params.dropId}/${product.id}`} key={product.id} >
+              <div onClick={() => this.props.chooseProduct(product)}>
+                <ShopItem  product={product} key={product.id} />
+              </div>
+            </Link>
           ))
         }
         </div>
@@ -29,11 +35,13 @@ class Drop extends React.Component {
   }
 }
 
-
 const mapStateToProps = state => ({
   products: state.product.products
 })
 
-export default connect(mapStateToProps)(Drop);
+const mapDispatchToProps = dispatch => ({
+  chooseProduct: product => dispatch(selectChosenProduct(product))
+})
+export default connect(mapStateToProps, mapDispatchToProps)(Drop);
 
 

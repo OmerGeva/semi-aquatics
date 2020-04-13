@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const selectProduct = state => {
+export const selectProduct = state => {
   return state.product;
 }
 

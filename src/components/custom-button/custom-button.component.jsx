@@ -2,9 +2,9 @@ import React from 'react';
 
 import { CustomButtonContainer } from './custom-button.styles';
 
-const CustomButton = () => (
+const CustomButton = ({children}) => (
   <CustomButtonContainer>
-    Add to cart
+    {children}
   </CustomButtonContainer>
 
 );

@@ -6,12 +6,18 @@
   font-family: 'VCROSDMono';
   color: #ABABAB;
   text-align: center;
-  display: flex
+  display: flex;
 }
 
 .right-side {
+  overflow: hidden;
   width: 90vw;
 }
 .page {
   height: 90vh;
+}
+
+a{
+  color: #ABABAB;
+  text-decoration: none;
 }

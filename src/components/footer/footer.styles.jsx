@@ -6,6 +6,6 @@ export const FooterContainer = styled.div`
  text-align: right;
  padding: 12px;
  h4{
-  margin-right: 24px;
+  margin-right: 5%;
  }
 `
