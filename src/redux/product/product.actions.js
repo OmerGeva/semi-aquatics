@@ -6,9 +6,18 @@ const client = Client.buildClient({
       storefrontAccessToken: process.env.REACT_APP_STORE_FRONT_ACCESS_TOKEN
     });
 
-export const selectChosenProduct = (product) => ({
+export const chooseProduct = (product) => ({
   type: productActionTypes.SET_CHOSEN_PRODUCT,
   payload: product
+})
+
+export const chooseVariantProduct = (product) => ({
+  type: productActionTypes.SET_CHOSEN_VARIANT_PRODUCT,
+  payload: product
+})
+
+export const toggleProductSize = () => ({
+  type: productActionTypes.TOGGLE_PRODUCT_SIZE
 })
 
 export const fetchProductsStart = () => ({

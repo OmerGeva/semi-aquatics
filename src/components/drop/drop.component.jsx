@@ -6,7 +6,7 @@ import './drop.styles.scss';
 
 
 import ShopItem from '../shop-item/shop-item.component'
-import { selectChosenProduct } from '../../redux/product/product.actions'
+import { chooseProduct } from '../../redux/product/product.actions'
 
 class Drop extends React.Component {
   render(){
@@ -15,10 +15,14 @@ class Drop extends React.Component {
       if (drop.title.includes(this.props.match.params.dropId)) {
         currentDrop.push(drop)
       }
+      console.log(this.props)
     })
     return (
       <div className="drop-page">
-        <h2>DROP {this.props.match.params.dropId}</h2>
+        <div className="drop-title">
+          <h2>DROP {this.props.match.params.dropId}</h2>
+          <h4>{currentDrop[0].description}</h4>
+        </div>
         <div className="drop-products">
         {
            currentDrop[0].products.map((product) => (
@@ -40,7 +44,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  chooseProduct: product => dispatch(selectChosenProduct(product))
+  chooseProduct: product => dispatch(chooseProduct(product))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Drop);
 
