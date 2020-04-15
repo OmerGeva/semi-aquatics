@@ -15,7 +15,6 @@ class Drop extends React.Component {
       if (drop.title.includes(this.props.match.params.dropId)) {
         currentDrop.push(drop)
       }
-      console.log(this.props)
     })
     return (
       <div className="drop-page">

@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { ShowProductContainer } from './show-product.styles';
 import CustomButtom from '../custom-button/custom-button.component'
 import { createStructuredSelector } from 'reselect';
+import { selectCartCheckout } from '../../redux/cart/cart.selectors';
 import { selectChosenProduct, selectProductSizes, selectIsProductsSizeHidden, selectVariantProduct } from '../../redux/product/product.selectors'
 import { toggleProductSize, chooseVariantProduct } from '../../redux/product/product.actions'
-import { addItemToCart } from '../../redux/cart/cart.actions'
+import { addItemToCartAsync } from '../../redux/cart/cart.actions'
 
-const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct }) =>(
+const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout }) =>(
     <ShowProductContainer>
       <div className="product-info">
         <img src={product.images[0].src} alt=""/>
@@ -36,12 +37,11 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
               <span></span>
             }
           </div>
-          <div onClick={() => (variantProduct || product.variants.length == 1) ? addToCart(variantProduct, product) : null}>
+          <div onClick={() => ((variantProduct && variantProduct.available) || product.variants.length === 1) ? addToCart(variantProduct, product, checkout) : null}>
             <CustomButtom>
             {
-              product.availableForSale ? "ADD TO CART" : "SOLD OUT"
+              (variantProduct && variantProduct.available) || (product.availableForSale & variantProduct == null) ? "ADD TO CART" : "SOLD OUT"
             }
-
             </CustomButtom>
           </div>
         </div>
@@ -53,11 +53,12 @@ const mapStateToProps = createStructuredSelector({
   product: selectChosenProduct,
   sizes: selectProductSizes,
   hidden: selectIsProductsSizeHidden,
-  variantProduct: selectVariantProduct
+  variantProduct: selectVariantProduct,
+  checkout: selectCartCheckout
 })
 
 const mapDispatchToProps = dispatch => ({
-  addToCart: (variantProduct, product) =>  dispatch(addItemToCart(variantProduct, product)),
+  addToCart: (variantProduct, product, checkout) =>  dispatch(addItemToCartAsync(variantProduct, product, checkout)),
   toggleHidden: () => dispatch(toggleProductSize()),
   chooseProduct: (variant) => dispatch(chooseVariantProduct(variant))
 })

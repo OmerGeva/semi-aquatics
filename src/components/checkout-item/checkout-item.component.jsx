@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { CheckoutItemContainer } from './checkout-item.styles';
-import { removeItemFromCart } from '../../redux/cart/cart.actions'
+import { removeItemFromCartAsync } from '../../redux/cart/cart.actions'
 
-export const CheckoutItem = ({item, removeItemFromCart}) => (
+export const CheckoutItem = ({item, removeItemFromCart, checkout}) => (
   <CheckoutItemContainer>
     <div className="image-container">
       {
@@ -24,12 +24,15 @@ export const CheckoutItem = ({item, removeItemFromCart}) => (
     <span className="quantity">{item.quantity}</span>
 
     <span className="price">${item.price * item.quantity}</span>
-    <span className="remove-button" onClick={() => removeItemFromCart(item)}>𝗫</span>
+    <span className="remove-button" onClick={() => removeItemFromCart(item, checkout)}>𝗫</span>
   </CheckoutItemContainer>
 )
 
+const mapStateToProps = state => ({
+  checkout: state.cart.checkout
+})
 const mapDispatchToProps = dispatch => ({
-  removeItemFromCart: item => dispatch(removeItemFromCart(item))
+  removeItemFromCart: (item, checkout) => dispatch(removeItemFromCartAsync(item, checkout))
 })
 
-export default connect(null, mapDispatchToProps)(CheckoutItem);
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutItem);

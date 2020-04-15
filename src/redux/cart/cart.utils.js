@@ -1,4 +1,6 @@
+///////////////////// ADDING ITEM TO THE CART /////////////////////
 export const addItemToCart = (cartItems, itemToAdd) => {
+
   const noSize = itemToAdd[0] == null ? true : false
 
   const existingCartItem = cartItems.find(
@@ -18,6 +20,7 @@ export const addItemToCart = (cartItems, itemToAdd) => {
   [...cartItems, {...itemToAdd[0], quantity: 1, productName: itemToAdd[1].title}]
 }
 
+///////////////////// REMOVING ITEM FROM THE CART /////////////////////
 export const removeItemFromCart = (cartItems, itemToRemove) => {
   const existingCartItem = cartItems.find(
     cartItem => cartItem.id === itemToRemove.id);
