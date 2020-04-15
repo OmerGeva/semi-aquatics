@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const ButtonStyles = css`
-  font-family: 'HelveticaNeue';
+  font-family: 'VCR_OSD_MONO_1';
   background-color: white;
   color: #ABABAB;
   border: 1px solid #ABABAB;
@@ -30,7 +30,7 @@ export const CustomButtonContainer= styled.button`
   padding: 0 35px 0 35px;
   font-size: 15px;
   text-transform: uppercase;
-  font-family: 'HelveticaNeue';
+  font-family: 'VCR_OSD_MONO_1';
   font-weight: bolder;
   cursor: pointer;
   display: flex;

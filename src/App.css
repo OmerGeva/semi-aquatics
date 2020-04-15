@@ -1,9 +1,9 @@
 @font-face {
-  font-family: HelveticaNeue;
-  src: url(./assets/HelveticaNeue Light.ttf);
+  font-family: VCR_OSD_MONO_1;
+  src: url(./assets/VCR_OSD_MONO_1.001.ttf);
 }
 .App {
-  font-family: 'HelveticaNeue';
+  font-family: 'VCR_OSD_MONO_1';
   color: #ABABAB;
   text-align: center;
   display: flex;

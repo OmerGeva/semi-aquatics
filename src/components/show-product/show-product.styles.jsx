@@ -32,7 +32,7 @@ p{
     padding: 0 35px 0 35px;
     font-size: 15px;
     text-transform: uppercase;
-    font-family: 'HelveticaNeue';
+    font-family: 'VCR_OSD_MONO_1';
     font-weight: bolder;
     cursor: pointer;
     justify-content: center;
@@ -56,6 +56,6 @@ p{
   padding: 42px;
 }
 button{
-  font-family: 'HelveticaNeue'
+  font-family: 'VCR_OSD_MONO_1'
 }
 `
