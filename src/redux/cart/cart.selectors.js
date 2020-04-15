@@ -24,5 +24,5 @@ export const selectCartCheckout = createSelector(
   )
 export const selectCartCheckoutUrl = createSelector(
   [selectCartCheckout],
-  checkout => checkout.webUrl
+  checkout => checkout ? checkout.webUrl : '/checkout'
   )
