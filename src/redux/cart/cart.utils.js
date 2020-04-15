@@ -9,9 +9,9 @@ export const addItemToCart = (cartItems, itemToAdd) => {
   if (existingCartItem){
     return cartItems.map(cartItem =>
         noSize ?
-        (cartItem.id === itemToAdd[1].id ? {...itemToAdd[1], quantity: cartItem.quantity + 1, price: itemToAdd[1].variants[0].price} : cartItem)
+        (cartItem.id === itemToAdd[1].id ? {...itemToAdd[1], quantity: cartItem.quantity + 1, price: itemToAdd[1].variants[0].price, productName: itemToAdd[1].title} : cartItem)
         :
-        (cartItem.id === itemToAdd[0].id ? {...itemToAdd[0], quantity: cartItem.quantity + 1} : cartItem)
+        (cartItem.id === itemToAdd[0].id ? {...itemToAdd[0], quantity: cartItem.quantity + 1, productName: itemToAdd[1].title} : cartItem)
       )
   }
   return noSize ?

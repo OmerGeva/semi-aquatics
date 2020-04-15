@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import { CheckoutItemContainer } from './checkout-item.styles';
 import { removeItemFromCartAsync } from '../../redux/cart/cart.actions'
 
-export const CheckoutItem = ({item, removeItemFromCart, checkout}) => (
+export const CheckoutItem = ({item, removeItemFromCart, checkout}) => {
+  console.log(item);
+return (
   <CheckoutItemContainer>
     <div className="image-container">
       {
@@ -27,7 +29,7 @@ export const CheckoutItem = ({item, removeItemFromCart, checkout}) => (
     <span className="remove-button" onClick={() => removeItemFromCart(item, checkout)}>𝗫</span>
   </CheckoutItemContainer>
 )
-
+}
 const mapStateToProps = state => ({
   checkout: state.cart.checkout
 })

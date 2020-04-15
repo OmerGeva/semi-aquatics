@@ -31,7 +31,10 @@ const Navbar = ({ numberOfCartItems }) => (
       DROP 1
     </LinkContainer>
     <div className="pages-space"></div>
-    <LinkContainer to="/info/faq" className="home-link">
+    <LinkContainer to="/info/sizing">
+      SIZING
+    </LinkContainer>
+    <LinkContainer to="/info/faq">
       FAQ
     </LinkContainer>
 

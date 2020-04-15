@@ -17,4 +17,9 @@ flex-direction: column;
 .item-space{
   flex-grow: 1;
 }
+.center-button{
+  display: flex;
+  justify-content: space-around;
+}
 `
+

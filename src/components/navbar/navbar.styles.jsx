@@ -14,6 +14,7 @@ export const NavbarContainer = styled.div`
   .home-link {
     margin-bottom: 12px;
   }
+
   .cart-link {
     margin-bottom: 32px;
   }
@@ -29,4 +30,4 @@ export const LinkContainer = styled(Link)`
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-`;
+`
