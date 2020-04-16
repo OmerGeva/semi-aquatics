@@ -8,6 +8,7 @@ export const FooterContainer = styled.div`
  height: 10vh;
  text-align: right;
  padding: 12px;
+
  h4{
   margin-right: 5%;
  }
@@ -19,4 +20,7 @@ export const FooterContainer = styled.div`
     color: #999999;
   }
  }
+ @media only screen and (max-width: 768px) {
+     display: none;
+   }
 `

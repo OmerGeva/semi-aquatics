@@ -8,4 +8,10 @@ img{
   margin: 16px;
   border 1px solid #ABABAB;;
 }
+
+@media only screen and (max-width: 768px) {
+  img{
+    width: 80%;
+  }
+}
 `

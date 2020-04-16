@@ -14,4 +14,7 @@ export const FaqContainer = styled.div`
     padding: 16px;
     margin-bottom: 16px;
   }
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+}
 `

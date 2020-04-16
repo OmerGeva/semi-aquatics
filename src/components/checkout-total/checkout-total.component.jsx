@@ -9,13 +9,15 @@ import CustomButtom from '../custom-button/custom-button.component'
 const CheckoutTotal = ({ totalPrice, totalItems, checkoutUrl }) => (
   <CheckoutTotalContainer>
     <h5>ORDER SUMMARY</h5>
-    <div className="total-price">
-      <h5>ITEMS</h5>
-      <p>{totalItems}</p>
-    </div>
-    <div className="total-price">
-      <h5>TOTAL</h5>
-      <p>${totalPrice}</p>
+    <div className="totals-mobile">
+      <div className="total-price">
+        <h5>ITEMS</h5>
+        <p>{totalItems}</p>
+      </div>
+      <div className="total-price">
+        <h5>TOTAL</h5>
+        <p>${totalPrice}</p>
+      </div>
     </div>
     <div className="item-space"></div>
     <div className="center-button">

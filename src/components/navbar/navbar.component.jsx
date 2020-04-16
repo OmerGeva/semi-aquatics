@@ -4,44 +4,112 @@ import { selectCartItemCount } from '../../redux/cart/cart.selectors';
 import { NavbarContainer, LinkContainer } from './navbar.styles';
 import { createStructuredSelector } from 'reselect';
 
-const Navbar = ({ numberOfCartItems }) => (
-  <NavbarContainer >
-    <LinkContainer to="/" className="home-link">
-      HOME
-    </LinkContainer>
-    <LinkContainer to="/checkout" className="cart-link">
-      CART ({numberOfCartItems})
-    </LinkContainer>
-    <LinkContainer to="/shop/drops/6">
-      DROP 6
-    </LinkContainer>
-    <LinkContainer to="/shop/drops/5">
-      DROP 5
-    </LinkContainer>
-    <LinkContainer to="/shop/drops/4">
-      DROP 4
-    </LinkContainer>
-    <LinkContainer to="/shop/drops/3">
-      DROP 3
-    </LinkContainer>
-    <LinkContainer to="/shop/drops/2">
-      DROP 2
-    </LinkContainer>
-    <LinkContainer to="/shop/drops/1">
-      DROP 1
-    </LinkContainer>
-    <div className="pages-space"></div>
-    <LinkContainer to="/info/sizing">
-      SIZING
-    </LinkContainer>
-    <LinkContainer to="/info/faq">
-      FAQ
-    </LinkContainer>
+import onClickOutside from "react-onclickoutside";
 
-  </NavbarContainer>
-)
+class  Navbar extends React.Component{
+  state = {
+    navbarOpen: false
+  }
+  handleClickOutside(){
+    this.setState({
+      navbarOpen: false
+    })
+  }
+  toggleList(){
+    this.setState(() => ({
+      navbarOpen: !this.state.navbarOpen
+    }))
+  }
+
+  render(){
+    const {numberOfCartItems} = this.props
+    return(
+      <NavbarContainer >
+        <div className="nav-desktop">
+        <LinkContainer to="/" className="home-link">
+        HOME
+        </LinkContainer>
+        <LinkContainer to="/checkout" className="cart-link">
+        CART ({numberOfCartItems})
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/6">
+        DROP 6
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/5">
+        DROP 5
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/4">
+        DROP 4
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/3">
+        DROP 3
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/2">
+        DROP 2
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/1">
+        DROP 1
+        </LinkContainer>
+        <div className="pages-space"></div>
+        <LinkContainer to="/info/sizing">
+        SIZING
+        </LinkContainer>
+        <LinkContainer to="/info/faq">
+        FAQ
+        </LinkContainer>
+      </div>
+
+      {
+        //////////////// MOBILE ////////////////
+      }
+      <div className={this.state.navbarOpen ? "mobile-toggle-btn-open" : "mobile-toggle-btn-closed"} onClick={() => this.toggleList()}>
+        <i className="fas fa-bars"></i>
+      </div>
+      <div className={this.state.navbarOpen ? "nav-mobile-open" : "nav-mobile-closed"}>
+        <LinkContainer to="/" className="home-link">
+        HOME
+        </LinkContainer>
+        <LinkContainer to="/checkout" className="cart-link">
+        CART ({numberOfCartItems})
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/6">
+        DROP 6
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/5">
+        DROP 5
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/4">
+        DROP 4
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/3">
+        DROP 3
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/2">
+        DROP 2
+        </LinkContainer>
+        <LinkContainer to="/shop/drops/1">
+        DROP 1
+        </LinkContainer>
+        <div className="pages-space"></div>
+        <LinkContainer to="/info/sizing">
+        SIZING
+        </LinkContainer>
+        <LinkContainer to="/info/faq">
+        FAQ
+        </LinkContainer>
+        <a href="https://www.instagram.com/semiaquatics">
+        <i className="fab fa-instagram footer-item" ></i>
+        </a>
+        <h6 className="footer-item">© 2020 Semi Aquatics</h6>
+      </div>
+
+
+      </NavbarContainer>
+      )
+  }
+}
 
 const mapStateToProps = createStructuredSelector({
   numberOfCartItems: selectCartItemCount
 })
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps)(onClickOutside(Navbar));

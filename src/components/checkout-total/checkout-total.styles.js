@@ -21,5 +21,23 @@ flex-direction: column;
   display: flex;
   justify-content: space-around;
 }
+
+  @media only screen and (max-width: 768px) {
+    border: 1px solid #ABABAB;
+    height: 20vh;
+    width: 80%;
+    h5{
+      margin: 16px;
+    }
+    .totals-mobile{
+      margin-right: 16px;
+      padding: 0 16px;
+      display: flex;
+      justify-content: space-around;
+    }
+    .total-price{
+      width: 30%;
+    }
+}
 `
 

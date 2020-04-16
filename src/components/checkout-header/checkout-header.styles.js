@@ -7,6 +7,7 @@ export const CheckoutHeaderContainer = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid darkgrey;
   height: 10%;
+
   .header-block {
     text-transform: capitalize;
     width: 16%;
@@ -15,4 +16,19 @@ export const CheckoutHeaderContainer = styled.div`
       width: 8%;
     }
   }
+  .header-block-mobile{
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    padding: 10px 0;
+    width: 100%;
+    font-size: 18px;
+    .header-block {
+      display: none;
+    }
+    .header-block-mobile{
+      display: block;
+    }
+  }
+
 `

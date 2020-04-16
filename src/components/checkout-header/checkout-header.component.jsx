@@ -3,6 +3,11 @@ import { CheckoutHeaderContainer } from './checkout-header.styles'
 
 export const CheckoutHeader = () => (
   <CheckoutHeaderContainer>
+    <div className="header-block-mobile">
+      <span>
+        YOUR CART
+      </span>
+    </div>
     <div className="header-block">
       <span>
         PRODUCT

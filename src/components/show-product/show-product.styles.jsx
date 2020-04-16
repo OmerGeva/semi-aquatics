@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ShowProductContainer = styled.div`
 display: flex;
+margin-top 30px;
 height: 100%;
 width: 100%;
 overflow: hidden;
@@ -15,6 +16,7 @@ img{
   width: 90%;
 }
 p{
+  font-size: 12px;
   line-height: 2;
 }
 .size-and-add-to-cart{
@@ -57,5 +59,19 @@ p{
 }
 button{
   font-family: 'VCR_OSD_MONO_1'
+}
+
+@media only screen and (max-width: 768px) {
+  display: block;
+  .product-info{
+    width: 90%
+  }
+  .buy-product{
+    width: 90%;
+    padding:12px;
+    p{
+      display: none;
+    }
+  }
 }
 `
