@@ -66,35 +66,35 @@ class  Navbar extends React.Component{
         <i className="fas fa-bars"></i>
       </div>
       <div className={this.state.navbarOpen ? "nav-mobile-open" : "nav-mobile-closed"}>
-        <LinkContainer to="/" className="home-link">
+        <LinkContainer to="/" className="home-link"  onClick={() => this.toggleList()}>
         HOME
         </LinkContainer>
-        <LinkContainer to="/checkout" className="cart-link">
+        <LinkContainer to="/checkout" className="cart-link" onClick={() => this.toggleList()}>
         CART ({numberOfCartItems})
         </LinkContainer>
-        <LinkContainer to="/shop/drops/6">
+        <LinkContainer to="/shop/drops/6"  onClick={() => this.toggleList()}>
         DROP 6
         </LinkContainer>
-        <LinkContainer to="/shop/drops/5">
+        <LinkContainer to="/shop/drops/5"  onClick={() => this.toggleList()}>
         DROP 5
         </LinkContainer>
-        <LinkContainer to="/shop/drops/4">
+        <LinkContainer to="/shop/drops/4"  onClick={() => this.toggleList()}>
         DROP 4
         </LinkContainer>
-        <LinkContainer to="/shop/drops/3">
+        <LinkContainer to="/shop/drops/3"  onClick={() => this.toggleList()}>
         DROP 3
         </LinkContainer>
-        <LinkContainer to="/shop/drops/2">
+        <LinkContainer to="/shop/drops/2"  onClick={() => this.toggleList()}>
         DROP 2
         </LinkContainer>
-        <LinkContainer to="/shop/drops/1">
+        <LinkContainer to="/shop/drops/1"  onClick={() => this.toggleList()}>
         DROP 1
         </LinkContainer>
         <div className="pages-space"></div>
-        <LinkContainer to="/info/sizing">
+        <LinkContainer to="/info/sizing"  onClick={() => this.toggleList()}>
         SIZING
         </LinkContainer>
-        <LinkContainer to="/info/faq">
+        <LinkContainer to="/info/faq"  onClick={() => this.toggleList()}>
         FAQ
         </LinkContainer>
         <a href="https://www.instagram.com/semiaquatics">
