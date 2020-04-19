@@ -26,3 +26,7 @@ export const selectCartCheckoutUrl = createSelector(
   [selectCartCheckout],
   checkout => checkout ? checkout.webUrl : '/checkout'
   )
+export const selectCartInventoryQuantity = createSelector(
+  [selectCart],
+  cart => cart.inventoryQuantity
+  )

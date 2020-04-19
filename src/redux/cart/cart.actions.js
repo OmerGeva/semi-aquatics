@@ -1,5 +1,6 @@
 import { cartActionTypes } from './cart.types';
 import Client from 'shopify-buy';
+const axios = require('axios');
 
 export const addItemToCart = (variantProduct, product) => ({
     type: cartActionTypes.ADD_ITEM,
@@ -26,17 +27,26 @@ export const removeItemFromCheckout = (checkout) => ({
   payload: checkout
 })
 
+export const checkItemInventoryQuantity = (quantity) => ({
+  type: cartActionTypes.CHECK_INVENTORY_QUANTITY,
+  payload: quantity
+})
+
 /////////////////////// ADDING AN ITEM TO THE CART AND CHECKOUT OBJECT ASYNCHRONOUSLY ///////////////////////
-export const addItemToCartAsync = (variantProduct, product, checkout) => {
+export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQuantity) => {
+  const variantId = window.atob(variantProduct.id).replace('gid://shopify/ProductVariant/', '');
+  const productId = window.atob(product.id).replace('gid://shopify/Product/', '');
+
   return dispatch => {
-    dispatch(addItemToCart(variantProduct, product))
     const client = Client.buildClient({
       domain: 'semi-aquatics.myshopify.com',
       storefrontAccessToken: process.env.REACT_APP_STORE_FRONT_ACCESS_TOKEN
     });
-    ////////// IF THERE IS A CHECKOUT ALREADY //////////
+    ////////// IF THERE ISN'T A CHECKOUT ALREADY //////////
 
     if(checkout === undefined || checkout === null){
+    dispatch(addItemToCart(variantProduct, product))
+
     const lineItemsToAdd = [
       {
         variantId: variantProduct.id,
@@ -48,24 +58,37 @@ export const addItemToCartAsync = (variantProduct, product, checkout) => {
         client.checkout.addLineItems(checkout.id, lineItemsToAdd).then((checkout) => {
           dispatch(updateCheckout(checkout));
         });
-
       });
     }
-    ////////// ADD ITEM TO THE CHECKOOUT //////////
+    ////////// ADD ITEM TO THE CHECKOUT //////////
     else{
-      const exisitingCartItem = checkout.lineItems.find(item =>
-        item.id === variantProduct.id
+      const exisitingCartItem = checkout.lineItems.find(checkoutItem =>
+        checkoutItem.variant.id === variantProduct.id
         )
       if(exisitingCartItem){
-        const lineItemsToUpdate = [
-          {id: variantProduct.id, quantity: exisitingCartItem.quantity += 1}
-        ];
-
-        client.checkout.updateLineItems(checkout.id, lineItemsToUpdate).then((checkout) => {
-          dispatch(updateCheckout(checkout));
-        });
+        axios.get(`http://localhost:3001/api/item-info`, {
+            params: {
+              productId: productId,
+              variantId: variantId
+            }
+          })
+          .then(response => response.data)
+          .then(data =>
+            dispatch(checkItemInventoryQuantity(parseInt(data.variant.inventory_quantity)))
+          )
+          .catch(error => console.log(error));
+        if(inventoryQuantity && inventoryQuantity > exisitingCartItem.quantity){
+          dispatch(addItemToCart(variantProduct, product))
+          const lineItemsToUpdate = [
+            {id: exisitingCartItem.id, quantity: exisitingCartItem.quantity + 1}
+          ];
+          client.checkout.updateLineItems(checkout.id, lineItemsToUpdate).then((checkout) => {
+            dispatch(updateCheckout(checkout));
+          });
+        }
       }
       else{
+        dispatch(addItemToCart(variantProduct, product))
         const lineItemsToAdd = [
           {
             variantId: variantProduct.id,
@@ -75,7 +98,6 @@ export const addItemToCartAsync = (variantProduct, product, checkout) => {
         client.checkout.addLineItems(checkout.id, lineItemsToAdd).then((checkout) => {
           dispatch(updateCheckout(checkout));
         });
-
       }
     }
   }
@@ -104,5 +126,6 @@ export const removeItemFromCartAsync = (item, checkout) => {
 
   }
 }
+
 
 

@@ -3,7 +3,8 @@ import { addItemToCart, removeItemFromCart } from './cart.utils'
 
 const INITIAL_STATE = {
   cartItems: [],
-  checkout: null
+  checkout: null,
+  inventoryQuantity: null
 }
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -32,6 +33,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cartItems: removeItemFromCart(state.cartItems, action.payload)
+      }
+    case cartActionTypes.CHECK_INVENTORY_QUANTITY:
+      return {
+        ...state,
+        inventoryQuantity: action.payload
       }
     default:
       return state;

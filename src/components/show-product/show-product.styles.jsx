@@ -45,8 +45,9 @@ p{
     }
     .product-sizes-show{
       position: absolute;
+      width: 100px;
       .product-size{
-       padding: 0 24px 0 24px;
+        padding: 0 24px 0 24px;
         margin-top: 12px;
         display: block;
         cursor: pointer;
