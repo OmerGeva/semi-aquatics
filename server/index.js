@@ -28,8 +28,8 @@ app.get('/api/item-info', (req, res) => {
     }
   )
 });
-
-app.listen(3001, () =>
+const port  = process.env.NODE_ENV === 'development' ? 3001 : 80
+app.listen(port, () =>
   console.log('Express server is running on localhost:3001')
 );
 
