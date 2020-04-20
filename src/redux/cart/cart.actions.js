@@ -66,7 +66,7 @@ export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQ
         checkoutItem.variant.id === variantProduct.id
         )
       if(exisitingCartItem){
-        axios.get(`http://localhost:3001/api/item-info`, {
+        axios.get(`/api/item-info`, {
             params: {
               productId: productId,
               variantId: variantId
