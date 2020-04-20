@@ -1,5 +1,5 @@
 const express = require('express');
-
+const path = require('path')
 const request = require('request');
 
 const app = express();
@@ -12,6 +12,10 @@ app.use(function(req, res, next) {
   );
   next();
 });
+
+
+app.use(express.static(path.join(__dirname, 'build')))
+
 
 app.get('/api/item-info', (req, res) => {
   const {productId, variantId } = req.query
@@ -28,5 +32,13 @@ app.get('/api/item-info', (req, res) => {
     }
   )
 });
-app.listen(process.env.PORT || 3001);
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
+
+app.listen(process.env.PORT || 3001, () =>
+  console.log('Express server is running on localhost:3001')
+);
+
 
