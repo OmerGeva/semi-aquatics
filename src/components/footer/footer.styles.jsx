@@ -20,6 +20,9 @@ export const FooterContainer = styled.div`
     color: #999999;
   }
  }
+ .mail-us-footer{
+  margin-right: 2%;
+ }
  @media only screen and (max-width: 768px) {
      display: none;
    }

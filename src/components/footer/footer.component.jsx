@@ -6,6 +6,7 @@ class Footer extends React.Component {
   render(){
     return(
       <FooterContainer>
+          <a href="mailto:info@semiaquatics.com" className='mail-us-footer'>info@semiaquatics.com</a>
           <a href="https://www.instagram.com/semiaquatics">
             <i className="fab fa-instagram footer-item" ></i>
           </a>
