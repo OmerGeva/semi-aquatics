@@ -78,6 +78,9 @@ class  Navbar extends React.Component{
         <LinkContainer to="/checkout" className="cart-link" onClick={() => this.toggleList()}>
         CART ({numberOfCartItems})
         </LinkContainer>
+        <LinkContainer to="/shop/drops/7"  onClick={() => this.toggleList()}>
+        DROP 7
+        </LinkContainer>
         <LinkContainer to="/shop/drops/6"  onClick={() => this.toggleList()}>
         DROP 6
         </LinkContainer>
