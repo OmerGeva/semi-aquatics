@@ -5,6 +5,8 @@ import { createStructuredSelector } from 'reselect';
 
 import { ShopPageContainer } from './shop.styles'
 import Drop from '../../components/drop/drop.component'
+import Catalog from '../../components/catalog/catalog.component'
+
 import ShowProduct from '../../components/show-product/show-product.component'
 
 import WithSpinner from '../../components/with-spinner/with-spinner.component'
@@ -15,6 +17,7 @@ import { fetchProductsStartAsync } from '../../redux/product/product.actions'
 
 
 const DropWithSpinner = WithSpinner(Drop);
+const CatalogWithSpinner = WithSpinner(Catalog);
 
 class ShopPage extends React.Component {
 
@@ -28,6 +31,7 @@ class ShopPage extends React.Component {
     return(
       <ShopPageContainer>
         <Route exact path={`${match.path}/drops/:dropId`} render={(props) => <DropWithSpinner isLoading={isProductsFetching} products={products.products} {...props}/>} />
+        <Route exact path={`${match.path}/catalog`} render={(props) => <CatalogWithSpinner isLoading={isProductsFetching} products={products.products} {...props}/>} />
         <Route path={`${match.path}/drops/:dropId/:productId`} render={(props) => <ShowProduct {...props}/>}/>
       </ShopPageContainer>
       )

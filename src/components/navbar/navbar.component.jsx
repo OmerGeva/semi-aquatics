@@ -50,6 +50,9 @@ class  Navbar extends React.Component{
         <LinkContainer to="/shop/drops/1">
         DROP 1
         </LinkContainer>
+        <LinkContainer to="/shop/catalog">
+        CATALOG
+        </LinkContainer>
         <div className="pages-space"></div>
         <LinkContainer to="/info/sizing">
         SIZING
