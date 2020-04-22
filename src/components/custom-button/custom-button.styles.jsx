@@ -5,11 +5,25 @@ export const ButtonStyles = css`
   background-color: white;
   color: #ABABAB;
   border: 1px solid #ABABAB;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.7;
   }
 `
+
+export const SoldOutStyles = css`
+  font-family: 'VCR_OSD_MONO_1';
+  background-color: white;
+  color: #ABABAB;
+  border: 1px solid #ABABAB;
+  cursor: default;
+
+  &:focus{
+    outline: none;
+  }
+`
+
 export const InvertedButtonStyles = css`
   background-color: white;
   color: #ABABAB;
@@ -22,6 +36,13 @@ export const InvertedButtonStyles = css`
   }
 `;
 
+const getButtonStyles = ({soldOut}) => {
+   if (soldOut){
+    return SoldOutStyles;
+   }
+    return ButtonStyles;
+}
+
 export const CustomButtonContainer= styled.button`
   width: auto;
   height: 50px;
@@ -32,9 +53,9 @@ export const CustomButtonContainer= styled.button`
   text-transform: uppercase;
   font-family: 'VCR_OSD_MONO_1';
   font-weight: bolder;
-  cursor: pointer;
   display: flex;
   justify-content: center;
 
-  ${ButtonStyles}
+
+  ${getButtonStyles}
 `;

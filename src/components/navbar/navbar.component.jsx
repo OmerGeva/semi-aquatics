@@ -93,6 +93,9 @@ class  Navbar extends React.Component{
         <LinkContainer to="/shop/drops/1"  onClick={() => this.toggleList()}>
         DROP 1
         </LinkContainer>
+        <LinkContainer to="/shop/catalog"  onClick={() => this.toggleList()}>
+        CATALOG
+        </LinkContainer>
         <div className="pages-space"></div>
         <LinkContainer to="/info/sizing"  onClick={() => this.toggleList()}>
         SIZING

@@ -2,8 +2,8 @@ import React from 'react';
 
 import { CustomButtonContainer } from './custom-button.styles';
 
-const CustomButton = ({children}) => (
-  <CustomButtonContainer>
+const CustomButton = ({children, soldOut}) => (
+  <CustomButtonContainer soldOut={soldOut}>
     {children}
   </CustomButtonContainer>
 

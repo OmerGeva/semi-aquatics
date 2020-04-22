@@ -24,7 +24,7 @@ flex-direction: column;
 
   @media only screen and (max-width: 768px) {
     border: 1px solid #ABABAB;
-    height: 20vh;
+    height: 28%;
     width: 80%;
     h5{
       margin: 16px;

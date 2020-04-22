@@ -13,22 +13,15 @@ export const CheckoutContainer = styled.div`
   }
   @media only screen and (max-width: 768px) {
     .checkout-items{
-      width: 100%;
-      height: 80vh;
+      margin: 0 auto;
+      width: 95%;
+      height: 80%;
       overflow: scroll;
     }
     .items-and-total{
-      display: flex;
+      display: block;
+      height: 70vh;
       align-items: center;
     }
-  .items-and-total{
-    display: block;
-    align-items: center;
-  }
-  .checkout-items{
-    margin: 0 auto;
-    width: 95%;
-    height: 60vh;
-    overflow: scroll;
   }
 `

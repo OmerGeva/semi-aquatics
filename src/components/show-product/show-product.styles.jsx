@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const ShowProductContainer = styled.div`
 display: flex;
-margin-top 30px;
 height: 100%;
 width: 100%;
 overflow: hidden;
@@ -39,6 +38,9 @@ p{
     cursor: pointer;
     justify-content: center;
     }
+    .no-size{
+      cursor: default;
+    }
     .product-sizes-hidden{
       text-align: center;
       display: none;
@@ -61,8 +63,21 @@ p{
 button{
   font-family: 'VCR_OSD_MONO_1'
 }
+.mobile-sizes-btn{
+  display: none;
+}
 
 @media only screen and (max-width: 768px) {
+  .desktop-sizes-btn{
+    display: none;
+  }
+  .mobile-sizes-btn{
+    display: block;
+  }
+  .product-sizes-show{
+    position: relative;
+    background-color: white;
+  }
   display: block;
   .product-info{
     width: 90%
