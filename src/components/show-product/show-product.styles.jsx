@@ -66,7 +66,9 @@ button{
 .mobile-sizes-btn{
   display: none;
 }
-
+.mobile-description{
+  display: none;
+}
 @media only screen and (max-width: 768px) {
   .desktop-sizes-btn{
     display: none;
@@ -87,6 +89,13 @@ button{
     padding:12px;
     p{
       display: none;
+    }
+    .mobile-description{
+      text-align: left;
+      padding-top: 16px;
+      margin: auto;
+      width: 90%;
+      display: block;
     }
   }
 }

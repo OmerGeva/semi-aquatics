@@ -86,6 +86,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
             }
           </div>
         </div>
+        <p className="mobile-description">{product.description}</p>
       </div>
     </ShowProductContainer>
   )
