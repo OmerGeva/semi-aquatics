@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 export const NavbarContainer = styled.div`
+
   .nav-desktop{
     width: 10vw;
   height: 95vh;
