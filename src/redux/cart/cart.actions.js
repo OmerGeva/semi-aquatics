@@ -66,18 +66,19 @@ export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQ
         checkoutItem.variant.id === variantProduct.id
         )
       if(exisitingCartItem){
-        axios.get(`/api/item-info`, {
-            params: {
-              productId: productId,
-              variantId: variantId
-            }
-          })
-          .then(response => response.data)
-          .then(data =>
-            dispatch(checkItemInventoryQuantity(parseInt(data.variant.inventory_quantity)))
-          )
-          .catch(error => console.log(error));
-        if(inventoryQuantity && inventoryQuantity > exisitingCartItem.quantity){
+        // COMMENTED OUT, DOESN'T WORK IN PRODUCTION
+      //   axios.get(`/api/item-info`, {
+      //       params: {
+      //         productId: productId,
+      //         variantId: variantId
+      //       }
+      //     })
+      //     .then(response => response.data)
+      //     .then(data =>
+      //       dispatch(checkItemInventoryQuantity(parseInt(data.variant.inventory_quantity)))
+      //     )
+      //     .catch(error => console.log(error));
+        // if(inventoryQuantity && inventoryQuantity > exisitingCartItem.quantity){
           dispatch(addItemToCart(variantProduct, product))
           const lineItemsToUpdate = [
             {id: exisitingCartItem.id, quantity: exisitingCartItem.quantity + 1}
@@ -85,7 +86,7 @@ export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQ
           client.checkout.updateLineItems(checkout.id, lineItemsToUpdate).then((checkout) => {
             dispatch(updateCheckout(checkout));
           });
-        }
+        // }
       }
       else{
         dispatch(addItemToCart(variantProduct, product))

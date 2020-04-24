@@ -18,7 +18,6 @@ class App extends React.Component {
     this.setState({dark: !this.state.dark})
   }
   render(){
-  console.log(this.state.dark);
   return (
     <AppContainer isDark={this.state.dark}>
       <div className="App">
