@@ -1,6 +1,6 @@
 import { cartActionTypes } from './cart.types';
 import Client from 'shopify-buy';
-const axios = require('axios');
+// const axios = require('axios');
 
 export const addItemToCart = (variantProduct, product) => ({
     type: cartActionTypes.ADD_ITEM,
@@ -34,8 +34,8 @@ export const checkItemInventoryQuantity = (quantity) => ({
 
 /////////////////////// ADDING AN ITEM TO THE CART AND CHECKOUT OBJECT ASYNCHRONOUSLY ///////////////////////
 export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQuantity) => {
-  const variantId = window.atob(variantProduct.id).replace('gid://shopify/ProductVariant/', '');
-  const productId = window.atob(product.id).replace('gid://shopify/Product/', '');
+  // const variantId = window.atob(variantProduct.id).replace('gid://shopify/ProductVariant/', '');
+  // const productId = window.atob(product.id).replace('gid://shopify/Product/', '');
 
   return dispatch => {
     const client = Client.buildClient({

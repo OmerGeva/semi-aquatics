@@ -5,17 +5,19 @@ import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 
 import productReducer from './product/product.reducer';
 import cartReducer from './cart/cart.reducer'
+import styleReducer from './style/style.reducer'
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['product', 'cart'],
+  whitelist: ['product', 'cart', 'style'],
   stateReconciler: hardSet
 }
 
 const rootReducer = combineReducers({
   product: productReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  style: styleReducer
 });
 
 export default persistReducer(persistConfig, rootReducer);

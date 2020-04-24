@@ -1,12 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { FooterContainer } from './footer.styles'
+import { toggleDarkTheme } from '../../redux/style/style.actions'
 
-const Footer = ({ changeTheme }) => {
+const Footer = ({ isDark, toggleDarkTheme }) => {
     return(
-      <FooterContainer>
+      <FooterContainer isDark={isDark}>
           <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
-          <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => changeTheme()}>
+          <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
             <span></span>
           </label>
 
@@ -18,5 +20,12 @@ const Footer = ({ changeTheme }) => {
       </FooterContainer>
     )
 }
+const mapStateToProps = state => ({
+  isDark: state.style.isDark
+})
 
-export default Footer;
+const mapDispatchToProps = dispatch => ({
+  toggleDarkTheme: () => dispatch(toggleDarkTheme())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);

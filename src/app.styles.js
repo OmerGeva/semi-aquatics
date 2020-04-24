@@ -19,10 +19,7 @@ a{
 }
 `
 const isDarkStyles = ({isDark}) => {
-   if (isDark){
-    return DarkStyles;
-   }
-    return LightStyles;
+  return isDark ? DarkStyles: LightStyles;
 }
 export const AppContainer = styled.div`
 .App {

@@ -1,4 +1,79 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const DarkStyles = css`
+span {
+   position: absolute;
+   bottom: calc(100% + 10px);
+   left: 60px;
+   width: 100%;
+ }
+
+ .theme-switch__label {
+    background-color: #ABABAB;
+
+  &::before {
+    color: #ABABAB;
+  }
+
+  &::after {
+    color: turquoise;
+  }
+.theme-switch__input:checked ~ .theme-switch__label {
+   background-color: #ABABAB;
+
+ &::before {
+   color: orange;
+ }
+
+ &::after {
+   color: #ABABAB;
+ }
+
+ span::after {
+   transform: translate3d(0, 0, 0);
+ }
+}
+
+`
+
+const LightStyles = css`
+span {
+   position: absolute;
+   bottom: calc(100% + 10px);
+   left: 0;
+   width: 100%;
+ }
+ .theme-switch__label {
+    background-color: #ABABAB;
+
+  &::before {
+   color: orange;
+  }
+
+  &::after {
+   color: #ABABAB;
+  }
+.theme-switch__input:checked ~ .theme-switch__label {
+   background-color: #ABABAB;
+
+ &::before {
+    color: #ABABAB;
+ }
+
+ &::after {
+    color: turquoise;
+ }
+
+ span::after {
+   transform: translate3d(60px, 0, 0);
+ }
+}
+`
+
+
+const toggleButtonStyles = ({isDark}) => {
+  return isDark ? DarkStyles : LightStyles
+}
 
 export const FooterContainer = styled.div`
  display: flex;
@@ -63,22 +138,15 @@ export const FooterContainer = styled.div`
     content: '\\263C';
     right: 100%;
     margin-right: 10px;
-    color: orange;
   }
 
   &::after {
     content: '\\263E';
     left: 100%;
     margin-left: 10px;
-    color: #ABABAB;
   }
 
-  span {
-    position: absolute;
-    bottom: calc(100% + 10px);
-    left: 0;
-    width: 100%;
-  }
+
 
   span::after {
     position: absolute;
@@ -95,21 +163,9 @@ export const FooterContainer = styled.div`
  }
 
  // Checked label styles
- .theme-switch__input:checked ~ .theme-switch__label {
-    background-color: #ABABAB;
 
-  &::before {
-    color: #ABABAB;
-  }
+  ${toggleButtonStyles}
 
-  &::after {
-    color: turquoise;
-  }
-
-  span::after {
-    transform: translate3d(60px, 0, 0);
-  }
- }
  @media only screen and (max-width: 768px) {
      display: none;
 

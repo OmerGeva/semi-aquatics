@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 
 import Navbar from './components/navbar/navbar.component';
 import Footer from './components/footer/footer.component';
@@ -10,16 +12,9 @@ import InfoPage from './pages/info-page/info-page.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import { AppContainer } from './app.styles.js'
 
-class App extends React.Component {
-  state = {
-    dark: false
-  }
-  changeTheme = event => {
-    this.setState({dark: !this.state.dark})
-  }
-  render(){
-  return (
-    <AppContainer isDark={this.state.dark}>
+const App = ({ isDark }) =>
+  (
+    <AppContainer isDark={isDark}>
       <div className="App">
         <Navbar />
         <div className="right-side">
@@ -31,12 +26,15 @@ class App extends React.Component {
               <Route path='/checkout' component={CheckoutPage}/>
             </Switch>
           </div>
-          <Footer changeTheme={this.changeTheme}/>
+          <Footer />
         </div>
       </div>
     </AppContainer>
   );
-  }
-}
 
-export default App;
+
+const mapStateToProps = state => ({
+  isDark: state.style.isDark
+})
+
+export default connect(mapStateToProps)(App);
