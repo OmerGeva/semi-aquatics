@@ -1,10 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { selectCartItemCount } from '../../redux/cart/cart.selectors';
-import { NavbarContainer, LinkContainer } from './navbar.styles';
 import { createStructuredSelector } from 'reselect';
 
-import onClickOutside from "react-onclickoutside";
+import { selectCartItemCount } from '../../redux/cart/cart.selectors';
+import { NavbarContainer, LinkContainer } from './navbar.styles';
+
+import { selectIsDark } from '../../redux/style/style.selectors'
+
+import onClickOutside from "react-onclickoutside"
+import { toggleDarkTheme } from '../../redux/style/style.actions';
 
 class  Navbar extends React.Component{
   state = {
@@ -22,9 +26,9 @@ class  Navbar extends React.Component{
   }
 
   render(){
-    const {numberOfCartItems} = this.props
+    const {numberOfCartItems, toggleDarkTheme, isDark} = this.props
     return(
-      <NavbarContainer >
+      <NavbarContainer isDark={isDark} >
         <div className="nav-desktop">
         <LinkContainer to="/" className="home-link">
         HOME
@@ -57,6 +61,10 @@ class  Navbar extends React.Component{
         CATALOG
         </LinkContainer>
         <div className="pages-space"></div>
+        <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
+        <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
+          <span></span>
+        </label>
         <LinkContainer to="/info/sizing">
         SIZING
         </LinkContainer>
@@ -103,6 +111,10 @@ class  Navbar extends React.Component{
         CATALOG
         </LinkContainer>
         <div className="pages-space"></div>
+        <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
+        <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
+          <span></span>
+        </label>
         <LinkContainer to="/info/sizing"  onClick={() => this.toggleList()}>
         SIZING
         </LinkContainer>
@@ -122,6 +134,10 @@ class  Navbar extends React.Component{
 }
 
 const mapStateToProps = createStructuredSelector({
-  numberOfCartItems: selectCartItemCount
+  numberOfCartItems: selectCartItemCount,
+  isDark: selectIsDark
 })
-export default connect(mapStateToProps)(onClickOutside(Navbar));
+const mapDispatchToProps = dispatch => ({
+  toggleDarkTheme: () => dispatch(toggleDarkTheme())
+})
+export default connect(mapStateToProps, mapDispatchToProps)(onClickOutside(Navbar));

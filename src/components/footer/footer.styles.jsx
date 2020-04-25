@@ -7,28 +7,7 @@ span {
    left: 60px;
    width: 100%;
  }
-
- .theme-switch__label {
-    background-color: #ABABAB;
-
-  &::before {
-    color: #ABABAB;
-  }
-
-  &::after {
-    color: turquoise;
-  }
 .theme-switch__input:checked ~ .theme-switch__label {
-   background-color: #ABABAB;
-
- &::before {
-   color: orange;
- }
-
- &::after {
-   color: #ABABAB;
- }
-
  span::after {
    transform: translate3d(0, 0, 0);
  }
@@ -43,26 +22,7 @@ span {
    left: 0;
    width: 100%;
  }
- .theme-switch__label {
-    background-color: #ABABAB;
-
-  &::before {
-   color: orange;
-  }
-
-  &::after {
-   color: #ABABAB;
-  }
 .theme-switch__input:checked ~ .theme-switch__label {
-   background-color: #ABABAB;
-
- &::before {
-    color: #ABABAB;
- }
-
- &::after {
-    color: turquoise;
- }
 
  span::after {
    transform: translate3d(60px, 0, 0);
@@ -76,6 +36,7 @@ const toggleButtonStyles = ({isDark}) => {
 }
 
 export const FooterContainer = styled.div`
+font-family: 'VCR_OSD_MONO_1';
  display: flex;
  align-items: center;
  justify-content: flex-end;
@@ -121,10 +82,8 @@ export const FooterContainer = styled.div`
   transition: background-color 200ms ease-in-out;
   width: 90px;
   height: 20px;
-  border-radius: 50px;
   text-align: center;
-  background-color: #ABABAB;
-  box-shadow: -4px 4px 15px inset rgba(0, 0, 0, 0.4);
+  border: 1px solid #ABABAB;
 
   &::before,
   &::after {
@@ -133,21 +92,6 @@ export const FooterContainer = styled.div`
     transform: translate3d(0, -50%, 0);
     top: 50%;
   }
-
-  &::before {
-    content: '\\263C';
-    right: 100%;
-    margin-right: 10px;
-  }
-
-  &::after {
-    content: '\\263E';
-    left: 100%;
-    margin-left: 10px;
-  }
-
-
-
   span::after {
     position: absolute;
     top: calc(100% + 15px);
@@ -155,14 +99,11 @@ export const FooterContainer = styled.div`
     width: 20px;
     height: 20px;
     content: '';
-    border-radius: 50%;
     background-color: #c9c9c9;
     transition: transform 200ms, background-color 200ms;
-    box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.4);
   }
  }
 
- // Checked label styles
 
   ${toggleButtonStyles}
 
