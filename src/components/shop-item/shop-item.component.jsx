@@ -14,7 +14,7 @@ const ShopItem = ({ product, match }) => {
           {
             availableForSale ? <span></span> : <p className="sold-out">sold out</p>
           }
-          <img src={ images[0].src } alt="product"/>
+          <img src={ images[0].src } alt={title}/>
           <h5>{title}</h5>
         </div>
     )}
