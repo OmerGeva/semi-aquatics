@@ -30,48 +30,48 @@ class  Navbar extends React.Component{
     return(
       <NavbarContainer isDark={isDark} >
         <div className="nav-desktop">
-        <LinkContainer to="/" className="home-link">
-        HOME
+          <LinkContainer to="/" className="home-link">
+          HOME
+          </LinkContainer>
+          <LinkContainer to="/checkout" className="cart-link">
+          CART ({numberOfCartItems})
+          </LinkContainer>
+          <LinkContainer to="/shop/drops/7">
+          DROP 7
+          </LinkContainer>
+          <LinkContainer to="/shop/drops/6">
+          DROP 6
+          </LinkContainer>
+          <LinkContainer to="/shop/drops/5">
+          DROP 5
+          </LinkContainer>
+          <LinkContainer to="/shop/drops/4">
+          DROP 4
+          </LinkContainer>
+          <LinkContainer to="/shop/drops/3">
+          DROP 3
+          </LinkContainer>
+          <LinkContainer to="/shop/drops/2">
+          DROP 2
+          </LinkContainer>
+          <LinkContainer to="/shop/drops/1">
+          DROP 1
+          </LinkContainer>
+          <LinkContainer to="/shop/catalog">
+          CATALOG
+          </LinkContainer>
+          <div className="pages-space"></div>
+          <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
+          <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
+            <span></span>
+          </label>
+          <LinkContainer to="/info/sizing">
+          SIZING
+          </LinkContainer>
+          <LinkContainer to="/info/faq">
+          FAQ
         </LinkContainer>
-        <LinkContainer to="/checkout" className="cart-link">
-        CART ({numberOfCartItems})
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/7">
-        DROP 7
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/6">
-        DROP 6
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/5">
-        DROP 5
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/4">
-        DROP 4
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/3">
-        DROP 3
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/2">
-        DROP 2
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/1">
-        DROP 1
-        </LinkContainer>
-        <LinkContainer to="/shop/catalog">
-        CATALOG
-        </LinkContainer>
-        <div className="pages-space"></div>
-        <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
-        <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
-          <span></span>
-        </label>
-        <LinkContainer to="/info/sizing">
-        SIZING
-        </LinkContainer>
-        <LinkContainer to="/info/faq">
-        FAQ
-        </LinkContainer>
-      </div>
+        </div>
 
       {
         //////////////// MOBILE ////////////////

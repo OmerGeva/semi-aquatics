@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const DarkStyles = css`
-.nav-mobile-open{
-  background-color: #2D2D2D;
-  }
+
 span {
    position: absolute;
    bottom: calc(100% + 10px);
@@ -22,9 +20,7 @@ span {
 `
 
 const LightStyles = css`
-.nav-mobile-open{
-  background-color: white;
-}
+
 span {
    position: absolute;
    bottom: calc(100% + 10px);
@@ -38,6 +34,25 @@ span {
 }
 `
 
+const DarkStylesBackground = css`
+ @media only screen and (max-width: 768px) {
+  .nav-mobile-open{
+    background-color: #2D2D2D;
+    }
+}
+`
+const LightStylesBackground = css`
+ @media only screen and (max-width: 768px) {
+  .nav-mobile-open{
+    background-color: white;
+  }
+}
+`
+
+
+const toggleMobileBackground = ({isDark}) => {
+  return isDark ? DarkStylesBackground : LightStylesBackground
+}
 
 const toggleButtonStyles = ({isDark}) => {
   return isDark ? DarkStyles : LightStyles
@@ -45,23 +60,22 @@ const toggleButtonStyles = ({isDark}) => {
 
 
 export const NavbarContainer = styled.div`
-
   .nav-desktop{
     width: 10vw;
-  height: 95vh;
-  padding: 16px;
-  display: flex;
-  text-align: left;
-  flex-direction: column;
-  .home-link {
-    margin-bottom: 12px;
-  }
-  .cart-link {
-    margin-bottom: 32px;
-  }
-  .pages-space{
-    flex-grow: 1;
-  }
+    height: 95vh;
+    padding: 16px;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    .home-link {
+      margin-bottom: 12px;
+    }
+    .cart-link {
+      margin-bottom: 32px;
+    }
+    .pages-space{
+      flex-grow: 1;
+    }
   }
   .nav-mobile-open{
     display: none;
@@ -76,43 +90,44 @@ export const NavbarContainer = styled.div`
     display: none;
   }
 
-   * {
-    box-sizing: border-box;
-   }
+  * {
+   box-sizing: border-box;
+  }
 
-   // Toggle switch
-   .theme-switch__input,
-   .theme-switch__label {
-    position: absolute;
-    bottom: 115px;
-    left: 15px;
-    z-index: 1;
-   }
+  // Toggle switch
+  .theme-switch__input,
+  .theme-switch__label {
+   position: absolute;
+   bottom: 115px;
+   left:15px;
+   z-index: 1;
+  }
 
-   .theme-switch__input {
-    display: none;
-   }
+  .theme-switch__input {
+   display: none;
+  }
 
-   .theme-switch__label {
-    padding: 12px;
-    transition: background-color 200ms ease-in-out;
-    width: 60px;
-    height: 20px;
-    text-align: center;
-    border: 1px solid #ABABAB;
+  .theme-switch__label {
+     padding: 12px;
+     transition: background-color 200ms ease-in-out;
+     width: 60px;
+     height: 20px;
+     text-align: center;
+     border: 1px solid #ABABAB;
 
-    span::after {
-      position: absolute;
-      top: calc(100% + 15px);
-      left: 5px;
-      width: 15px;
-      height: 15px;
-      content: '';
-      background-color: #c9c9c9;
-      transition: transform 200ms, background-color 200ms;
+     span::after {
+       position: absolute;
+       top: calc(100% + 15px);
+       left: 5px;
+       width: 15px;
+       height: 15px;
+       content: '';
+       background-color: #c9c9c9;
+       transition: transform 200ms, background-color 200ms;
+     }
+   ${toggleButtonStyles}
     }
-   }
-    ${toggleButtonStyles}
+    ${toggleMobileBackground}
   }
 
 
@@ -149,8 +164,8 @@ export const NavbarContainer = styled.div`
     display: none;
   }
   .nav-mobile-open{
-    left:50vw;
-    width: 50vw;
+    left:60vw;
+    width: 60vw;
     height: 100vh;
     padding: 8px;
     text-align: left;
@@ -213,7 +228,7 @@ export const NavbarContainer = styled.div`
         transition: transform 200ms, background-color 200ms;
       }
      }
-      ${toggleButtonStyles}
+     ${toggleButtonStyles}
     }
   }
 
