@@ -4,11 +4,12 @@ import { ShowProductContainer } from './show-product.styles';
 import CustomButtom from '../custom-button/custom-button.component'
 import { createStructuredSelector } from 'reselect';
 import { selectCartCheckout, selectCartInventoryQuantity } from '../../redux/cart/cart.selectors';
-import { selectChosenProduct, selectProductSizes, selectIsProductsSizeHidden, selectVariantProduct } from '../../redux/product/product.selectors'
-import { toggleProductSize, chooseVariantProduct } from '../../redux/product/product.actions'
-import { addItemToCartAsync } from '../../redux/cart/cart.actions'
+import { selectChosenProduct, selectProductSizes, selectIsProductsSizeHidden, selectVariantProduct } from '../../redux/product/product.selectors';
+import { toggleProductSize, chooseVariantProduct } from '../../redux/product/product.actions';
+import { addItemToCartAsync } from '../../redux/cart/cart.actions';
 
-const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, inventoryQuantity}) =>(
+
+const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, inventoryQuantity, isDark}) =>(
     <ShowProductContainer>
       <div className="product-info">
         <img src={product.images[0].src} alt=""/>
@@ -18,7 +19,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
         {
           product.description.split(' ').map(
             word => (word[0] === word[0].toUpperCase() && (word !== 'Semi' && word !== 'Aquatics' && word[0] !== '1' && word[0] !== '&')) ? `~${word}` : word).join(' ').split('~').map(
-            sentence =>  <p className="product-description" key={sentence.length}>{sentence}</p> )
+            sentence =>  <p className="product-description" key={Math.random()}>{sentence}</p> )
         }
         <h4>${product.variants[0].price}</h4>
         <div className="size-and-add-to-cart">

@@ -24,7 +24,7 @@ class Home extends React.Component {
         <form action="https://gmail.us4.list-manage.com/subscribe/post?u=98190063b370f72608d400f09&amp;id=fbde19324c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
           <div className="form-flex-box">
             <div className="group">
-              <input type="email" name="EMAIL" className="form-input" id="mce-EMAIL" onChange={this.handleChange}/>
+              <input type="email" name="EMAIL" className="form-input" id="mce-EMAIL"  autoComplete="off" onChange={this.handleChange}/>
               <label className={`${this.state.text.length ? 'shrink' : ""} form-input-label`}>
               EMAIL
               </label>

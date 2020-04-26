@@ -96,6 +96,7 @@ export const HomeContainer = styled.div`
   justify-content: center;
 
   .submit-subscribe{
+    background-color: white;
     height: 38px;
     letter-spacing: 0.5px;
     padding: 0 24px 0 24px;

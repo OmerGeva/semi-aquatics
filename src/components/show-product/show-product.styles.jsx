@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const ShowProductContainer = styled.div`
 display: flex;
 height: 100%;
@@ -82,6 +83,7 @@ button{
   }
   .product-sizes-show{
     position: relative;
+    color: #ABABAB;
     background-color: white;
   }
   display: block;
