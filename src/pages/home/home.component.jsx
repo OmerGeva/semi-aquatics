@@ -1,14 +1,45 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectIsDark } from '../../redux/style/style.selectors'
+import { HomeContainer } from './home.styles'
 
-import './home.styles.scss'
 
-const Home = () => (
-  <div className="home-logo">
-    <h2>[Reverse Evolution]</h2>
-    <img src="https://cdn.shopify.com/s/files/1/0276/3305/7867/files/big3_1410x.png?v=1575617303" alt="logo"/>
+class Home extends React.Component {
+  state={
+    text: ""
+  }
+  handleChange = event =>{
+    this.setState({text: event.target.value})
+  }
 
-    <h4>SUBSCRIBE</h4>
-  </div>
+  render(){
+  const {isDark} = this.props;
+  return(
+    <HomeContainer isDark={isDark}>
+      <div className="home-page">
+        <h2>[Reverse Evolution]</h2>
+        <img src="https://cdn.shopify.com/s/files/1/0276/3305/7867/files/big3_1410x.png?v=1575617303" alt="logo"/>
+
+        <form action="https://gmail.us4.list-manage.com/subscribe/post?u=98190063b370f72608d400f09&amp;id=fbde19324c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+          <div className="form-flex-box">
+            <div className="group">
+              <input type="email" name="EMAIL" className="form-input" id="mce-EMAIL" onChange={this.handleChange}/>
+              <label className={`${this.state.text.length ? 'shrink' : ""} form-input-label`}>
+              EMAIL
+              </label>
+            </div>
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className='submit-subscribe'/>
+          </div>
+        </form>
+      </div>
+    </HomeContainer>
   )
+  }
+}
 
-export default Home;
+const mapStateToProps = createStructuredSelector({
+  isDark: selectIsDark
+})
+
+export default connect(mapStateToProps)(Home);

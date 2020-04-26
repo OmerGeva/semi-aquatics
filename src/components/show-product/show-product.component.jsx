@@ -15,7 +15,11 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
       </div>
       <div className="buy-product">
         <h4>{product.title}</h4>
-        <p>{product.description}</p>
+        {
+          product.description.split(' ').map(
+            word => (word[0] === word[0].toUpperCase() && (word !== 'Semi' && word !== 'Aquatics' && word[0] !== '1' && word[0] !== '&')) ? `~${word}` : word).join(' ').split('~').map(
+            sentence =>  <p className="product-description" key={sentence.length}>{sentence}</p> )
+        }
         <h4>${product.variants[0].price}</h4>
         <div className="size-and-add-to-cart">
           <div>

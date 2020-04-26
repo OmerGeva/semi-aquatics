@@ -59,6 +59,10 @@ p{
 .buy-product{
   width: 40%;
   padding: 42px;
+  .product-description{
+  text-align: left;
+    margin: 4px;
+  }
 }
 button{
   font-family: 'VCR_OSD_MONO_1'
