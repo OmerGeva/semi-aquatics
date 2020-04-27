@@ -78,7 +78,7 @@ button{
   display: none;
 }
 @media only screen and (max-width: 768px) {
-  overflow: scroll;
+  overflow-y: scroll;
   .desktop-sizes-btn{
     display: none;
   }

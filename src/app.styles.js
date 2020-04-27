@@ -38,7 +38,7 @@ export const AppContainer = styled.div`
   overflow: hidden;
   width: 90vw;
   @media only screen and (max-width: 768px) {
-    overflow: scroll;
+    overflow-y: scroll;
   }
 }
 .page {
