@@ -11,6 +11,9 @@ import { addItemToCartAsync } from '../../redux/cart/cart.actions';
 
 const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, inventoryQuantity, isDark}) =>(
     <ShowProductContainer>
+    <div className="other-text">
+      Hoodie Crewneck Sweatshirt T-Shirt Sweater Jacket Outerwear Style Fashion Comfort Design Streetwear 
+    </div>
       <div className="product-info">
         <img src={product.images[0].src} alt=""/>
       </div>

@@ -11,6 +11,9 @@ align-items: center;
 .product-info{
   width: 50%
 }
+.other-text{
+  display: none;
+}
 img{
   max-height: 70%;
   width: 90%;
@@ -75,6 +78,7 @@ button{
   display: none;
 }
 @media only screen and (max-width: 768px) {
+  overflow: scroll;
   .desktop-sizes-btn{
     display: none;
   }

@@ -29,12 +29,17 @@ export const AppContainer = styled.div`
   height: 100vh;
   overflow: hidden;
   ${isDarkStyles}
+  @media only screen and (max-width: 768px) {
+    overflow: scroll;
+  }
 }
 
 .right-side {
   overflow: hidden;
   width: 90vw;
-
+  @media only screen and (max-width: 768px) {
+    overflow: scroll;
+  }
 }
 .page {
   height: 90vh;
