@@ -180,8 +180,6 @@ export const NavbarContainer = styled.div`
     h6{
       margin: 0;
     }
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
     left:60vw;
     width: 60vw;
     height: 100vh;

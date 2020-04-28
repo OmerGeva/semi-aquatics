@@ -32,9 +32,10 @@ export const HomeContainer = styled.div`
       margin-top: 30vh;
     }
     img{
-    margin-top: 20vh;
-     margin: 63px auto;
-     width: 110vw;
+     padding-right: 12px;
+     margin-right: 12px;
+     margin-top: 62px;
+     width: 100vw;
      margin-bottom: 24px;
    }
    .form-flex-box{
