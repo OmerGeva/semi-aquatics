@@ -26,16 +26,19 @@ export const HomeContainer = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
+    padding: 0;
+    margin-top: 15vh;
     h4{
       margin-top: 30vh;
     }
-    margin-top: 36px;
     img{
-     width: 90%;
+    margin-top: 20vh;
+     margin: 63px auto;
+     width: 110vw;
      margin-bottom: 24px;
    }
    .form-flex-box{
-    display: block;
+    display: none;
     .group{
       width: 60%;
       margin: auto;

@@ -37,25 +37,25 @@ class  Navbar extends React.Component{
           CART ({numberOfCartItems})
           </LinkContainer>
           <LinkContainer to="/shop/drops/7">
-          DROP 7
+          SPRING/SUMMER 1
           </LinkContainer>
           <LinkContainer to="/shop/drops/6">
-          DROP 6
+          FALL/WINTER 6
           </LinkContainer>
           <LinkContainer to="/shop/drops/5">
-          DROP 5
+          FALL/WINTER 5
           </LinkContainer>
           <LinkContainer to="/shop/drops/4">
-          DROP 4
+          FALL/WINTER 4
           </LinkContainer>
           <LinkContainer to="/shop/drops/3">
-          DROP 3
+          FALL/WINTER 3
           </LinkContainer>
           <LinkContainer to="/shop/drops/2">
-          DROP 2
+          FALL/WINTER 2
           </LinkContainer>
           <LinkContainer to="/shop/drops/1">
-          DROP 1
+          FALL/WINTER 1
           </LinkContainer>
           <LinkContainer to="/shop/catalog">
           CATALOG
@@ -87,25 +87,25 @@ class  Navbar extends React.Component{
         CART ({numberOfCartItems})
         </LinkContainer>
         <LinkContainer to="/shop/drops/7"  onClick={() => this.toggleList()}>
-        DROP 7
+        SPRING/SUMMER 1
         </LinkContainer>
         <LinkContainer to="/shop/drops/6"  onClick={() => this.toggleList()}>
-        DROP 6
+        FALL/WINTER 6
         </LinkContainer>
         <LinkContainer to="/shop/drops/5"  onClick={() => this.toggleList()}>
-        DROP 5
+        FALL/WINTER 5
         </LinkContainer>
         <LinkContainer to="/shop/drops/4"  onClick={() => this.toggleList()}>
-        DROP 4
+        FALL/WINTER 4
         </LinkContainer>
         <LinkContainer to="/shop/drops/3"  onClick={() => this.toggleList()}>
-        DROP 3
+        FALL/WINTER 3
         </LinkContainer>
         <LinkContainer to="/shop/drops/2"  onClick={() => this.toggleList()}>
-        DROP 2
+        FALL/WINTER 2
         </LinkContainer>
         <LinkContainer to="/shop/drops/1"  onClick={() => this.toggleList()}>
-        DROP 1
+        FALL/WINTER 1
         </LinkContainer>
         <LinkContainer to="/shop/catalog"  onClick={() => this.toggleList()}>
         CATALOG

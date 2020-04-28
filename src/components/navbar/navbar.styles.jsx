@@ -244,12 +244,13 @@ export const NavbarContainer = styled.div`
 `
 
 export const LinkContainer = styled(Link)`
-
+  overflow-x: visible;
+  width: 110%;
   display: block;
   margin-top: 24px;
   color: #ABABAB;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
 
    @media only screen and (max-width: 768px)  {
