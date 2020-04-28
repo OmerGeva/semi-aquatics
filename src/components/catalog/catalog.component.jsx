@@ -1,10 +1,11 @@
 import React from 'react';
 import { CatalogContainer } from './catalog.styles';
 
+import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-
+import { selectProductsForCatalogPage } from '../../redux/product/product.selectors'
 import ShopItem from '../shop-item/shop-item.component'
 import { chooseProduct } from '../../redux/product/product.actions'
 
@@ -16,24 +17,24 @@ const Catalog = ({products, chooseProduct}) => (
         <h2>CATALOG</h2>
       </div>
       <div className="drop-products">
-      {
-        products.map(drop =>
-             drop.products.map((product) => (
-              <Link to={`/shop/drops/${drop.title[drop.title.length-1]}/${product.id}`} key={product.id} >
-                <div onClick={() => chooseProduct(product)}>
-                  <ShopItem  product={product} key={product.id} />
-                </div>
-              </Link>
-            ))
+        {
+          products.map((product) => (
+            <Link to={`/shop/drops/${product[1].title[product[1].title.length-1]}/${product[0].id}`} key={product[0].id} >
+            <div onClick={() => chooseProduct(product[0])}>
+            <ShopItem  product={product[0]} key={product[0].id} />
+            </div>
+            </Link>
+            )
           )
-      }
+        }
       </div>
     </div>
   </CatalogContainer>
-)
+  )
 
-const mapStateToProps = state => ({
-  products: state.product.products
+
+const mapStateToProps = createStructuredSelector({
+  products: selectProductsForCatalogPage
 })
 
 const mapDispatchToProps = dispatch => ({

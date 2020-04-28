@@ -131,6 +131,13 @@ export const NavbarContainer = styled.div`
   }
 
 
+@media only screen and(max-width: 768px) and (max-height: 668px) {
+    margin: 0;
+  .nav-mobile-open{
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
  @media only screen and (max-width: 768px) {
     z-index: 10;
     position: fixed;
@@ -243,9 +250,18 @@ export const LinkContainer = styled(Link)`
   font-weight: 600;
   text-decoration: none;
 
-   @media only screen and (max-width: 768px) {
+   @media only screen and (max-width: 768px)  {
     font-weight: 500;
     font-size: 18px;
 
 }
+
+  @media only screen and (max-height: 668px) {
+      margin-top: 16px;
+      font-size: 16px;
+  }
+    @media only screen and (max-height: 569px) {
+      margin-top: 16px;
+      font-size: 14px;
+  }
 `

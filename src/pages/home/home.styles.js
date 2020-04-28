@@ -25,7 +25,6 @@ export const HomeContainer = styled.div`
     margin: auto;
   }
 
-
   @media only screen and (max-width: 768px) {
     h4{
       margin-top: 30vh;
@@ -33,6 +32,7 @@ export const HomeContainer = styled.div`
     margin-top: 36px;
     img{
      width: 90%;
+     margin-bottom: 24px;
    }
    .form-flex-box{
     display: block;
@@ -46,7 +46,7 @@ export const HomeContainer = styled.div`
     }
 
     .submit-subscribe{
-      margin-top: 16px;
+      margin-top: 8px;
     }
   }
 }
@@ -91,7 +91,7 @@ export const HomeContainer = styled.div`
   }
 }
 .form-flex-box{
-  margin-top: 16px;
+
   display: flex;
   justify-content: center;
 

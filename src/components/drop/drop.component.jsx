@@ -20,7 +20,9 @@ class Drop extends React.Component {
       <div className="drop-page">
         <div className="drop-title">
           <h2>DROP {this.props.match.params.dropId}</h2>
-          <h4>{currentDrop[0].description}</h4>
+          <h4>{this.props.match.params.dropId == 7 ?
+            "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
+          :currentDrop[0].description}</h4>
         </div>
         <div className="drop-products">
         {
