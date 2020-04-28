@@ -29,7 +29,7 @@ class Home extends React.Component {
               EMAIL
               </label>
             </div>
-            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className='submit-subscribe'/>
+            <input type="submit" value="Subscribe" name="subscribe" className='submit-subscribe'/>
           </div>
         </form>
       </div>
