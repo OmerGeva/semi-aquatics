@@ -139,8 +139,6 @@ export const NavbarContainer = styled.div`
   }
 }
  @media only screen and (max-width: 768px) {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
     z-index: 10;
     position: fixed;
     height: 100vh;
@@ -173,6 +171,8 @@ export const NavbarContainer = styled.div`
     display: none;
   }
   .nav-mobile-open{
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     left:60vw;
     width: 60vw;
     height: 100vh;
