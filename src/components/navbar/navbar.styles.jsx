@@ -60,7 +60,12 @@ const toggleButtonStyles = ({isDark}) => {
 
 
 export const NavbarContainer = styled.div`
+  .new-drop{
+    color: red;
+    margin: 0;
+  }
   .nav-desktop{
+
     width: 10vw;
     height: 95vh;
     padding: 16px;
@@ -139,6 +144,7 @@ export const NavbarContainer = styled.div`
   }
 }
  @media only screen and (max-width: 768px) {
+
     z-index: 10;
     position: fixed;
     height: 100vh;
@@ -171,6 +177,9 @@ export const NavbarContainer = styled.div`
     display: none;
   }
   .nav-mobile-open{
+    h6{
+      margin: 0;
+    }
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     left:60vw;
@@ -195,10 +204,20 @@ export const NavbarContainer = styled.div`
       font-size: 24px;
       margin-top: 8px;;
     }
+    .new-drop{
+      color: red;
+      margin: 0;
+    }
     h6{
       font-size: 12px;
-
       margin-top: 16px;;
+    }
+    .copyright{
+      margin-bottom: 64px;
+    }
+
+    .non-drop-page{
+      margin-top: 12px;
     }
 
      * {
@@ -209,7 +228,7 @@ export const NavbarContainer = styled.div`
      .theme-switch__input,
      .theme-switch__label {
       position: absolute;
-      bottom: 170px;
+      bottom: 210px;
       left:7px;
       z-index: 1;
      }

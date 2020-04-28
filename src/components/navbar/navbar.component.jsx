@@ -39,6 +39,7 @@ class  Navbar extends React.Component{
           <LinkContainer to="/shop/drops/7">
           SPRING/SUMMER 1
           </LinkContainer>
+          <h6 className="new-drop">NEW!</h6>
           <LinkContainer to="/shop/drops/6">
           FALL/WINTER 6
           </LinkContainer>
@@ -89,6 +90,7 @@ class  Navbar extends React.Component{
         <LinkContainer to="/shop/drops/7"  onClick={() => this.toggleList()}>
         SPRING/SUMMER 1
         </LinkContainer>
+        <h6 className="new-drop">NEW!</h6>
         <LinkContainer to="/shop/drops/6"  onClick={() => this.toggleList()}>
         FALL/WINTER 6
         </LinkContainer>
@@ -115,16 +117,16 @@ class  Navbar extends React.Component{
         <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
           <span></span>
         </label>
-        <LinkContainer to="/info/sizing"  onClick={() => this.toggleList()}>
+        <LinkContainer to="/info/sizing" className="non-drop-page" onClick={() => this.toggleList()}>
         SIZING
         </LinkContainer>
-        <LinkContainer to="/info/faq"  onClick={() => this.toggleList()}>
+        <LinkContainer to="/info/faq" className="non-drop-page" onClick={() => this.toggleList()}>
         FAQ
         </LinkContainer>
         <a href="https://www.instagram.com/semiaquatics">
-        <i className="fab fa-instagram footer-item" ></i>
+          <i className="fab fa-instagram footer-item" ></i>
         </a>
-        <h6 className="footer-item">© 2020 Semi Aquatics</h6>
+        <h6 className="footer-item copyright">© 2020 Semi Aquatics</h6>
       </div>
 
 
