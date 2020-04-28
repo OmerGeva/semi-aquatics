@@ -33,7 +33,6 @@ export const HomeContainer = styled.div`
     }
     img{
      padding-right: 12px;
-     margin-right: 12px;
      margin-top: 62px;
      width: 100vw;
      margin-bottom: 24px;

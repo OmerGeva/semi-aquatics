@@ -144,7 +144,6 @@ export const NavbarContainer = styled.div`
   }
 }
  @media only screen and (max-width: 768px) {
-
     z-index: 10;
     position: fixed;
     height: 100vh;
@@ -211,7 +210,7 @@ export const NavbarContainer = styled.div`
       margin-top: 16px;;
     }
     .copyright{
-      margin-bottom: 64px;
+      margin-bottom: 84px;
     }
 
     .non-drop-page{

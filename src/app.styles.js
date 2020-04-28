@@ -53,7 +53,6 @@ export const AppContainer = styled.div`
     width: 100vw;
   }
   .page {
-  padding-top: 10%;
   height: 100vh;
   width: 100vw;
   }

@@ -26,10 +26,14 @@ export const CatalogContainer = styled.div`
     }
   }
   @media only screen and (max-width: 768px) {
+      padding-top: 20%;
       margin-right: 1vh;
       height: 100vh;
       width: 100%;
       padding-right: 8px;
+      .drop-title{
+        height: 10%;
+      }
     }
 }
 

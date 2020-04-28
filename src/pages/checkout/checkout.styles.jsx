@@ -12,6 +12,8 @@ export const CheckoutContainer = styled.div`
     align-items: center;
   }
   @media only screen and (max-width: 768px) {
+    padding-top: 20%;
+
     .checkout-items{
       margin: 0 auto;
       width: 95%;
