@@ -116,6 +116,9 @@ export const NavbarContainer = styled.div`
   }
 
   .theme-switch__label {
+      &:hover{
+        cursor: pointer;
+      }
      padding: 12px;
      transition: background-color 200ms ease-in-out;
      width: 60px;
