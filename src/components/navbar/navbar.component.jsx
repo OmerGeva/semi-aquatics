@@ -26,9 +26,10 @@ class  Navbar extends React.Component{
   }
 
   render(){
+    const navHeight  = window.innerHeight
     const {numberOfCartItems, toggleDarkTheme, isDark} = this.props
     return(
-      <NavbarContainer isDark={isDark} >
+      <NavbarContainer isDark={isDark} navHeight = {navHeight}>
         <div className="nav-desktop">
           <LinkContainer to="/" className="home-link">
           HOME
