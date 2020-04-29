@@ -4,6 +4,8 @@ export const InfoPageContainer = styled.div`
 overflow: scroll;
 padding: 24px;
 height: 85vh;
-padding-top: 20%;
+  @media only screen and (max-width: 768px) {
+    padding-top: 20%;
+  }
 
 `

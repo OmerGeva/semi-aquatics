@@ -101,11 +101,14 @@ button{
       display: none;
     }
     .mobile-description{
+
+      line-height: normal;
       text-align: left;
-      padding-top: 16px;
+      padding-top: 8px;
       margin: auto;
       width: 90%;
       display: block;
+
     }
   }
 }

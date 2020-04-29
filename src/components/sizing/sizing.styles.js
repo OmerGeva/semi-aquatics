@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const SizingContainer = styled.div`
 overflow: scroll;
 height: 90vh;
+h5{
+  margin-bottom: 0;
+}
 img{
   width: 60%;
   margin: 16px;
