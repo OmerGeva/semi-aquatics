@@ -149,7 +149,7 @@ export const NavbarContainer = styled.div`
  @media only screen and (max-width: 768px) {
     z-index: 10;
     position: fixed;
-    height: ${setNavHeight}px;
+    height: 100vh;
     border-right: 1px solid gray;
     padding: 0px;
     .nav-desktop{
@@ -212,6 +212,10 @@ export const NavbarContainer = styled.div`
       font-size: 12px;
       margin-top: 16px;;
     }
+    .copyright{
+      margin-bottom: 84px;
+    }
+
     .non-drop-page{
       margin-top: 12px;
     }
