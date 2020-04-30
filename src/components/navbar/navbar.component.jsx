@@ -40,8 +40,7 @@ class  Navbar extends React.Component{
           <LinkContainer to="/shop/drops/7">
           SPRING/SUMMER 1
           </LinkContainer>
-          <h6 className="new-drop">NEW!</h6>
-          <LinkContainer to="/shop/drops/6">
+            <LinkContainer to="/shop/drops/6">
           FALL/WINTER 6
           </LinkContainer>
           <LinkContainer to="/shop/drops/5">
@@ -91,7 +90,6 @@ class  Navbar extends React.Component{
         <LinkContainer to="/shop/drops/7"  onClick={() => this.toggleList()}>
         SPRING/SUMMER 1
         </LinkContainer>
-        <h6 className="new-drop">NEW!</h6>
         <LinkContainer to="/shop/drops/6"  onClick={() => this.toggleList()}>
         FALL/WINTER 6
         </LinkContainer>
