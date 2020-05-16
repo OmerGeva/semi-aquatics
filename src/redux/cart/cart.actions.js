@@ -43,7 +43,8 @@ export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQ
       storefrontAccessToken: process.env.REACT_APP_STORE_FRONT_ACCESS_TOKEN
     });
     ////////// IF THERE ISN'T A CHECKOUT ALREADY //////////
-
+    console.log(`Checkout !== null: ${checkout !== null}, requiresShipping === true: ${checkout.requiresShipping === true}`)
+    console.log(`Checkout: ${checkout}, requiresShipping: ${checkout.requiresShipping}`)
     if(checkout === undefined || checkout === null || (checkout !== null && checkout.requiresShipping === true)){
     dispatch(addItemToCart(variantProduct, product))
 
