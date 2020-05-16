@@ -10,6 +10,7 @@ import { chooseProduct } from '../../redux/product/product.actions'
 
 class Drop extends React.Component {
   render(){
+    console.log(this.props.checkout);
     const currentDrop = []
     this.props.products.forEach((drop) => {
       if (drop.title.includes(this.props.match.params.dropId)) {
@@ -42,7 +43,8 @@ class Drop extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  products: state.product.products
+  products: state.product.products,
+  checkout: state.cart.checkout
 })
 
 const mapDispatchToProps = dispatch => ({
