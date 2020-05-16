@@ -44,7 +44,7 @@ export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQ
     });
     ////////// IF THERE ISN'T A CHECKOUT ALREADY //////////
 
-    if(checkout === undefined || checkout === null || (checkout !== null && checkout.completedAt !== null)){
+    if(checkout === undefined || checkout === null || (checkout !== null && checkout.requiresShipping === true)){
     dispatch(addItemToCart(variantProduct, product))
 
     const lineItemsToAdd = [
