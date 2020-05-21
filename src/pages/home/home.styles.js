@@ -38,7 +38,7 @@ export const HomeContainer = styled.div`
      margin-bottom: 24px;
    }
    .form-flex-box{
-    display: none;
+    display: block;
     .group{
       width: 60%;
       margin: auto;
