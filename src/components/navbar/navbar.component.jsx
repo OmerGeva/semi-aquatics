@@ -122,6 +122,9 @@ class  Navbar extends React.Component{
         <LinkContainer to="/info/sizing" className="non-drop-page" onClick={() => this.toggleList()}>
         SIZING
         </LinkContainer>
+        <LinkContainer to="/info/sustainability" className="non-drop-page" onClick={() => this.toggleList()}>
+        SUSTAINABILITY
+        </LinkContainer>
         <LinkContainer to="/info/faq" className="non-drop-page" onClick={() => this.toggleList()}>
         FAQ
         </LinkContainer>

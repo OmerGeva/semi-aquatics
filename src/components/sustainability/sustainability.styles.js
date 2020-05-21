@@ -50,7 +50,7 @@ h5{
     img{
       width: 100%;
       margin: 0;
-      border 1px solid #ABABAB;;
+      border 1px solid #ABABAB;
     }
   }
   .example-card-sustainability-text{
