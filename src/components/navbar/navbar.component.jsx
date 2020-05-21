@@ -69,6 +69,9 @@ class  Navbar extends React.Component{
           <LinkContainer to="/info/sizing">
           SIZING
           </LinkContainer>
+          <LinkContainer to="/info/sustainability">
+          SUSTAINABILITY
+          </LinkContainer>
           <LinkContainer to="/info/faq">
           FAQ
         </LinkContainer>

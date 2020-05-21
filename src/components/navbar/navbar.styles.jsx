@@ -106,7 +106,7 @@ export const NavbarContainer = styled.div`
   .theme-switch__input,
   .theme-switch__label {
    position: absolute;
-   bottom: 115px;
+   bottom: 150px;
    left:15px;
    z-index: 1;
   }
