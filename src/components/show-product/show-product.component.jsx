@@ -21,7 +21,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
         <h4>{product.title}</h4>
         {
           product.description.split(' ').map(
-            word => (word[0] === word[0].toUpperCase() && (word !== 'Semi' && word !== 'Aquatics' && word[0] !== '1' && word[0] !== '&')) ? `~${word}` : word).join(' ').split('~').map(
+            word => (word[0] === word[0].toUpperCase() && (word !== 'Semi' && word !== 'Aquatics' && word[0] !== '"'  && word !== 'Horse"' && word[0] !== '1' && word[0] !== '&')) ? `~${word}` : word).join(' ').split('~').map(
             sentence =>  <p className="product-description" key={Math.random()}>{sentence}</p> )
         }
         <h4>${product.variants[0].price}</h4>

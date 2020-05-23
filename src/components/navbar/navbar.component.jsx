@@ -94,7 +94,7 @@ class  Navbar extends React.Component{
         CART ({numberOfCartItems})
         </LinkContainer>
         <LinkContainer to="/shop/drops/8"  onClick={() => this.toggleList()}>
-        SPRING/SUMMER 1
+        SPRING/SUMMER 2
         </LinkContainer>
         <LinkContainer to="/shop/drops/7"  onClick={() => this.toggleList()}>
         SPRING/SUMMER 1
