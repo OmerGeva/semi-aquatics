@@ -98,6 +98,44 @@ export const NavbarContainer = styled.div`
     display: none;
   }
 
+  .summer-season{
+      .summer-drops{
+        display: none;
+      }
+      margin-top: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      &:hover{
+      .summer-drops{
+        display: block;
+        width: 110%;
+        padding-bottom: 20px;
+        padding-left: 4px;
+        margin-top: 6px;
+        border-bottom: 1px solid;
+      }
+    }
+  }
+  .winter-season{
+      .winter-drops{
+        display: none;
+      }
+      margin-top: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      &:hover{
+      .winter-drops{
+        display: block;
+        width: 110%;
+        padding-bottom: 20px;
+        padding-left: 4px;
+        margin-top: 6px;
+        border-bottom: 1px solid;
+      }
+    }
+  }
   * {
    box-sizing: border-box;
   }
@@ -150,6 +188,51 @@ export const NavbarContainer = styled.div`
   }
 }
  @media only screen and (max-width: 768px) {
+
+  .summer-season{
+    .mobile-nav-titles{
+      font-size: 18px;
+    }
+      .summer-drops{
+        display: none;
+      }
+      margin-top: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      &:hover{
+      .summer-drops{
+        display: block;
+        width: 110%;
+        padding-bottom: 20px;
+        padding-left: 4px;
+        margin-top: 6px;
+        border-bottom: 1px solid rgba(0,0,0,0);
+      }
+    }
+  }
+  .winter-season{
+    .mobile-nav-titles{
+      font-size: 18px;
+    }
+      .winter-drops{
+        display: none;
+      }
+      margin-top: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      &:hover{
+      .winter-drops{
+        display: block;
+        width: 110%;
+        padding-bottom: 20px;
+        padding-left: 4px;
+        margin-top: 6px;
+        border-bottom: 1px solid rgba(0,0,0,0);
+      }
+    }
+  }
     z-index: 10;
     position: fixed;
     height: 100vh;
@@ -216,7 +299,7 @@ export const NavbarContainer = styled.div`
       margin-top: 16px;;
     }
     .copyright{
-      margin-bottom: 84px;
+      margin-bottom: 72px;
     }
 
     .non-drop-page{
@@ -269,12 +352,14 @@ export const LinkContainer = styled(Link)`
   overflow-x: visible;
   width: 110%;
   display: block;
-  margin-top: 24px;
+  margin-top: 22px;
   color: #ABABAB;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
-
+  &:hover{
+    opacity: 0.7;
+  }
    @media only screen and (max-width: 768px)  {
     font-weight: 500;
     font-size: 18px;

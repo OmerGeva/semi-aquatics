@@ -37,33 +37,46 @@ class  Navbar extends React.Component{
           <LinkContainer to="/checkout" className="cart-link">
           CART ({numberOfCartItems})
           </LinkContainer>
-          <LinkContainer to="/shop/drops/8">
-          SPRING/SUMMER 2
-          </LinkContainer>
-          <LinkContainer to="/shop/drops/7">
-          SPRING/SUMMER 1
-          </LinkContainer>
-            <LinkContainer to="/shop/drops/6">
-          FALL/WINTER 6
-          </LinkContainer>
-          <LinkContainer to="/shop/drops/5">
-          FALL/WINTER 5
-          </LinkContainer>
-          <LinkContainer to="/shop/drops/4">
-          FALL/WINTER 4
-          </LinkContainer>
-          <LinkContainer to="/shop/drops/3">
-          FALL/WINTER 3
-          </LinkContainer>
-          <LinkContainer to="/shop/drops/2">
-          FALL/WINTER 2
-          </LinkContainer>
-          <LinkContainer to="/shop/drops/1">
-          FALL/WINTER 1
-          </LinkContainer>
           <LinkContainer to="/shop/catalog">
           CATALOG
           </LinkContainer>
+          <div className="summer-season">
+            SPRING/SUMMER
+            <div className="summer-drops">
+              <LinkContainer to="/shop/drops/8">
+              DROP 2
+              </LinkContainer>
+              <div className="new-drop">
+              NEW!
+              </div>
+              <LinkContainer to="/shop/drops/7">
+              DROP 1
+              </LinkContainer>
+            </div>
+          </div>
+          <div className="winter-season">
+            FALL/WINTER
+            <div className="winter-drops">
+              <LinkContainer to="/shop/drops/6">
+              DROP 6
+              </LinkContainer>
+              <LinkContainer to="/shop/drops/5">
+              DROP 5
+              </LinkContainer>
+              <LinkContainer to="/shop/drops/4">
+              DROP 4
+              </LinkContainer>
+              <LinkContainer to="/shop/drops/3">
+              DROP 3
+              </LinkContainer>
+              <LinkContainer to="/shop/drops/2">
+              DROP 2
+              </LinkContainer>
+              <LinkContainer to="/shop/drops/1">
+              DROP 1
+              </LinkContainer>
+            </div>
+          </div>
           <div className="pages-space"></div>
           <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
           <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
@@ -93,33 +106,46 @@ class  Navbar extends React.Component{
         <LinkContainer to="/checkout" className="cart-link" onClick={() => this.toggleList()}>
         CART ({numberOfCartItems})
         </LinkContainer>
-        <LinkContainer to="/shop/drops/8"  onClick={() => this.toggleList()}>
-        SPRING/SUMMER 2
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/7"  onClick={() => this.toggleList()}>
-        SPRING/SUMMER 1
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/6"  onClick={() => this.toggleList()}>
-        FALL/WINTER 6
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/5"  onClick={() => this.toggleList()}>
-        FALL/WINTER 5
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/4"  onClick={() => this.toggleList()}>
-        FALL/WINTER 4
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/3"  onClick={() => this.toggleList()}>
-        FALL/WINTER 3
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/2"  onClick={() => this.toggleList()}>
-        FALL/WINTER 2
-        </LinkContainer>
-        <LinkContainer to="/shop/drops/1"  onClick={() => this.toggleList()}>
-        FALL/WINTER 1
-        </LinkContainer>
         <LinkContainer to="/shop/catalog"  onClick={() => this.toggleList()}>
         CATALOG
         </LinkContainer>
+        <div className="summer-season">
+          <div className="mobile-nav-titles">SPRING/SUMMER</div>
+          <div className="summer-drops">
+            <LinkContainer to="/shop/drops/8"  onClick={() => this.toggleList()}>
+            DROP 2
+            </LinkContainer>
+            <div className="new-drop">
+            NEW!
+            </div>
+            <LinkContainer to="/shop/drops/7"  onClick={() => this.toggleList()}>
+            DROP 1
+            </LinkContainer>
+          </div>
+        </div>
+        <div className="winter-season">
+          <div className="mobile-nav-titles">FALL/WINTER</div>
+          <div className="winter-drops">
+            <LinkContainer to="/shop/drops/6"  onClick={() => this.toggleList()}>
+            DROP 6
+            </LinkContainer>
+            <LinkContainer to="/shop/drops/5"  onClick={() => this.toggleList()}>
+            DROP 5
+            </LinkContainer>
+            <LinkContainer to="/shop/drops/4"  onClick={() => this.toggleList()}>
+            DROP 4
+            </LinkContainer>
+            <LinkContainer to="/shop/drops/3"  onClick={() => this.toggleList()}>
+            DROP 3
+            </LinkContainer>
+            <LinkContainer to="/shop/drops/2"  onClick={() => this.toggleList()}>
+            DROP 2
+            </LinkContainer>
+            <LinkContainer to="/shop/drops/1"  onClick={() => this.toggleList()}>
+            DROP 1
+            </LinkContainer>
+          </div>
+        </div>
         <div className="pages-space"></div>
         <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
         <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
