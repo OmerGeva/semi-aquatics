@@ -106,6 +106,7 @@ export const NavbarContainer = styled.div`
       font-size: 14px;
       font-weight: 500;
       cursor: pointer;
+      width: 90%;
       &:hover{
       .summer-drops{
         display: block;
@@ -125,6 +126,7 @@ export const NavbarContainer = styled.div`
       font-size: 14px;
       font-weight: 500;
       cursor: pointer;
+      width: 90%;
       &:hover{
       .winter-drops{
         display: block;

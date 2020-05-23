@@ -41,7 +41,7 @@ class  Navbar extends React.Component{
           CATALOG
           </LinkContainer>
           <div className="summer-season">
-            SPRING/SUMMER
+            SPRING/SUMMER 2020
             <div className="summer-drops">
               <LinkContainer to="/shop/drops/8">
               DROP 2
@@ -55,7 +55,7 @@ class  Navbar extends React.Component{
             </div>
           </div>
           <div className="winter-season">
-            FALL/WINTER
+            FALL/WINTER <br />2019/20
             <div className="winter-drops">
               <LinkContainer to="/shop/drops/6">
               DROP 6
@@ -110,7 +110,7 @@ class  Navbar extends React.Component{
         CATALOG
         </LinkContainer>
         <div className="summer-season">
-          <div className="mobile-nav-titles">SPRING/SUMMER</div>
+          <div className="mobile-nav-titles">SPRING/SUMMER 2020</div>
           <div className="summer-drops">
             <LinkContainer to="/shop/drops/8"  onClick={() => this.toggleList()}>
             DROP 2
@@ -124,7 +124,7 @@ class  Navbar extends React.Component{
           </div>
         </div>
         <div className="winter-season">
-          <div className="mobile-nav-titles">FALL/WINTER</div>
+          <div className="mobile-nav-titles">FALL/WINTER 2019/20</div>
           <div className="winter-drops">
             <LinkContainer to="/shop/drops/6"  onClick={() => this.toggleList()}>
             DROP 6
