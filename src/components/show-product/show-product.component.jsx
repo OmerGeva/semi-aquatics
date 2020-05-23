@@ -97,7 +97,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
         {
           product.description.split(' ').map(
             word => (word[0] === word[0].toUpperCase() && (word !== 'Semi' && word !== 'Aquatics' && word[0] !== '"'  && word !== 'Horse"' && word[0] !== '1' && word[0] !== '&')) ? `~${word}` : word).join(' ').split('~').map(
-            sentence =>  <p className="product-description" key={Math.random()}>{sentence}</p> )
+            sentence =>  <p className="mobile-description" key={Math.random()}>{sentence}</p> )
         }
       </div>
     </ShowProductContainer>
