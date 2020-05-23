@@ -8,8 +8,24 @@ import './drop.styles.scss';
 import ShopItem from '../shop-item/shop-item.component'
 import { chooseProduct } from '../../redux/product/product.actions'
 
+
 class Drop extends React.Component {
   render(){
+    const currentDropHeader = (dropId) => {
+      if(dropId <= 6)
+      {
+        return `Fall / Winter ${dropId}`
+      }
+      else if(dropId === 7)
+      {
+        return 'Spring / Summer 1'
+      }
+      else
+      {
+        return 'Spring / Summer 2'
+      }
+    }
+
     const currentDrop = []
     this.props.products.forEach((drop) => {
       if (drop.title.includes(this.props.match.params.dropId)) {
@@ -19,9 +35,9 @@ class Drop extends React.Component {
     return (
       <div className="drop-page">
         <div className="drop-title">
-          <h2>{parseInt(this.props.match.params.dropId) <= 6 ? `Fall / Winter ${this.props.match.params.dropId}` : `Spring / Summer 1`}</h2>
+          <h2>{currentDropHeader(parseInt(this.props.match.params.dropId))}</h2>
           <h4>{currentDrop[0].description}</h4>
-          <h5>{this.props.match.params.dropId == 7 ?
+          <h5>{this.props.match.params.dropId === 7 ?
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
         </div>
