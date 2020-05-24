@@ -12,9 +12,9 @@ export const removeItemFromCart = item => ({
   payload: item
 })
 
-export const resetCart = () => ({
+export const resetCart = cart => ({
   type: cartActionTypes.RESET_CART,
-  payload: []
+  payload: cart
 })
 
 export const createCheckout = (checkout) => ({
@@ -38,15 +38,17 @@ export const checkItemInventoryQuantity = (quantity) => ({
 })
 
 /////////////////////// ADDING AN ITEM TO THE CART AND CHECKOUT OBJECT ASYNCHRONOUSLY ///////////////////////
-export const viewCheckoutAsync = (checkout) => {
+export const updateCheckoutAsync = (checkout) => {
   return dispatch => {
     const client = Client.buildClient({
       domain: 'semi-aquatics.myshopify.com',
       storefrontAccessToken: process.env.REACT_APP_STORE_FRONT_ACCESS_TOKEN
     });
     client.checkout.fetch(checkout.id).then((checkout) => {
-       console.log("Current Checkout:");
-       console.log(checkout);
+      if(checkout.completedAt != null)
+      {
+       dispatch(resetCart([]))
+      }
     });
   }
 }

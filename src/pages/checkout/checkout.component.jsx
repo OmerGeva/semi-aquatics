@@ -5,11 +5,11 @@ import { CheckoutContainer } from './checkout.styles';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import CheckoutHeader from '../../components/checkout-header/checkout-header.component';
 import CheckoutTotal from '../../components/checkout-total/checkout-total.component';
-import { resetCart, viewCheckoutAsync } from '../../redux/cart/cart.actions'
+import { updateCheckoutAsync } from '../../redux/cart/cart.actions'
 
-const CheckoutPage = ({cartItems, checkoutFinished, checkout, viewCart}) => {
+const CheckoutPage = ({cartItems, checkoutFinished, checkout, updateCart}) => {
 
-  viewCart(checkout);
+  updateCart(checkout);
 
   return(
     <CheckoutContainer>
@@ -34,7 +34,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch =>({
-  viewCart: (checkout) => dispatch(viewCheckoutAsync(checkout))
+  updateCart: (checkout) => dispatch(updateCheckoutAsync(checkout))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CheckoutPage);
