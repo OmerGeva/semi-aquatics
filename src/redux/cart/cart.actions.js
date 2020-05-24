@@ -44,12 +44,15 @@ export const updateCheckoutAsync = (checkout) => {
       domain: 'semi-aquatics.myshopify.com',
       storefrontAccessToken: process.env.REACT_APP_STORE_FRONT_ACCESS_TOKEN
     });
-    client.checkout.fetch(checkout.id).then((checkout) => {
-      if(checkout.completedAt != null)
-      {
-       dispatch(resetCart([]))
-      }
-    });
+
+    if (checkout){
+      client.checkout.fetch(checkout.id).then((checkout) => {
+        if(checkout.completedAt != null)
+        {
+         dispatch(resetCart([]))
+        }
+      });
+    }
   }
 }
 

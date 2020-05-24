@@ -12,7 +12,11 @@ import ShowProduct from '../../components/show-product/show-product.component'
 import WithSpinner from '../../components/with-spinner/with-spinner.component'
 
 import { selectIsProductsFetching, selectProducts } from '../../redux/product/product.selectors'
+import { selectCheckout } from '../../redux/cart/cart.selectors'
+
 import { fetchProductsStartAsync } from '../../redux/product/product.actions'
+import { updateCheckoutAsync } from '../../redux/cart/cart.actions'
+
 
 
 
@@ -22,8 +26,10 @@ const CatalogWithSpinner = WithSpinner(Catalog);
 class ShopPage extends React.Component {
 
   componentDidMount(){
-    const { fetchProductsStartAsync } = this.props;
+    const { fetchProductsStartAsync, updateCart, selectCheckout } = this.props;
+    updateCart(selectCheckout);
     fetchProductsStartAsync();
+
   }
 
   render(){
@@ -40,11 +46,13 @@ class ShopPage extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   isProductsFetching: selectIsProductsFetching,
-  products: selectProducts
+  products: selectProducts,
+  checkout: selectCheckout
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchProductsStartAsync: () => dispatch(fetchProductsStartAsync())
+  fetchProductsStartAsync: () => dispatch(fetchProductsStartAsync()),
+  updateCart: (checkout) => dispatch(updateCheckoutAsync(checkout))
 })
 
 

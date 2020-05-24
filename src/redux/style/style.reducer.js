@@ -1,7 +1,7 @@
 import styleActionTypes from './style.types'
 
 const INITIAL_STATE = {
-  isDark: false
+  isDark: true
 }
 
 const styleReducer = (state = INITIAL_STATE, action) => {
