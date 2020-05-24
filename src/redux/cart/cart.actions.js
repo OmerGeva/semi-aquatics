@@ -38,6 +38,20 @@ export const checkItemInventoryQuantity = (quantity) => ({
 })
 
 /////////////////////// ADDING AN ITEM TO THE CART AND CHECKOUT OBJECT ASYNCHRONOUSLY ///////////////////////
+export const viewCheckoutAsync = (checkout) => {
+  return dispatch => {
+    const client = Client.buildClient({
+      domain: 'semi-aquatics.myshopify.com',
+      storefrontAccessToken: process.env.REACT_APP_STORE_FRONT_ACCESS_TOKEN
+    });
+    client.checkout.fetch(checkout.id).then((checkout) => {
+       console.log("Current Checkout:");
+       console.log(checkout);
+    });
+  }
+}
+
+
 export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQuantity) => {
   // const variantId = window.atob(variantProduct.id).replace('gid://shopify/ProductVariant/', '');
   // const productId = window.atob(product.id).replace('gid://shopify/Product/', '');
@@ -64,6 +78,7 @@ export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQ
       });
     }
     ////////// ADD ITEM TO THE CHECKOUT //////////
+
     else{
       const exisitingCartItem = checkout.lineItems.find(checkoutItem =>
         checkoutItem.variant.id === variantProduct.id
