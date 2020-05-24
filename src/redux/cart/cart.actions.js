@@ -12,6 +12,11 @@ export const removeItemFromCart = item => ({
   payload: item
 })
 
+export const resetCart = () => ({
+  type: cartActionTypes.RESET_CART,
+  payload: []
+})
+
 export const createCheckout = (checkout) => ({
   type: cartActionTypes.CREATE_CHECK_OUT,
   payload: checkout
@@ -45,7 +50,6 @@ export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQ
     ////////// IF THERE ISN'T A CHECKOUT ALREADY //////////
     if(checkout === undefined || checkout === null || (checkout !== null && checkout.requiresShipping === true)){
     dispatch(addItemToCart(variantProduct, product))
-
     const lineItemsToAdd = [
       {
         variantId: variantProduct.id,

@@ -19,6 +19,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         ...state,
         checkout: action.payload
       }
+    case cartActionTypes.RESET_CART:
+      return {
+        ...state,
+        cartItems: []
+      }
     case cartActionTypes.UPDATE_CHECK_OUT:
       return {
         ...state,

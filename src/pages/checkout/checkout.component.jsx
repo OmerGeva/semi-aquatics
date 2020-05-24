@@ -5,25 +5,39 @@ import { CheckoutContainer } from './checkout.styles';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import CheckoutHeader from '../../components/checkout-header/checkout-header.component';
 import CheckoutTotal from '../../components/checkout-total/checkout-total.component';
+import { resetCart } from '../../redux/cart/cart.actions'
 
-const CheckoutPage = ({cartItems}) => (
-  <CheckoutContainer>
-    <CheckoutHeader />
-    <div className="items-and-total">
-      <div className="checkout-items">
-        {
-          cartItems.map(item =>
-            <CheckoutItem item={item} key={item.id}/>
-          )
-        }
+const CheckoutPage = ({cartItems, checkoutFinished, checkout}) => {
+
+  console.log(checkout);
+  // if(checkoutFinished){
+  //   resetCart();
+  // }
+
+  return(
+    <CheckoutContainer>
+      <CheckoutHeader />
+      <div className="items-and-total">
+        <div className="checkout-items">
+          {
+            cartItems.map(item =>
+              <CheckoutItem item={item} key={item.id}/>
+            )
+          }
+        </div>
+        <CheckoutTotal />
       </div>
-      <CheckoutTotal />
-    </div>
-  </CheckoutContainer>
-)
+    </CheckoutContainer>
+    )
+}
 
 const mapStateToProps = state => ({
-  cartItems: state.cart.cartItems
+  cartItems: state.cart.cartItems,
+  checkout: state.cart.checkout
 })
 
-export default connect(mapStateToProps)(CheckoutPage);
+const mapDispatchToProps = dispatch =>({
+  resetCart: () => dispatch(resetCart())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutPage);

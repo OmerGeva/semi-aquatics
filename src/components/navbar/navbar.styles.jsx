@@ -190,7 +190,6 @@ export const NavbarContainer = styled.div`
   }
 }
  @media only screen and (max-width: 768px) {
-
   .summer-season{
     .mobile-nav-titles{
       font-size: 18px;
@@ -362,6 +361,7 @@ export const LinkContainer = styled(Link)`
   &:hover{
     opacity: 0.7;
   }
+
    @media only screen and (max-width: 768px)  {
     font-weight: 500;
     font-size: 18px;
