@@ -12,29 +12,40 @@ import InfoPage from './pages/info-page/info-page.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import { AppContainer } from './app.styles.js'
 
-const App = ({ isDark }) =>
-  (
-    <AppContainer isDark={isDark}>
-      <div className="App">
-        <Navbar />
-        <div className="right-side">
-          <div className="page">
-            <Switch>
-              <Route exact path='/' component={Home}/>
-              <Route path='/info' component={InfoPage}/>
-              <Route path='/shop' component={ShopPage}/>
-              <Route path='/checkout' component={CheckoutPage}/>
-            </Switch>
+import { updateCheckoutAsync } from './redux/cart/cart.actions'
+
+
+const App = ({ isDark, checkout, updateCart }) =>
+  {
+    updateCart(checkout);
+    return(
+      <AppContainer isDark={isDark}>
+        <div className="App">
+          <Navbar />
+          <div className="right-side">
+            <div className="page">
+              <Switch>
+                <Route exact path='/' component={Home}/>
+                <Route path='/info' component={InfoPage}/>
+                <Route path='/shop' component={ShopPage}/>
+                <Route path='/checkout' component={CheckoutPage}/>
+              </Switch>
+            </div>
+            <Footer />
           </div>
-          <Footer />
         </div>
-      </div>
-    </AppContainer>
-  );
+      </AppContainer>
+      )
+  }
 
 
 const mapStateToProps = state => ({
-  isDark: state.style.isDark
+  isDark: state.style.isDark,
+  checkout: state.cart.checkout
 })
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  updateCart: (checkout) => dispatch(updateCheckoutAsync(checkout))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
