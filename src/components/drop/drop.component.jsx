@@ -38,7 +38,7 @@ class Drop extends React.Component {
           <h2>{currentDropHeader(parseInt(this.props.match.params.dropId))}</h2>
           <h4>{currentDrop[0].description}</h4>
           <h5>{this.props.match.params.dropId == 8 ?
-            "Drops on Monday, 25th at 6:00 PM EST"
+            "Drops on Monday, May 25th at 6:00 PM EST"
           : "" }</h5>
 
           <h5>{this.props.match.params.dropId == 7 ?
