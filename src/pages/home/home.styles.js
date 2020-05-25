@@ -48,8 +48,8 @@ export const HomeContainer = styled.div`
       width 100%;
     }
 
-    .submit-subscribe{
-      background-color: red;
+    .submit-subscribe-button{
+      background-color: white;
       height: 38px;
       letter-spacing: 0.5px;
       padding: 0 24px 0 24px;
@@ -112,7 +112,7 @@ export const HomeContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  .submit-subscribe{
+  .submit-subscribe-button{
     background-color: white;
     height: 38px;
     letter-spacing: 0.5px;
