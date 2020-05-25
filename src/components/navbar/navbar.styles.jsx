@@ -67,6 +67,11 @@ export const NavbarContainer = styled.div`
     color: red;
     margin: 0;
   }
+  .new-drop-top{
+    color: red;
+    margin: 0;
+  }
+
   .nav-desktop{
 
     width: 10vw;
@@ -108,6 +113,9 @@ export const NavbarContainer = styled.div`
       cursor: pointer;
       width: 90%;
       &:hover{
+       .new-drop-top{
+         display: none;
+       }
       .summer-drops{
         display: block;
         width: 110%;

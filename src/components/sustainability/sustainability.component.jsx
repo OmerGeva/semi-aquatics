@@ -49,7 +49,7 @@ const Sustainability = () => (
         <img src={farming} alt="farming"/>
         <div className="example-card-sustainability-text">
           <h4>No Waste</h4>
-          <p>All plant materials besides the seed and fiber is captured during the ginning process and is utilized in the local cattle industry as much needed bedding for livestock.</p>
+          <p>All plant materials besides the seed and fiber is captured during the ginning process and is utilized in the local cattle industry as much needed bedding for livestock. Additionally, one of the most valuable bi-products of the seed is cottonseed oil.</p>
         </div>
       </div>
     </div>
