@@ -29,7 +29,7 @@ class Home extends React.Component {
               EMAIL
               </label>
             </div>
-            <input type="submit" value="Subscribe" className='submit-subscribe-button'/>
+            <button className='submit-subscribe-button'>Subscribe</button>
           </div>
         </form>
       </div>
