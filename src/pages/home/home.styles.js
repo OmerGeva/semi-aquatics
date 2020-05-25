@@ -49,7 +49,7 @@ export const HomeContainer = styled.div`
     }
 
     .submit-subscribe{
-      background-color: white;
+      background-color: red;
       height: 38px;
       letter-spacing: 0.5px;
       padding: 0 24px 0 24px;
