@@ -49,7 +49,10 @@ export const updateCheckoutAsync = (checkout) => {
       client.checkout.fetch(checkout.id).then((checkout) => {
         if(checkout.completedAt != null)
         {
-         dispatch(resetCart([]))
+         dispatch(resetCart([]));
+         client.checkout.create().then((checkout) => {
+          dispatch(createCheckout(checkout));
+          })
         }
       });
     }
