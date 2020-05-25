@@ -113,17 +113,19 @@ export const HomeContainer = styled.div`
   justify-content: center;
 
   .submit-subscribe-button{
-    background-color: white;
-    height: 38px;
-    letter-spacing: 0.5px;
-    padding: 0 24px 0 24px;
-    font-size: 15px;
+    border-radius: 0 !important;
+    filter: none !important;
+    background-color: white !important;
+    height: 38px !important;
+    letter-spacing: 0.5px !important;
+    padding: 0 24px 0 24px !important;
+    font-size: 15px !important;
     text-transform: uppercase;
     font-family: 'VCR_OSD_MONO_1';
     font-weight: bolder;
     font-family: 'VCR_OSD_MONO_1';
-    color: #ABABAB;
-    border: 1px solid #ABABAB;
+    color: #ABABAB !important;
+    border: 1px solid #ABABAB !important;
     cursor: pointer;
     &:hover {
       opacity: 0.7;
