@@ -113,7 +113,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
 
       </div>
       {
-        product.title.length === 42 ?
+        product.title.length > 41 ?
         <p className='smaller-text mobile-sizes-btn'>
         <span className="italic-font">
           { productText.faceMasks.line3 }
