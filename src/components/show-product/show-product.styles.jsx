@@ -11,6 +11,16 @@ align-items: center;
 .product-info{
   width: 50%
 }
+.smaller-text{
+  font-size: 10px;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ABABAB;
+  margin-bottom: 0px;
+}
+.italic-font{
+  font-style: italic;
+}
 .other-text{
   display: none;
 }
@@ -23,7 +33,7 @@ p{
   line-height: 2;
 }
 .size-and-add-to-cart{
-  margin-top: 52px;
+  margin-top: 35px;
   display: flex;
   justify-content: space-around;
     .choose-size{
@@ -64,7 +74,10 @@ p{
   width: 40%;
   padding: 42px;
   .product-description{
-  text-align: left;
+    p{
+      margin: 2px;
+    }
+    text-align: left;
     margin: 4px;
   }
 }
@@ -85,6 +98,11 @@ button{
   .mobile-sizes-btn{
     display: block;
   }
+  .smaller-text{
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+  }
   .product-sizes-show{
     position: relative;
     color: #ABABAB;
@@ -92,7 +110,7 @@ button{
   }
   display: block;
   .product-info{
-    width: 90%
+    width: 95%
   }
   .buy-product{
     width: 90%;
@@ -101,13 +119,16 @@ button{
       display: none;
     }
     .mobile-description{
-
       line-height: normal;
       text-align: left;
       padding-top: 8px;
       margin: auto;
-      width: 90%;
+      width: 80%;
       display: block;
+      p{
+        margin: 2px;
+        display: block;
+      }
 
     }
   }

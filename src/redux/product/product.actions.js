@@ -12,10 +12,13 @@ export const chooseProduct = (product) => ({
   payload: product
 })
 
-export const chooseVariantProduct = (product) => ({
+export const chooseVariantProduct = (product) => {
+  console.log(product.product)
+  return ({
   type: productActionTypes.SET_CHOSEN_VARIANT_PRODUCT,
   payload: product
-})
+  })
+}
 
 export const toggleProductSize = () => ({
   type: productActionTypes.TOGGLE_PRODUCT_SIZE
@@ -38,7 +41,6 @@ export const fetchProductsFailure = errorMessage  => ({
 export const fetchProductsStartAsync = (dropNumber) =>{
   return dispatch => {
     dispatch(fetchProductsStart());
-
     client.collection.fetchAllWithProducts().then((collections) => {
       // Do something with the collections
       dispatch(fetchProductsSuccess(collections));

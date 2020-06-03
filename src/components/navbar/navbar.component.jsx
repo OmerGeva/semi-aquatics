@@ -6,7 +6,7 @@ import { selectCartItemCount } from '../../redux/cart/cart.selectors';
 import { NavbarContainer, LinkContainer } from './navbar.styles';
 
 import { selectIsDark } from '../../redux/style/style.selectors'
-
+import { selectProducts } from '../../redux/product/product.selectors'
 import onClickOutside from "react-onclickoutside"
 import { toggleDarkTheme } from '../../redux/style/style.actions';
 
@@ -26,6 +26,16 @@ class  Navbar extends React.Component{
   }
 
   render(){
+    // let drop9Id = '';
+    // if (this.props.products.products){
+    //   // access to individual product through drop ID
+    //   this.props.products.products.forEach((drop) => {
+    //     if (drop.title.includes('9')) {
+    //       drop9Id = drop.products[0].id
+    //     }
+    //   })
+    // }
+
     const navHeight  = window.innerHeight
     const {numberOfCartItems, toggleDarkTheme, isDark} = this.props
     return(
@@ -40,6 +50,10 @@ class  Navbar extends React.Component{
           <LinkContainer to="/shop/catalog">
           CATALOG
           </LinkContainer>
+          <LinkContainer to={`/shop/drops/9`}>
+          FACE-MASKS
+          </LinkContainer>
+          <h6 className="new-drop">NEW!</h6>
           <div className="summer-season">
             SPRING/SUMMER 2020
 
@@ -108,10 +122,12 @@ class  Navbar extends React.Component{
         <LinkContainer to="/shop/catalog"  onClick={() => this.toggleList()}>
         CATALOG
         </LinkContainer>
+        <LinkContainer to={`/shop/drops/9`}  onClick={() => this.toggleList()}>
+        FACE-MASKS
+        </LinkContainer>
+        <h6 className="new-drop">NEW!</h6>
         <div className="summer-season">
-          <div className="mobile-nav-titles">SPRING/SUMMER 2020
-
-          </div>
+          <div className="mobile-nav-titles">SPRING/SUMMER 2020</div>
           <div className="summer-drops">
             <LinkContainer to="/shop/drops/8"  onClick={() => this.toggleList()}>
             DROP 2
@@ -173,7 +189,8 @@ class  Navbar extends React.Component{
 
 const mapStateToProps = createStructuredSelector({
   numberOfCartItems: selectCartItemCount,
-  isDark: selectIsDark
+  isDark: selectIsDark,
+  products: selectProducts
 })
 const mapDispatchToProps = dispatch => ({
   toggleDarkTheme: () => dispatch(toggleDarkTheme())

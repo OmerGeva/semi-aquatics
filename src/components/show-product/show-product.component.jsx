@@ -7,7 +7,7 @@ import { selectCartCheckout, selectCartInventoryQuantity } from '../../redux/car
 import { selectChosenProduct, selectProductSizes, selectIsProductsSizeHidden, selectVariantProduct } from '../../redux/product/product.selectors';
 import { toggleProductSize, chooseVariantProduct } from '../../redux/product/product.actions';
 import { addItemToCartAsync } from '../../redux/cart/cart.actions';
-
+import { productText } from './text'
 
 const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, inventoryQuantity, isDark}) =>(
     <ShowProductContainer>
@@ -19,12 +19,24 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
       </div>
       <div className="buy-product">
         <h4>{product.title}</h4>
-        {
-          product.description.split(' ').map(
-            word => (word[0] === word[0].toUpperCase() && (word !== 'Semi' && word !== 'Aquatics' && word[0] !== '"'  && word !== 'Horse"' && word[0] !== '1' && word[0] !== '&')) ? `~${word}` : word).join(' ').split('~').map(
-            sentence =>  <p className="product-description" key={Math.random()}>{sentence}</p> )
-        }
+
+        <div className="product-description" dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></div>
+
         <h4>${product.variants[0].price}</h4>
+        {
+          product.title.length === 42 ?
+          <p className='smaller-text'>
+          <span className="italic-font">
+            { productText.faceMasks.line3 }
+          </span>
+          <br/>
+            { productText.faceMasks.line1 }
+          <br/>
+            { productText.faceMasks.line2 }
+          </p>
+          :
+          ""
+        }
         <div className="size-and-add-to-cart">
           <div>
             <div className="mobile-sizes-btn">
@@ -94,12 +106,24 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
             }
           </div>
         </div>
-        {
-          product.description.split(' ').map(
-            word => (word[0] === word[0].toUpperCase() && (word !== 'Semi' && word !== 'Aquatics' && word[0] !== '"'  && word !== 'Horse"' && word[0] !== '1' && word[0] !== '&')) ? `~${word}` : word).join(' ').split('~').map(
-            sentence =>  <p className="mobile-description" key={Math.random()}>{sentence}</p> )
-        }
+
+        <div className="mobile-description" dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></div>
+
       </div>
+      {
+        product.title.length === 42 ?
+        <p className='smaller-text mobile-sizes-btn'>
+        <span className="italic-font">
+          { productText.faceMasks.line3 }
+        </span>
+        <br/>
+          { productText.faceMasks.line1 }
+        <br/>
+          { productText.faceMasks.line2 }
+        </p>
+        :
+        ""
+      }
     </ShowProductContainer>
   )
 

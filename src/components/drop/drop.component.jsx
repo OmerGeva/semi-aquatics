@@ -20,6 +20,10 @@ class Drop extends React.Component {
       {
         return 'Spring / Summer 1'
       }
+      else if(dropId === 9)
+      {
+        return 'FACE MASKS'
+      }
       else
       {
         return 'Spring / Summer 2'
