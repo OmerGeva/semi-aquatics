@@ -361,6 +361,7 @@ export const LinkContainer = styled(Link)`
   overflow-x: visible;
   width: 110%;
   display: block;
+  margin-top: 22px;
   color: #ABABAB;
   font-size: 14px;
   font-weight: 500;
