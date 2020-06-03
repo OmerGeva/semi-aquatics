@@ -308,7 +308,7 @@ export const NavbarContainer = styled.div`
       margin-top: 16px;;
     }
     .copyright{
-      margin-bottom: 72px;
+      margin-bottom: 50px;
     }
 
     .non-drop-page{
