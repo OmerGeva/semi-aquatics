@@ -92,7 +92,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
               }
             </div>
           </div>
-          <div onClick={() => ((variantProduct && variantProduct.available) || product.variants.length === 1) ? addToCart(variantProduct, product, checkout, inventoryQuantity) : null}>
+          <div onClick={() => ((variantProduct && variantProduct.available) || product.variants.length === 1) ? addToCart(product.variants[0], product, checkout, inventoryQuantity) : null}>
 
             {
               (variantProduct && variantProduct.available) || (product.availableForSale & variantProduct == null) ?

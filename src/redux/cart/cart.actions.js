@@ -88,6 +88,7 @@ export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQ
     ////////// ADD ITEM TO THE CHECKOUT //////////
 
     else{
+
       const exisitingCartItem = checkout.lineItems.find(checkoutItem =>
         checkoutItem.variant.id === variantProduct.id
         )
@@ -115,6 +116,7 @@ export const addItemToCartAsync = (variantProduct, product, checkout, inventoryQ
         // }
       }
       else{
+
         dispatch(addItemToCart(variantProduct, product))
         const lineItemsToAdd = [
           {
