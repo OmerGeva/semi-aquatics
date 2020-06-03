@@ -361,7 +361,6 @@ export const LinkContainer = styled(Link)`
   overflow-x: visible;
   width: 110%;
   display: block;
-  margin-top: 22px;
   color: #ABABAB;
   font-size: 14px;
   font-weight: 500;
@@ -371,14 +370,20 @@ export const LinkContainer = styled(Link)`
   }
 
    @media only screen and (max-width: 768px)  {
+    margin-top: 14px;
     font-weight: 500;
     font-size: 14px;
+    .mobile-dropdown-drop{
+      display: block;
+    }
 
 }
 
   @media only screen and (max-height: 668px) {
-      margin-top: 16px;
       font-size: 14px;
+      .mobile-dropdown-drop{
+      display: block;
+      }
   }
     @media only screen and (max-height: 569px) {
       margin-top: 16px;
