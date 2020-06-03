@@ -24,7 +24,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
 
         <h4>${product.variants[0].price}</h4>
         {
-          product.title.length === 42 ?
+          (product.title.length > 41) ?
           <p className='smaller-text'>
           <span className="italic-font">
             { productText.faceMasks.line3 }
