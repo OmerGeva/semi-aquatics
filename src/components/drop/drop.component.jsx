@@ -22,7 +22,7 @@ class Drop extends React.Component {
       }
       else if(dropId === 9)
       {
-        return 'FACE MASKS'
+        return 'SILENCE SPEAKS VOLUMES'
       }
       else
       {
@@ -41,10 +41,9 @@ class Drop extends React.Component {
         <div className="drop-title">
           <h2>{currentDropHeader(parseInt(this.props.match.params.dropId))}</h2>
           <h4>{currentDrop[0].description}</h4>
-          <h5>{this.props.match.params.dropId == 8 ?
-            "Drops on Monday, May 25th at 6:00 PM EST"
+          <h5>{this.props.match.params.dropId == 9 ?
+            "100% of profits will be donated evenly between the Massachusetts Bail Fund the Youth Justice & Power Union."
           : "" }</h5>
-
           <h5>{this.props.match.params.dropId == 7 ?
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
