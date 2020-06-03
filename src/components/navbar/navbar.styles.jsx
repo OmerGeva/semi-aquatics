@@ -323,7 +323,7 @@ export const NavbarContainer = styled.div`
      .theme-switch__input,
      .theme-switch__label {
       position: absolute;
-      bottom: 240px;
+      bottom: 215px;
       left:7px;
       z-index: 1;
      }
