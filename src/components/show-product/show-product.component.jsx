@@ -30,7 +30,9 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
             { productText.faceMasks.line3 }
           </span>
           <br/>
+          <span className="bolder-font">
             { productText.faceMasks.line1 }
+          </span>
           <br/>
             { productText.faceMasks.line2 }
           </p>

@@ -21,6 +21,9 @@ align-items: center;
 .italic-font{
   font-style: italic;
 }
+.bolder-font{
+  font-weight: bolder;
+}
 .other-text{
   display: none;
 }

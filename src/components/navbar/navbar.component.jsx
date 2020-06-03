@@ -51,7 +51,7 @@ class  Navbar extends React.Component{
           CATALOG
           </LinkContainer>
           <LinkContainer to={`/shop/drops/9`}>
-          Silence Speaks Volumes
+          SILENCE SPEAKS VOLUMES
           </LinkContainer>
           <h6 className="new-drop">NEW!</h6>
           <div className="summer-season">
@@ -123,7 +123,7 @@ class  Navbar extends React.Component{
         CATALOG
         </LinkContainer>
         <LinkContainer to={`/shop/drops/9`}  onClick={() => this.toggleList()}>
-        Silence Speaks Volumes
+        SILENCE SPEAKS VOLUMES
         </LinkContainer>
         <h6 className="new-drop">NEW!</h6>
         <div className="summer-season">
