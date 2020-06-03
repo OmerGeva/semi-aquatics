@@ -194,13 +194,13 @@ export const NavbarContainer = styled.div`
     margin: 0;
   .nav-mobile-open{
     font-weight: 500;
-    font-size: 14px;
-  }
+    font-size: 14px;  }
 }
  @media only screen and (max-width: 768px) {
+
   .summer-season{
     .mobile-nav-titles{
-      font-size: 18px;
+      font-size: 14px;
     }
       .summer-drops{
         display: none;
@@ -222,7 +222,7 @@ export const NavbarContainer = styled.div`
   }
   .winter-season{
     .mobile-nav-titles{
-      font-size: 18px;
+      font-size: 14px;
     }
       .winter-drops{
         display: none;
@@ -372,13 +372,13 @@ export const LinkContainer = styled(Link)`
 
    @media only screen and (max-width: 768px)  {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
 
 }
 
   @media only screen and (max-height: 668px) {
       margin-top: 16px;
-      font-size: 16px;
+      font-size: 14px;
   }
     @media only screen and (max-height: 569px) {
       margin-top: 16px;
