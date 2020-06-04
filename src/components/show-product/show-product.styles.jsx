@@ -65,6 +65,11 @@ p{
     .product-sizes-show{
       position: absolute;
       width: 100px;
+        bottom: 90px;
+        background-color: white;
+        color: #ABABAB;
+        border: 1px solid #ABABAB;
+
       .product-size{
         padding: 0 24px 0 24px;
         margin-top: 12px;

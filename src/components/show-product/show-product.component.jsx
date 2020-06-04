@@ -24,7 +24,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
 
         <h4>${product.variants[0].price}</h4>
         {
-          (product.title.length > 41) ?
+          product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1OTAxNzMxMjY3MzE=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1ODg2MTcwNzI3MTU=' ?
           <p className='smaller-text'>
           <span className="italic-font">
             { productText.faceMasks.line3 }
@@ -131,7 +131,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
 
       </div>
       {
-        product.title.length > 41 ?
+        product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1OTAxNzMxMjY3MzE=' || product.variants[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1ODg2MTcwNzI3MTU=' ?
         <p className='smaller-text mobile-sizes-btn'>
         <span className="italic-font">
           { productText.faceMasks.line3 }
