@@ -13,7 +13,6 @@ export const chooseProduct = (product) => ({
 })
 
 export const chooseVariantProduct = (product) => {
-  console.log(product.product)
   return ({
   type: productActionTypes.SET_CHOSEN_VARIANT_PRODUCT,
   payload: product

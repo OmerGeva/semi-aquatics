@@ -94,19 +94,37 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
               }
             </div>
           </div>
-          <div onClick={() => ((variantProduct && variantProduct.available) || product.variants.length === 1) ? addToCart(product.variants[0], product, checkout, inventoryQuantity) : null}>
+          {
+            product.variants.length === 1 ?
+            <div onClick={() => addToCart(product.variants[0], product, checkout, inventoryQuantity)}>
 
-            {
-              (variantProduct && variantProduct.available) || (product.availableForSale & variantProduct == null) ?
-                <CustomButtom soldOut={false}>
-                   ADD TO CART
-                </CustomButtom>
-               :
-                <CustomButtom soldOut={true}>
-                   SOLD OUT
-                </CustomButtom>
-            }
-          </div>
+              {
+                (variantProduct && variantProduct.available) || (product.availableForSale & variantProduct == null) ?
+                  <CustomButtom soldOut={false}>
+                     ADD TO CART
+                  </CustomButtom>
+                 :
+                  <CustomButtom soldOut={true}>
+                     SOLD OUT
+                  </CustomButtom>
+              }
+            </div>
+            :
+            <div onClick={() =>  (variantProduct && variantProduct.available) ? addToCart(variantProduct, product, checkout, inventoryQuantity) : ''}>
+
+              {
+                (variantProduct && variantProduct.available) || (product.availableForSale & variantProduct == null) ?
+                  <CustomButtom soldOut={false}>
+                     ADD TO CART
+                  </CustomButtom>
+                 :
+                  <CustomButtom soldOut={true}>
+                     SOLD OUT
+                  </CustomButtom>
+              }
+            </div>
+          }
+
         </div>
 
         <div className="mobile-description" dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></div>
