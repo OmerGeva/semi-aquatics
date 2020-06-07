@@ -20,11 +20,16 @@ const getIsDark = ({isDark}) => {
 export const HomeContainer = styled.div`
 .home-page{
   padding: 32px;
+  .title-RE{
+    margin-bottom: 42px;
+  }
   img{
+    margin-bottom: 0;
     width: 50%;
     margin: auto;
-    animation: spin 50s linear infinite;
-    -webkit-animation: spin 50s linear infinite;
+    transform-origin: 45% 43%;
+    animation: spin 5s linear infinite;
+    -webkit-animation: spin 5s linear infinite;
       @keyframes spin {
         to {
           -webkit-transform: rotate(360deg);
@@ -36,6 +41,7 @@ export const HomeContainer = styled.div`
         }
       }
     }
+
 
   @media only screen and (max-width: 768px) {
     padding: 0;
