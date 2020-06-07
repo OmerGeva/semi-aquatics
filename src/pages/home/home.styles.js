@@ -23,7 +23,19 @@ export const HomeContainer = styled.div`
   img{
     width: 50%;
     margin: auto;
-  }
+    animation: spin 10s linear infinite;
+    -webkit-animation: spin 10s linear infinite;
+      @keyframes spin {
+        to {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @-webkit-keyframes spin {
+        to {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+    }
 
   @media only screen and (max-width: 768px) {
     padding: 0;
