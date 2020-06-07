@@ -28,8 +28,8 @@ export const HomeContainer = styled.div`
     width: 50%;
     margin: auto;
     transform-origin: 45% 43%;
-    animation: spin 5s linear infinite;
-    -webkit-animation: spin 5s linear infinite;
+    animation: spin 50s linear infinite;
+    -webkit-animation: spin 50s linear infinite;
       @keyframes spin {
         to {
           -webkit-transform: rotate(360deg);
