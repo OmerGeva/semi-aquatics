@@ -1,4 +1,5 @@
 import React from 'react';
+import {useState, useEffect} from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -7,65 +8,99 @@ import './drop.styles.scss';
 
 import ShopItem from '../shop-item/shop-item.component'
 import { chooseProduct } from '../../redux/product/product.actions'
+import CountdownTimer from '../../components/countdown-timer/countdown-timer.component'
 
 
-class Drop extends React.Component {
-  render(){
+const Drop = ({products, match, chooseProduct}) => {
+    const calculateTimeLeft = () => {
+      const difference = new Date("2020-06-22") - new Date();
+      let timeLeft = {};
+
+      if (difference > 0) {
+        timeLeft = {
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60)
+        };
+      }
+
+      return timeLeft;
+    };
+
+    const timerComponents = [];
+
+
+
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+    useEffect(() => {
+      setTimeout(() => {
+        setTimeLeft(calculateTimeLeft());
+      }, 1000);
+    });
+
+    Object.keys(timeLeft).forEach(interval => {
+      if (!timeLeft[interval]) {
+        return;
+      }
+      timerComponents.push(
+        <span>
+          {timeLeft[interval]} {interval}{" "}
+        </span>
+      );
+    });
+
     const currentDropHeader = (dropId) => {
       if(dropId <= 6)
       {
         return `Fall / Winter ${dropId}`
       }
-      else if(dropId === 7)
-      {
-        return 'Spring / Summer 1'
-      }
-      else if(dropId === 9)
-      {
-        return 'SILENCE SPEAKS VOLUMES'
-      }
       else
       {
-        return 'Spring / Summer 2'
+        return `Spring / Summer ${dropId != 10 ? dropId - 6 : dropId - 7}`
       }
     }
 
     const currentDrop = []
-    this.props.products.forEach((drop) => {
-      if (drop.title.includes(this.props.match.params.dropId)) {
+    products.forEach((drop) => {
+      if (drop.title.includes(match.params.dropId)) {
         currentDrop.push(drop)
       }
     })
     return (
       <div className="drop-page">
         <div className="drop-title">
-          <h2>{currentDropHeader(parseInt(this.props.match.params.dropId))}</h2>
+          <h2>{currentDropHeader(parseInt(match.params.dropId))}</h2>
           <h4>{currentDrop[0].description}</h4>
-          <h5>{this.props.match.params.dropId == 9 ?
-            "100% of profits will be donated evenly between the Massachusetts Bail Fund the Youth Justice & Power Union."
-          : "" }</h5>
-          <h5>{this.props.match.params.dropId == 7 ?
+          <h5>{match.params.dropId == 7 ?
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
         </div>
-        <div className="drop-products">
+
+
+        <div className={timerComponents.length &&  match.params.dropId !== '10' ? `drop-products`: "" }>
         {
+          timerComponents.length &&  match.params.dropId !== '10'?
            currentDrop[0].products.map((product) => (
-            <Link to={`${this.props.match.params.dropId}/${product.id}`} key={product.id} >
-              <div onClick={() => this.props.chooseProduct(product)}>
+            <Link to={`${match.params.dropId}/${product.id}`} key={product.id} >
+              <div onClick={() => chooseProduct(product)}>
                 <ShopItem  product={product} key={product.id} />
               </div>
             </Link>
           ))
+        :
+          <CountdownTimer timeLeft={timeLeft} timerComponents={timerComponents}/>
         }
         </div>
+
       </div>
       )
-  }
 }
 
 const mapStateToProps = state => ({
-  products: state.product.products
+  products: state.product.products,
+  state: state
 })
 
 const mapDispatchToProps = dispatch => ({

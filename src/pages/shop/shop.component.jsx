@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import {useEffect} from 'react'
 import { createStructuredSelector } from 'reselect';
 
 import { ShopPageContainer } from './shop.styles'
@@ -19,21 +20,18 @@ import { updateCheckoutAsync } from '../../redux/cart/cart.actions'
 
 
 
-
 const DropWithSpinner = WithSpinner(Drop);
 const CatalogWithSpinner = WithSpinner(Catalog);
 
-class ShopPage extends React.Component {
+const ShopPage = ({ fetchProductsStartAsync, updateCart, selectCheckout, match, isProductsFetching, products }) => {
 
-  componentDidMount(){
-    const { fetchProductsStartAsync, updateCart, selectCheckout } = this.props;
+  useEffect(() => {
+    console.log('YOOOOOO')
     updateCart(selectCheckout);
+
     fetchProductsStartAsync();
+  }, [])
 
-  }
-
-  render(){
-    const { match, isProductsFetching, products } = this.props;
     return(
       <ShopPageContainer>
         <Route exact path={`${match.path}/drops/:dropId`} render={(props) => <DropWithSpinner isLoading={isProductsFetching} products={products.products} {...props}/>} />
@@ -42,7 +40,6 @@ class ShopPage extends React.Component {
       </ShopPageContainer>
       )
   }
-}
 
 const mapStateToProps = createStructuredSelector({
   isProductsFetching: selectIsProductsFetching,

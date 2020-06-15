@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-
 import { selectCartItemCount } from '../../redux/cart/cart.selectors';
 import { NavbarContainer, LinkContainer } from './navbar.styles';
 
@@ -25,17 +24,10 @@ class  Navbar extends React.Component{
     }))
   }
 
-  render(){
-    // let drop9Id = '';
-    // if (this.props.products.products){
-    //   // access to individual product through drop ID
-    //   this.props.products.products.forEach((drop) => {
-    //     if (drop.title.includes('9')) {
-    //       drop9Id = drop.products[0].id
-    //     }
-    //   })
-    // }
 
+  render(){
+    const winterDrops = [1,2,3,4,5,6].reverse()
+    const summerDrops = [7,8,10].reverse()
     const navHeight  = window.innerHeight
     const {numberOfCartItems, toggleDarkTheme, isDark} = this.props
     return(
@@ -50,43 +42,29 @@ class  Navbar extends React.Component{
           <LinkContainer to="/shop/catalog">
           CATALOG
           </LinkContainer>
-          <LinkContainer to={`/shop/drops/9`}>
-          SILENCE SPEAKS VOLUMES
-          </LinkContainer>
           <div className="summer-season">
             SPRING/SUMMER 2020
 
             <div className="summer-drops">
-              <LinkContainer to="/shop/drops/8">
-              DROP 2
-              </LinkContainer>
-
-              <LinkContainer to="/shop/drops/7">
-              DROP 1
-              </LinkContainer>
+              {
+                summerDrops.map(drop =>
+                  <LinkContainer to={`/shop/drops/${drop}`}>
+                  DROP {drop === 10 ? drop - 7 : drop - 6}
+                  </LinkContainer>
+                  )
+              }
             </div>
           </div>
           <div className="winter-season">
             FALL/WINTER <br />2019/20
             <div className="winter-drops">
-              <LinkContainer to="/shop/drops/6">
-              DROP 6
-              </LinkContainer>
-              <LinkContainer to="/shop/drops/5">
-              DROP 5
-              </LinkContainer>
-              <LinkContainer to="/shop/drops/4">
-              DROP 4
-              </LinkContainer>
-              <LinkContainer to="/shop/drops/3">
-              DROP 3
-              </LinkContainer>
-              <LinkContainer to="/shop/drops/2">
-              DROP 2
-              </LinkContainer>
-              <LinkContainer to="/shop/drops/1">
-              DROP 1
-              </LinkContainer>
+            {
+              winterDrops.map(drop =>
+                <LinkContainer to={`/shop/drops/${drop}`}>
+                DROP {drop}
+                </LinkContainer>
+                )
+            }
             </div>
           </div>
           <div className="pages-space"></div>
@@ -121,42 +99,28 @@ class  Navbar extends React.Component{
         <LinkContainer to="/shop/catalog"  onClick={() => this.toggleList()}>
         CATALOG
         </LinkContainer>
-        <LinkContainer to={`/shop/drops/9`}  onClick={() => this.toggleList()}>
-        SILENCE SPEAKS VOLUMES
-        </LinkContainer>
         <div className="summer-season">
           <div className="mobile-nav-titles">SPRING/SUMMER 2020</div>
           <div className="summer-drops">
-            <LinkContainer to="/shop/drops/8"  onClick={() => this.toggleList()}>
-            DROP 2
-            </LinkContainer>
-
-            <LinkContainer to="/shop/drops/7"  onClick={() => this.toggleList()}>
-            DROP 1
-            </LinkContainer>
+            {
+              summerDrops.map(drop =>
+                <LinkContainer to={`/shop/drops/${drop}`} onClick={() => this.toggleList()}>
+                DROP {drop === 10 ? drop - 7 :drop - 6}
+                </LinkContainer>
+                )
+            }
           </div>
         </div>
         <div className="winter-season">
           <div className="mobile-nav-titles">FALL/WINTER 2019/20</div>
           <div className="winter-drops">
-            <LinkContainer to="/shop/drops/6"  onClick={() => this.toggleList()}>
-            DROP 6
-            </LinkContainer>
-            <LinkContainer to="/shop/drops/5"  onClick={() => this.toggleList()}>
-            DROP 5
-            </LinkContainer>
-            <LinkContainer to="/shop/drops/4"  onClick={() => this.toggleList()}>
-            DROP 4
-            </LinkContainer>
-            <LinkContainer to="/shop/drops/3"  onClick={() => this.toggleList()}>
-            DROP 3
-            </LinkContainer>
-            <LinkContainer to="/shop/drops/2"  onClick={() => this.toggleList()}>
-            DROP 2
-            </LinkContainer>
-            <LinkContainer to="/shop/drops/1"  onClick={() => this.toggleList()}>
-            DROP 1
-            </LinkContainer>
+            {
+              winterDrops.map(drop =>
+                <LinkContainer to={`/shop/drops/${drop}`}   onClick={() => this.toggleList()}>
+                DROP {drop}
+                </LinkContainer>
+                )
+            }
           </div>
         </div>
         <div className="pages-space"></div>
