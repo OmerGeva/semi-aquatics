@@ -7,7 +7,7 @@
     margin-top: 2%;
   }
   .drop-title{
-    height: 15%;
+    height: auto;
     margin-bottom: 2%;
   }
   .drop-products {
@@ -24,7 +24,10 @@
   }
   @media only screen and (max-width: 768px) {
     padding-top: 20%;
-
+    .drop-title{
+      height: auto;
+      margin-bottom: 2%;
+    }
       h5{
         font-weight: 100;
         width: 80vw;

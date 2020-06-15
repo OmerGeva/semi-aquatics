@@ -13,7 +13,7 @@ import CountdownTimer from '../../components/countdown-timer/countdown-timer.com
 
 const Drop = ({products, match, chooseProduct}) => {
     const calculateTimeLeft = () => {
-      const difference = new Date(2020, 5, 23, 0, 50) - new Date();
+      const difference = new Date(2020, 5, 23, 1, 3) - new Date();
       let timeLeft = {};
 
       if (difference > 0) {
@@ -76,21 +76,24 @@ const Drop = ({products, match, chooseProduct}) => {
           <h5>{match.params.dropId == 7 ?
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
+          {
+            timerComponents.length &&  match.params.dropId !== '10'?
+            ""
+          :
+            <CountdownTimer timeLeft={timeLeft} timerComponents={timerComponents}/>
+          }
         </div>
 
 
-        <div className={timerComponents.length &&  match.params.dropId !== '10' ? `drop-products`: "" }>
+        <div className='drop-products'>
         {
-          timerComponents.length &&  match.params.dropId !== '10'?
            currentDrop[0].products.map((product) => (
             <Link to={`${match.params.dropId}/${product.id}`} key={product.id} >
               <div onClick={() => chooseProduct(product)}>
-                <ShopItem  product={product} key={product.id} />
+                <ShopItem  product={product} key={product.id} dropId={(match.params.dropId)}/>
               </div>
             </Link>
           ))
-        :
-          <CountdownTimer timeLeft={timeLeft} timerComponents={timerComponents}/>
         }
         </div>
 
