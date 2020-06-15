@@ -13,7 +13,7 @@ import CountdownTimer from '../../components/countdown-timer/countdown-timer.com
 
 const Drop = ({products, match, chooseProduct}) => {
     const calculateTimeLeft = () => {
-      const difference = new Date(2020, 5, 23, 1, 3) - new Date();
+      const difference = new Date(2020, 5, 22, 18, 3) - new Date();
       let timeLeft = {};
 
       if (difference > 0) {
