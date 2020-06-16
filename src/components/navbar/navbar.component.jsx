@@ -46,11 +46,18 @@ class  Navbar extends React.Component{
             SPRING/SUMMER 2020
 
             <div className="summer-drops">
+              <LinkContainer to={`/shop/drops/${10}`}>
+              DROP 3
+              </LinkContainer>
+              <p className="new-drop">NEW!</p>
               {
                 summerDrops.map(drop =>
+                  drop !== 10 ?
                   <LinkContainer to={`/shop/drops/${drop}`}>
-                  DROP {drop === 10 ? drop - 7 : drop - 6}
+                  DROP {drop - 6}
                   </LinkContainer>
+                  :
+                  ""
                   )
               }
             </div>
@@ -102,11 +109,18 @@ class  Navbar extends React.Component{
         <div className="summer-season">
           <div className="mobile-nav-titles">SPRING/SUMMER 2020</div>
           <div className="summer-drops">
+            <LinkContainer to={`/shop/drops/3`} onClick={() => this.toggleList()}>
+            DROP 3
+            </LinkContainer>
+            <p className="new-drop">NEW!</p>
             {
               summerDrops.map(drop =>
+                drop !== 10 ?
                 <LinkContainer to={`/shop/drops/${drop}`} onClick={() => this.toggleList()}>
-                DROP {drop === 10 ? drop - 7 :drop - 6}
+                DROP {drop - 6}
                 </LinkContainer>
+                :
+                ""
                 )
             }
           </div>
