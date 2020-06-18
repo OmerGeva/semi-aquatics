@@ -61,11 +61,13 @@ export const CatalogContainer = styled.div`
   position: absolute;
   left: 152px;
   z-index: 2;
+  border: 1px solid #ABABAB;
+
   .product-filter{
     cursor: pointer;
     margin: 0 4px 0 4px;
     padding: 8px;
-    border: 1px solid #ABABAB;
+    border-top: 1px solid #ABABAB;
   }
   .product-filter-active{
     cursor: pointer;
