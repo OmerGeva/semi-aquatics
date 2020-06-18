@@ -49,5 +49,5 @@ export const selectProductsForCatalogPage = state => {
   const productArrayIdsWithoutDuplicates = productArrayIdsWithDuplicates.filter(unique)
 
   const productsArray = productArrayIdsWithoutDuplicates.map(productId => getProductWithId(productId, productsArrayWithDuplicates))
-  return productsArray;
+  return productsArray.reverse();
 }
