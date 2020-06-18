@@ -60,7 +60,6 @@ export const CatalogContainer = styled.div`
 
   padding: 0;
   background-color: #2D2D2D;
-  opacity: 0.8;
   position: absolute;
   left: 12.7%;
   z-index:2;
