@@ -39,7 +39,7 @@ return(
       </div>
       <div className="drop-products">
         {
-          currentProducts.map((product) => (
+          currentProducts.reverse().map((product) => (
             <Link to={`/shop/drops/${product[1].title[product[1].title.length-1]}/${product[0].id}`} key={product[0].id} >
             <div onClick={() => chooseProduct(product[0])}>
               <ShopItem  product={product[0]} key={product[0].id} />

@@ -26,7 +26,6 @@ const CatalogWithSpinner = WithSpinner(Catalog);
 const ShopPage = ({ fetchProductsStartAsync, updateCart, selectCheckout, match, isProductsFetching, products }) => {
 
   useEffect(() => {
-    console.log('YOOOOOO')
     updateCart(selectCheckout);
 
     fetchProductsStartAsync();
