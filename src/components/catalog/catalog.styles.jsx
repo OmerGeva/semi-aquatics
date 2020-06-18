@@ -66,6 +66,7 @@ export const CatalogContainer = styled.div`
   opacity: 0.8;
   left: 12.7%;
   border: 1px solid #ABABAB;
+  text-align: left;
 
   .product-filter{
     cursor: pointer;
