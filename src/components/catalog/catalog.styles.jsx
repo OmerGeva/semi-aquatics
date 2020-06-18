@@ -68,7 +68,7 @@ export const CatalogContainer = styled.div`
   opacity: 0.8;
   position: absolute;
   left: 12.7%;
-  z-index: 2;
+  z-index:2;
   border: 1px solid #ABABAB;
 
   .product-filter{
