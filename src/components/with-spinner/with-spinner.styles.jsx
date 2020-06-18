@@ -22,7 +22,7 @@ export const SpinnerContainer = styled.div`
       -webkit-transform: rotate(360deg);
     }
   }
-  @-webkit-keyframes spin {
+  @-webkit-keyframes spinning {
     to {
       -webkit-transform: rotate(360deg);
     }
