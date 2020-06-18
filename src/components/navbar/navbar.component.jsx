@@ -53,7 +53,7 @@ class  Navbar extends React.Component{
               {
                 summerDrops.map(drop =>
                   drop !== 10 ?
-                  <LinkContainer to={`/shop/drops/${drop}`}>
+                  <LinkContainer key={drop.id} to={`/shop/drops/${drop}`}>
                   DROP {drop - 6}
                   </LinkContainer>
                   :
@@ -67,7 +67,7 @@ class  Navbar extends React.Component{
             <div className="winter-drops">
             {
               winterDrops.map(drop =>
-                <LinkContainer to={`/shop/drops/${drop}`}>
+                <LinkContainer key={drop.id} to={`/shop/drops/${drop}`}>
                 DROP {drop}
                 </LinkContainer>
                 )
@@ -117,7 +117,7 @@ class  Navbar extends React.Component{
             {
               summerDrops.map(drop =>
                 drop !== 10 ?
-                <LinkContainer to={`/shop/drops/${drop}`} onClick={() => this.toggleList()}>
+                <LinkContainer to={`/shop/drops/${drop}`} key={drop.id} onClick={() => this.toggleList()}>
                 DROP {drop - 6}
                 </LinkContainer>
                 :
@@ -131,7 +131,7 @@ class  Navbar extends React.Component{
           <div className="winter-drops">
             {
               winterDrops.map(drop =>
-                <LinkContainer to={`/shop/drops/${drop}`}   onClick={() => this.toggleList()}>
+                <LinkContainer to={`/shop/drops/${drop}`} key={drop.id}  onClick={() => this.toggleList()}>
                 DROP {drop}
                 </LinkContainer>
                 )

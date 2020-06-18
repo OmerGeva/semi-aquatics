@@ -36,5 +36,43 @@ export const CatalogContainer = styled.div`
       }
     }
 }
+.filter-tab{
+  display: flex;
+  margin: 0 0 4px 24px;
+  width: 58px;
+  cursor: pointer;
+  padding: 8px;
+  border: 1px solid #ABABAB;
+}
+.filter-tab-active{
+  display: flex;
+  margin: 0 0 4px 24px;
+  width: 58px;
+  cursor: pointer;
+  padding: 8px;
+  background-color: #ABABAB;
+}
+.product-filters-closed{
+  display: none;
+}
+.product-filters{
+  background-color: #2D2D2D;
+  opacity: 0.8;
+  position: absolute;
+  left: 152px;
+  z-index: 2;
+  .product-filter{
+    cursor: pointer;
+    margin: 0 4px 0 4px;
+    padding: 8px;
+    border: 1px solid #ABABAB;
+  }
+  .product-filter-active{
+    cursor: pointer;
+    background-color: #ABABAB;
+    margin: 0 4px 0 4px;
+    padding: 8px;
+  }
+}
 
 `
