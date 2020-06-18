@@ -56,24 +56,38 @@ export const CatalogContainer = styled.div`
   display: none;
 }
 .product-filters{
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+  padding: 0;
   background-color: #2D2D2D;
   opacity: 0.8;
   position: absolute;
-  left: 152px;
+  left: 12.7%;
   z-index: 2;
   border: 1px solid #ABABAB;
 
   .product-filter{
     cursor: pointer;
-    margin: 0 4px 0 4px;
+    margin: 0;
     padding: 8px;
     border-top: 1px solid #ABABAB;
   }
   .product-filter-active{
+
     cursor: pointer;
     background-color: #ABABAB;
-    margin: 0 4px 0 4px;
+    margin: 0;
     padding: 8px;
+  }
+}
+ @media only screen and (max-width: 768px) {
+  .product-filters{
+    left: 10%;
   }
 }
 
