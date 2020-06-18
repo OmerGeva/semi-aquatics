@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const CatalogContainer = styled.div`
 .drop-page {
-  z-index:1;
   text-align: center;
   padding: 16px;
   overflow: scroll;
@@ -79,8 +78,11 @@ export const CatalogContainer = styled.div`
     padding: 8px;
   }
 }
+
  @media only screen and (max-width: 768px) {
+
   .product-filters{
+    z-index:2;
     left: 10%;
   }
 }
