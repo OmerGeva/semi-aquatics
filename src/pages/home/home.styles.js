@@ -41,9 +41,32 @@ export const HomeContainer = styled.div`
       }
       @-webkit-keyframes spin {
         to {
-          transform: rotate(360deg);
-          -ms-transform: rotate(360deg);
-          -webkit-transform: rotate(360deg);
+          0%{
+            transform: rotate(360deg);
+                      -ms-transform: rotate(360deg);
+                      -webkit-transform: rotate(360deg);
+          }
+          25%{
+            transform: rotate(360deg);
+                      -ms-transform: rotate(360deg);
+                      -webkit-transform: rotate(360deg);
+          }
+          50%{
+            transform: rotate(360deg);
+                      -ms-transform: rotate(360deg);
+                      -webkit-transform: rotate(360deg);
+          }
+          75%{
+            transform: rotate(360deg);
+                      -ms-transform: rotate(360deg);
+                      -webkit-transform: rotate(360deg);
+          }
+          100%{
+            transform: rotate(360deg);
+                      -ms-transform: rotate(360deg);
+                      -webkit-transform: rotate(360deg);
+          }
+
         }
       }
     }

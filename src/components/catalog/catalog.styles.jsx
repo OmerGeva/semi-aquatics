@@ -14,6 +14,7 @@ export const CatalogContainer = styled.div`
     margin-bottom: 2%;
   }
   .drop-products {
+    z-index: 0;
     display: grid;
     grid-gap: 1rem;
 
@@ -55,13 +56,15 @@ export const CatalogContainer = styled.div`
 .product-filters-closed{
   display: none;
 }
-.product-filters{
 
+.product-filters{
+  z-index: 2;
+  -webkit-transform: translate3d(0,0,0)
   padding: 0;
   background-color: #2D2D2D;
-  position: absolute;
+  position: fixed;
+  opacity: 0.8;
   left: 12.7%;
-  z-index:2;
   border: 1px solid #ABABAB;
 
   .product-filter{
@@ -82,7 +85,8 @@ export const CatalogContainer = styled.div`
  @media only screen and (max-width: 768px) {
 
   .product-filters{
-    z-index:2;
+    -webkit-transform: translate3d(0,0,0)
+    z-index: 2;
     left: 10%;
   }
 }
