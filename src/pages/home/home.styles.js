@@ -29,14 +29,20 @@ export const HomeContainer = styled.div`
     margin: auto;
     transform-origin: 45% 43%;
     animation: spin 50s linear infinite;
+    transform: spin 50s linear infinite;
+    -ms-transform: spin 50s linear infinite;
     -webkit-animation: spin 50s linear infinite;
       @keyframes spin {
         to {
+          transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
           -webkit-transform: rotate(360deg);
         }
       }
       @-webkit-keyframes spin {
         to {
+          transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
           -webkit-transform: rotate(360deg);
         }
       }

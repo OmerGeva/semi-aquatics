@@ -57,13 +57,7 @@ export const CatalogContainer = styled.div`
   display: none;
 }
 .product-filters{
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                      supported by Chrome, Edge, Opera and Firefox */
+
   padding: 0;
   background-color: #2D2D2D;
   opacity: 0.8;
