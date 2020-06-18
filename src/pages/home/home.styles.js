@@ -39,7 +39,7 @@ export const HomeContainer = styled.div`
           -webkit-transform: rotate(360deg);
         }
       }
-      @-webkit-keyframes spin {
+      @-webkit-keyframes spinning {
         to {
           0%{
             transform: rotate(360deg);
