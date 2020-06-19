@@ -58,7 +58,7 @@ export const CatalogContainer = styled.div`
 }
 
 .product-filters{
-  z-index: 2;
+  z-index:2;
   -webkit-transform: translate3d(0,0,0)
   padding: 0;
   background-color: #2D2D2D;
@@ -70,7 +70,7 @@ export const CatalogContainer = styled.div`
 
   .product-filter{
     cursor: pointer;
-    margin: 0;
+    margin:0;
     padding: 8px;
     border-top: 1px solid #ABABAB;
   }
