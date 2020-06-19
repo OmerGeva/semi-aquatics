@@ -119,7 +119,8 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
                   </CustomButtom>
                  :
                   <CustomButtom soldOut={true}>
-                     SOLD OUT
+
+                     {product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1OTc2ODkxMjI4OTE=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1OTc2OTIxMzc1NDc=' ? 'COMING SOON' : 'SOLD OUT'}
                   </CustomButtom>
               }
             </div>
