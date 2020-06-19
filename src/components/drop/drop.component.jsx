@@ -30,8 +30,6 @@ const Drop = ({products, match, chooseProduct}) => {
 
     const timerComponents = [];
 
-
-
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     useEffect(() => {
