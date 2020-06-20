@@ -15,9 +15,9 @@ import { AppContainer } from './app.styles.js'
 import { updateCheckoutAsync } from './redux/cart/cart.actions'
 
 
-const App = ({ isDark, checkout, updateCart }) =>
+const App = ({ isDark, checkout, updateCart, cartItems }) =>
   {
-    updateCart(checkout);
+    updateCart(checkout, cartItems);
     return(
       <AppContainer isDark={isDark}>
         <div className="App">
@@ -41,7 +41,8 @@ const App = ({ isDark, checkout, updateCart }) =>
 
 const mapStateToProps = state => ({
   isDark: state.style.isDark,
-  checkout: state.cart.checkout
+  checkout: state.cart.checkout,
+  cartItems: state.cart.cartItems
 })
 
 const mapDispatchToProps = dispatch => ({

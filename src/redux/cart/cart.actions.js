@@ -47,7 +47,7 @@ export const updateCheckoutAsync = (checkout) => {
 
     if (checkout){
       client.checkout.fetch(checkout.id).then((checkout) => {
-        if(checkout.completedAt != null)
+        if(checkout.completedAt != null || checkout.createdAt.split('T')[0] <= new Date('2020-06-21'))
         {
          dispatch(resetCart([]));
          client.checkout.create().then((checkout) => {

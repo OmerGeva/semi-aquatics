@@ -9,7 +9,7 @@ import { updateCheckoutAsync } from '../../redux/cart/cart.actions'
 
 const CheckoutPage = ({cartItems, checkoutFinished, checkout, updateCart}) => {
 
-  updateCart(checkout);
+  updateCart(checkout, cartItems);
 
   return(
     <CheckoutContainer>
