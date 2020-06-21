@@ -17,7 +17,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
 
   const createNotification = (product) => {
       console.log('hello')
-      return NotificationManager.success(`${product.title} was added to cart!`, 'Congrats!');
+      return NotificationManager.success(`${product.title} was added to cart!`);
       };
 
   const handleAddToCart = (variantProduct, product, checkout, inventoryQuantity) => {
