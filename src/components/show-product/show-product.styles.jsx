@@ -40,10 +40,11 @@ p{
   display: flex;
   justify-content: space-around;
     .choose-size{
+
     background-color: white;
     color: #ABABAB;
     border: 1px solid #ABABAB;
-    width: auto;
+    width: 32px;
     height: 50px;
     letter-spacing: 0.5px;
     line-height: 50px;
@@ -63,8 +64,8 @@ p{
       display: none;
     }
     .product-sizes-show{
-      position: absolute;
-      width: 100px;
+      position: fixed;
+      width: 102px;
         bottom: 90px;
         background-color: white;
         color: #ABABAB;
@@ -72,11 +73,15 @@ p{
 
       .product-size{
         padding: 0 24px 0 24px;
-        margin-top: 12px;
+        margin: 12px auto;
+        width: 16px;
         display: block;
         cursor: pointer;
       }
     }
+}
+.addToCartButton{
+  width: 200px;
 }
 .buy-product{
   width: 40%;
@@ -103,6 +108,8 @@ button{
   .desktop-sizes-btn{
     display: none;
   }
+
+
   .mobile-sizes-btn{
     display: block;
   }
@@ -112,7 +119,7 @@ button{
     padding: 10px;
   }
   .product-sizes-show{
-    position: relative;
+    bottom: 150px !important;
     color: #ABABAB;
     background-color: white;
   }
@@ -126,6 +133,7 @@ button{
     p{
       display: none;
     }
+
     .mobile-description{
       line-height: normal;
       text-align: left;

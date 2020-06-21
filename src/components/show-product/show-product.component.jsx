@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import 'react-notifications/lib/notifications.css';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+
 import { ShowProductContainer } from './show-product.styles';
 import CustomButtom from '../custom-button/custom-button.component'
 import { createStructuredSelector } from 'reselect';
@@ -9,7 +12,20 @@ import { toggleProductSize, chooseVariantProduct } from '../../redux/product/pro
 import { addItemToCartAsync } from '../../redux/cart/cart.actions';
 import { productText } from './text'
 
-const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, inventoryQuantity, isDark}) =>(
+const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, inventoryQuantity, isDark}) =>
+{
+
+  const createNotification = (product) => {
+      console.log('hello')
+      return NotificationManager.success(`${product.title} was added to cart!`, 'Congrats!');
+      };
+
+  const handleAddToCart = (variantProduct, product, checkout, inventoryQuantity) => {
+    addToCart(variantProduct, product, checkout, inventoryQuantity);
+    createNotification(product);
+  }
+
+return (
     <ShowProductContainer>
     <div className="other-text">
       Hoodie Crewneck Sweatshirt T-Shirt Sweater Jacket Outerwear Style Fashion Comfort Design Streetwear 
@@ -96,7 +112,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
           </div>
           {
             product.variants.length === 1 ?
-            <div onClick={() => addToCart(product.variants[0], product, checkout, inventoryQuantity)}>
+            <div onClick={() => addToCart(product.variants[0], product, checkout, inventoryQuantity)} className="addToCartButton">
 
               {
                 (variantProduct && variantProduct.available) || (product.availableForSale & variantProduct == null) ?
@@ -110,7 +126,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
               }
             </div>
             :
-            <div onClick={() =>  (variantProduct && variantProduct.available) ? addToCart(variantProduct, product, checkout, inventoryQuantity) : ''}>
+            <div onClick={() =>  (variantProduct && variantProduct.available) ? handleAddToCart(variantProduct, product, checkout, inventoryQuantity): ''} className="addToCartButton">
 
               {
                 (variantProduct && variantProduct.available) || (product.availableForSale & variantProduct == null) ?
@@ -132,6 +148,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
 
       </div>
       {
+        // CHECKING IF PRODUCT IS THE FACEMASKS OR THE SHIRTS, AND IT WILL SHOW THE EXTRA TEXT.
         product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1OTAxNzMxMjY3MzE=' || product.variants[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1ODg2MTcwNzI3MTU=' ?
         <p className='smaller-text mobile-sizes-btn'>
         <span className="italic-font">
@@ -145,8 +162,10 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
         :
         ""
       }
+      <NotificationContainer/>
     </ShowProductContainer>
   )
+}
 
 const mapStateToProps = createStructuredSelector({
   product: selectChosenProduct,
