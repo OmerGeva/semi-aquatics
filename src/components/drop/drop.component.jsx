@@ -24,7 +24,6 @@ const Drop = ({products, match, chooseProduct}) => {
           seconds: Math.floor((difference / 1000) % 60)
         };
       }
-
       return timeLeft;
     };
 
@@ -74,12 +73,7 @@ const Drop = ({products, match, chooseProduct}) => {
           <h5>{match.params.dropId == 7 ?
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
-          {
-            timerComponents.length &&  match.params.dropId !== '10'?
-            ""
-          :
-            <CountdownTimer timeLeft={timeLeft} timerComponents={timerComponents}/>
-          }
+
         </div>
 
 
