@@ -63,6 +63,8 @@ const setNavHeight = ({navHeight}) => {
 }
 
 export const NavbarContainer = styled.div`
+
+
 -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
@@ -281,6 +283,10 @@ export const NavbarContainer = styled.div`
     display: none;
   }
   .nav-mobile-open{
+    &:active{
+      outline: none;
+      box-shadow: none;
+    }
     h6{
       margin: 0;
     }

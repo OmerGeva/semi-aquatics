@@ -23,9 +23,13 @@ export const HomeContainer = styled.div`
   .title-RE{
     margin-bottom: 42px;
   }
+  h4{
+    margin-top: 0;
+    margin-bottom: 5vh;
+  }
   img{
     margin-bottom: 0;
-    width: 50%;
+    width: 45%;
     margin: auto;
     transform-origin: 45% 43%;
     animation: spin 50s linear infinite;
@@ -76,7 +80,7 @@ export const HomeContainer = styled.div`
     padding: 0;
     margin-top: 15vh;
     h4{
-      margin-top: 30vh;
+      margin-top: 5vh;
     }
     img{
      padding-right: 12px;

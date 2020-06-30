@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
@@ -29,6 +29,7 @@ const App = ({ isDark, checkout, updateCart, cartItems }) =>
                 <Route path='/info' component={InfoPage}/>
                 <Route path='/shop' component={ShopPage}/>
                 <Route path='/checkout' component={CheckoutPage}/>
+                <Route render={() => <Redirect to="/" />} />
               </Switch>
             </div>
             <Footer />
