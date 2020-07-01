@@ -64,7 +64,6 @@ const setNavHeight = ({navHeight}) => {
 
 export const NavbarContainer = styled.div`
 
-
 -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
@@ -86,6 +85,7 @@ export const NavbarContainer = styled.div`
     width: 10vw;
     height: 95vh;
     padding: 16px;
+    padding-top: 20px;
     display: flex;
     text-align: left;
     flex-direction: column;
@@ -261,6 +261,7 @@ export const NavbarContainer = styled.div`
     }
   .mobile-toggle-btn-open{
     z-index: 11;
+    background-color: #2D2D2D;
     padding-left: 16px;
     display: block;
     font-size: 24px;
@@ -274,7 +275,7 @@ export const NavbarContainer = styled.div`
     display: block;
     font-size: 24px;
     position: absolute;
-    top: 3%;
+    top: 5%;
     left: 5%;
   }
   .nav-mobile-closed{

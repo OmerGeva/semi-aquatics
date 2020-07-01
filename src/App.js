@@ -13,7 +13,7 @@ import CheckoutPage from './pages/checkout/checkout.component';
 import { AppContainer } from './app.styles.js'
 
 import { updateCheckoutAsync } from './redux/cart/cart.actions'
-
+import AnnouncementBanner from './components/announcement-banner/announcement-banner.component'
 
 const App = ({ isDark, checkout, updateCart, cartItems }) =>
   {
@@ -21,6 +21,7 @@ const App = ({ isDark, checkout, updateCart, cartItems }) =>
     return(
       <AppContainer isDark={isDark}>
         <div className="App">
+          <AnnouncementBanner />
           <Navbar />
           <div className="right-side">
             <div className="page">

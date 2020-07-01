@@ -20,7 +20,6 @@ class Home extends React.Component {
       <div className="home-page">
         <h2 className='title-RE'>[Reverse Evolution]</h2>
         <img src="https://cdn.shopify.com/s/files/1/0276/3305/7867/files/big3_1410x.png?v=1575617303" alt="logo"/>
-        <h4>CURRENTLY ALL SOLD OUT. ADD YOUR EMAIL TO FIND OUT WHEN OUR NEXT DROP IS</h4>
         <form action="https://gmail.us4.list-manage.com/subscribe/post?u=98190063b370f72608d400f09&amp;id=fbde19324c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
           <div className="form-flex-box">
             <div className="group">
