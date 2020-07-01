@@ -19,8 +19,16 @@ const getIsDark = ({isDark}) => {
 
 export const HomeContainer = styled.div`
 .home-page{
+
   padding: 32px;
   .title-RE{
+    display: flex;
+    justify-content: center;
+    align-content: middle;
+    .bracket{
+      font-size: 30px;
+    }
+    letter-spacing: .4rem;
     margin-bottom: 42px;
   }
   h4{
@@ -79,6 +87,13 @@ export const HomeContainer = styled.div`
   @media only screen and (max-width: 768px) {
     padding: 0;
     margin-top: 15vh;
+    .title-RE{
+      .bracket{
+        font-size: 26px;
+      }
+      letter-spacing: .2rem;
+      font-size: 22px;
+    }
     h4{
       margin-top: 5vh;
     }
