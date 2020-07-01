@@ -936,6 +936,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.9.2":
+  version "7.10.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.4.tgz#a6724f1a6b8d2f6ea5236dbfe58c7d7ea9c5eb99"
+  integrity sha512-UpTN5yUJr9b4EX2CnGNWIvER7Ab83ibv0pcvvHc4UOdrBI5jb8bj+32cCwPX6xu0mt2daFNjYhoi+X7beH0RSw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.4.0", "@babel/template@^7.8.3", "@babel/template@^7.8.6":
   version "7.8.6"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.8.6.tgz#86b22af15f828dfb086474f964dcc3e39c43ce2b"
@@ -2837,6 +2844,13 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001020, can
   version "1.0.30001035"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001035.tgz#2bb53b8aa4716b2ed08e088d4dc816a5fe089a1e"
   integrity sha512-C1ZxgkuA4/bUEdMbU5WrGY4+UhMFFiXrgNAfxiMIqWgFTWfv/xsZCS2xEHT2LMq7xAZfuAnu6mcqyDl0ZR6wLQ==
+
+canvas-scrolling-background@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/canvas-scrolling-background/-/canvas-scrolling-background-0.2.2.tgz#21c97cf0437b03accc6678c89295c6e7d2104bf4"
+  integrity sha512-xsvxbqDL4dXBOO74Yzweyz+iBqhkHUX5k3sOLpu4TYNhtrCnsOS+7L3K7rtcJLUbB+losa7HyXAtOp0rCssv+g==
+  dependencies:
+    hypergiant "^3.0.5"
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -5527,6 +5541,13 @@ https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
+
+hypergiant@^3.0.5:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/hypergiant/-/hypergiant-3.0.6.tgz#b90cc3300a743a69f989be654bb8cd0f1b4c9698"
+  integrity sha512-C4Jr+fmdRscwDr7M5u7L5R7q3O0hRDTBX/cqI7YmTaklOTzJDXExXf4zJs6PgBalBzkR1+3t/tGSIZRKvk152w==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24:
   version "0.4.24"
