@@ -9,7 +9,7 @@ export const AnnouncementBannerContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 2vh;
-  z-index: 1;
+  z-index: 7;
   background-color: #54a8c9;
   h5{
     margin: 0;
