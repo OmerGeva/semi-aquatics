@@ -16,7 +16,6 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
 {
 
   const createNotification = (product) => {
-      console.log('hello')
       return NotificationManager.success(`${product.title} was added to cart!`);
       };
 
@@ -55,61 +54,22 @@ return (
           :
           ""
         }
-        <div className="size-and-add-to-cart">
-          <div>
-            <div className="mobile-sizes-btn">
-              {
-                product.variants.length > 1 ?
-                  <div className={hidden ? "product-sizes-hidden" : "product-sizes-show"}>
-                  {
-                    product.variants.map(variant =>
-                      <span onClick={() => chooseProduct(variant)}className="product-size" key={variant.id}>{variant.title}</span>
-                      )
-                  }
-                  </div>
-                :
-                <span></span>
-              }
-              {
-                product.variants.length > 1 ?
-              <div onClick={() => toggleHidden()}className="choose-size">
-                {
-                  variantProduct ? variantProduct.title : "SIZE"
-                }
-              </div>
-              :
-              <div className="choose-size no-size">
-                NO SIZE
-              </div>
-              }
-            </div>
-            <div className="desktop-sizes-btn">
-              {
-                product.variants.length > 1 ?
-              <div onClick={() => toggleHidden()}className="choose-size">
-                {
-                  variantProduct ? variantProduct.title : "SIZE"
-                }
-              </div>
-              :
-              <div className="choose-size no-size">
-                NO SIZE
-              </div>
-              }
-              {
-                product.variants.length > 1 ?
-                  <div className={hidden ? "product-sizes-hidden" : "product-sizes-show"}>
-                  {
-                    product.variants.map(variant =>
-                      <span onClick={() => chooseProduct(variant)}className="product-size" key={variant.id}>{variant.title}</span>
-                      )
-                  }
-                  </div>
-                :
-                <span></span>
-              }
-            </div>
+        {
+          product.variants.length != 1 ?
+          <div className="sizes">
+            {
+            product.variants.map(variant =>
+                variant === variantProduct ?
+                <span onClick={() => chooseProduct(variant)} className="product-size chosen" key={variant.id}>{variant.title}</span>
+                  :
+                <span onClick={() => chooseProduct(variant)} className="product-size" key={variant.id}>{variant.title}</span>
+              )
+            }
           </div>
+          :
+          ""
+        }
+        <div className="add-to-cart">
           {
             product.variants.length === 1 ?
             <div onClick={() => addToCart(product.variants[0], product, checkout, inventoryQuantity)} className="addToCartButton">
@@ -127,7 +87,6 @@ return (
             </div>
             :
             <div onClick={() =>  (variantProduct && variantProduct.available) ? handleAddToCart(variantProduct, product, checkout, inventoryQuantity): ''} className="addToCartButton">
-
               {
                 (variantProduct && variantProduct.available) || (product.availableForSale & variantProduct == null) ?
                   <CustomButtom soldOut={false}>

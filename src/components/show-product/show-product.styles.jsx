@@ -8,6 +8,7 @@ width: 100%;
 overflow: hidden;
 padding: 42px 10px;
 align-items: center;
+margin-top: 2%;
 .product-info{
   width: 50%
 }
@@ -35,51 +36,39 @@ p{
   font-size: 12px;
   line-height: 2;
 }
-.size-and-add-to-cart{
-  margin-top: 35px;
+.product-size{
+  margin: 12px auto;
+  display: block;
+  cursor: pointer;
+  background-color: white;
+  color: #ABABAB;
+  border: 4px solid rgba(0,0,0,0);
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: 'VCR_OSD_MONO_1';
+  font-weight: bolder;
+  cursor: pointer;
+  justify-content: center;
+}
+.chosen{
+  color: #54A8C9;
+  border: 4px solid #54A8C9;
+}
+.sizes{
   display: flex;
   justify-content: space-around;
-    .choose-size{
 
-    background-color: white;
-    color: #ABABAB;
-    border: 1px solid #ABABAB;
-    width: 32px;
-    height: 50px;
-    letter-spacing: 0.5px;
-    line-height: 50px;
-    padding: 0 35px 0 35px;
-    font-size: 15px;
-    text-transform: uppercase;
-    font-family: 'VCR_OSD_MONO_1';
-    font-weight: bolder;
-    cursor: pointer;
-    justify-content: center;
-    }
-    .no-size{
-      cursor: default;
-    }
-    .product-sizes-hidden{
-      text-align: center;
-      display: none;
-    }
-    .product-sizes-show{
-      position: fixed;
-      width: 102px;
-        bottom: 90px;
-        background-color: white;
-        color: #ABABAB;
-        border: 1px solid #ABABAB;
-
-      .product-size{
-        padding: 0 24px 0 24px;
-        margin: 12px auto;
-        width: 16px;
-        display: block;
-        cursor: pointer;
-      }
-    }
 }
+.add-to-cart{
+    margin: 35px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
 .addToCartButton{
   width: 200px;
 }
@@ -108,6 +97,10 @@ button{
   .desktop-sizes-btn{
     display: none;
   }
+  .product-size{
+    width: 32px;
+  padding: 0 8px 0 8px;
+}
 
 
   .mobile-sizes-btn{
