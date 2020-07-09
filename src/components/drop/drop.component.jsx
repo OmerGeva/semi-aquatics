@@ -60,21 +60,16 @@ const Drop = ({products, match, chooseProduct}) => {
     }
 
     const currentDrop = []
-    if(products){
-      products.forEach((drop) => {
-        if (drop.title.includes(match.params.dropId)) {
-          currentDrop.push(drop)
-        }
-      })
-    }
+    products.forEach((drop) => {
+      if (drop.title.includes(match.params.dropId)) {
+        currentDrop.push(drop)
+      }
+    })
     return (
       <div className="drop-page">
         <div className="drop-title">
           <h2>{currentDropHeader(parseInt(match.params.dropId))}</h2>
-          {currentDrop[0] ?
           <h4>{currentDrop[0].description}</h4>
-          :
-          ""}
           <h5>{match.params.dropId == 7 ?
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
@@ -84,7 +79,6 @@ const Drop = ({products, match, chooseProduct}) => {
 
         <div className='drop-products'>
         {
-          currentDrop[0] ?
            currentDrop[0].products.map((product) => (
             <Link to={`${match.params.dropId}/${product.id}`} key={product.id} >
               <div onClick={() => chooseProduct(product)}>
@@ -92,8 +86,6 @@ const Drop = ({products, match, chooseProduct}) => {
               </div>
             </Link>
           ))
-           :
-           ""
         }
         </div>
 
