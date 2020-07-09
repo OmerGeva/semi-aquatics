@@ -12,41 +12,41 @@ import CountdownTimer from '../../components/countdown-timer/countdown-timer.com
 
 
 const Drop = ({products, match, chooseProduct}) => {
-    const calculateTimeLeft = () => {
-      const difference = new Date(2020, 5, 23, 1, 1) - new Date();
-      let timeLeft = {};
+    // const calculateTimeLeft = () => {
+    //   const difference = new Date(2020, 5, 23, 1, 1) - new Date();
+    //   let timeLeft = {};
 
-      if (difference > 0) {
-        timeLeft = {
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
-        };
-      }
-      return timeLeft;
-    };
+    //   if (difference > 0) {
+    //     timeLeft = {
+    //       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    //       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    //       minutes: Math.floor((difference / 1000 / 60) % 60),
+    //       seconds: Math.floor((difference / 1000) % 60)
+    //     };
+    //   }
+    //   return timeLeft;
+    // };
 
-    const timerComponents = [];
+    // const timerComponents = [];
 
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+    // const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-    useEffect(() => {
-      setTimeout(() => {
-        setTimeLeft(calculateTimeLeft());
-      }, 1000);
-    });
+    // useEffect(() => {
+    //   setTimeout(() => {
+    //     setTimeLeft(calculateTimeLeft());
+    //   }, 1000);
+    // });
 
-    Object.keys(timeLeft).forEach(interval => {
-      if (!timeLeft[interval]) {
-        return;
-      }
-      timerComponents.push(
-        <span>
-          {timeLeft[interval]} {interval}{" "}
-        </span>
-      );
-    });
+    // Object.keys(timeLeft).forEach(interval => {
+    //   if (!timeLeft[interval]) {
+    //     return;
+    //   }
+    //   timerComponents.push(
+    //     <span>
+    //       {timeLeft[interval]} {interval}{" "}
+    //     </span>
+    //   );
+    // });
 
     const currentDropHeader = (dropId) => {
       if(dropId <= 6)
