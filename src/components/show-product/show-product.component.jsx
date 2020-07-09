@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
@@ -11,9 +11,15 @@ import { selectChosenProduct, selectProductSizes, selectIsProductsSizeHidden, se
 import { toggleProductSize, chooseVariantProduct } from '../../redux/product/product.actions';
 import { addItemToCartAsync } from '../../redux/cart/cart.actions';
 import { productText } from './text'
+import Carousel from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
 const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, inventoryQuantity, isDark}) =>
 {
+
+  const [value, setValue] = useState(0);
 
   const createNotification = (product) => {
       return NotificationManager.success(`${product.title} was added to cart!`);
@@ -24,13 +30,27 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
     createNotification(product);
   }
 
+  const onCarouselValueChange = value => {
+    setValue(value);
+  }
+  const slides = product.images.map(image =>
+               (<img src={image.src} alt=""/>)
+                )
 return (
     <ShowProductContainer>
     <div className="other-text">
       Hoodie Crewneck Sweatshirt T-Shirt Sweater Jacket Outerwear Style Fashion Comfort Design Streetwear 
     </div>
       <div className="product-info">
-        <img src={product.images[0].src} alt=""/>
+      <Carousel
+          arrowLeft={<FontAwesomeIcon icon={faAngleDoubleLeft}/>}
+          arrowLeftDisabled={<FontAwesomeIcon icon={faAngleLeft}/>}
+          arrowRight={<FontAwesomeIcon icon={faAngleDoubleRight}/>}
+          arrowRightDisabled={<FontAwesomeIcon icon={faAngleRight}/>}
+          addArrowClickHandler
+          slides={slides}
+      >
+      </Carousel>
       </div>
       <div className="buy-product">
         <h4>{product.title}</h4>
