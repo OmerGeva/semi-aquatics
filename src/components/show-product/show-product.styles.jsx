@@ -29,7 +29,6 @@ margin-top: 2%;
   display: none;
 }
 img{
-  max-height: 70%;
   width: 90%;
 }
 p{
