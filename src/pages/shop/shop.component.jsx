@@ -22,6 +22,7 @@ import { updateCheckoutAsync } from '../../redux/cart/cart.actions'
 
 const DropWithSpinner = WithSpinner(Drop);
 const CatalogWithSpinner = WithSpinner(Catalog);
+const ShowProductWithSpinner = WithSpinner(ShowProduct);
 
 const ShopPage = ({ fetchProductsStartAsync, updateCart, selectCheckout, match, isProductsFetching, products }) => {
 
@@ -35,7 +36,7 @@ const ShopPage = ({ fetchProductsStartAsync, updateCart, selectCheckout, match, 
       <ShopPageContainer>
         <Route exact path={`${match.path}/drops/:dropId`} render={(props) => <DropWithSpinner isLoading={isProductsFetching} products={products.products} {...props}/>} />
         <Route exact path={`${match.path}/catalog`} render={(props) => <CatalogWithSpinner isLoading={isProductsFetching} products={products.products} {...props}/>} />
-        <Route path={`${match.path}/drops/:dropId/:productId`} render={(props) => <ShowProduct {...props}/>}/>
+        <Route exact path={`${match.path}/drops/:dropId/:productId`} render={(props) => <ShowProductWithSpinner isLoading={isProductsFetching} products={products.products} {...props}/>} />
       </ShopPageContainer>
       )
   }

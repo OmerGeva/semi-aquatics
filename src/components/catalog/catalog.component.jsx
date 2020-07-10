@@ -15,7 +15,7 @@ const Catalog = ({products, chooseProduct}) => {
 const [chosenFilter, setChosenFilter] = useState("")
 const [isModalOpen, setModalOpen] = useState(false);
 const ref = useRef();
-const currentProducts = chosenFilter === "" ? products : products.filter(product => product[0].productType == chosenFilter)
+const currentProducts = chosenFilter === "" ? products : products.filter(product => product[0].productType === chosenFilter)
 
 useOnClickOutside(ref, () => setModalOpen(false));
 

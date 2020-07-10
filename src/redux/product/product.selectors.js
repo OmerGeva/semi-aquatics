@@ -25,7 +25,7 @@ export const selectIsProductsFetching = createSelector(
 
 export const selectProductSizes = createSelector(
   [selectChosenProduct],
-  product => product.variants
+  product => product ? product.variants : product
 )
 
 // GETTING AN ARRAY OF [PRODUCT, DROP] FOR CATALOG PAGE, SO THERE WILL BE NO DUPLICATES, AND CAN STILL ACCESS DROP INFO
@@ -40,7 +40,6 @@ export const selectProductsForCatalogPage = state => {
   const getProductWithId = (productId, allProducts) => {
     return allProducts.find(product => product[0].id === productId)
   }
-
   const productArrayIdsWithDuplicates = []
   products.forEach(drop => drop.products.forEach(product => productArrayIdsWithDuplicates.push(product.id)))
   const productsArrayWithDuplicates = []

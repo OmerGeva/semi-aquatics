@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
@@ -7,7 +8,7 @@ import { ShowProductContainer } from './show-product.styles';
 import CustomButtom from '../custom-button/custom-button.component'
 import { createStructuredSelector } from 'reselect';
 import { selectCartCheckout, selectCartInventoryQuantity } from '../../redux/cart/cart.selectors';
-import { selectChosenProduct, selectProductSizes, selectIsProductsSizeHidden, selectVariantProduct } from '../../redux/product/product.selectors';
+import { selectChosenProduct, selectProductSizes, selectIsProductsSizeHidden, selectVariantProduct, selectProductsForCatalogPage } from '../../redux/product/product.selectors';
 import { toggleProductSize, chooseVariantProduct } from '../../redux/product/product.actions';
 import { addItemToCartAsync } from '../../redux/cart/cart.actions';
 import { productText } from './text'
@@ -16,10 +17,11 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
-const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, inventoryQuantity, isDark}) =>
+const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, allProducts, inventoryQuantity, isDark}) =>
 {
 
-  const [value, setValue] = useState(0);
+  const params = useParams();
+  product = product && product.id === params.productId ? product : allProducts.filter(individualProduct => individualProduct[0].id === params.productId)[0][0]
 
   const createNotification = (product) => {
       return NotificationManager.success(`${product.title} was added to cart!`);
@@ -30,9 +32,6 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
     createNotification(product);
   }
 
-  const onCarouselValueChange = value => {
-    setValue(value);
-  }
   const slides = product.images.map(image =>
                (<img src={image.src} alt=""/>)
                 )
@@ -75,7 +74,7 @@ return (
           ""
         }
         {
-          product.variants.length != 1 ?
+          product.variants.length !== 1 ?
           <div className="sizes">
             {
             product.variants.map(variant =>
@@ -152,7 +151,8 @@ const mapStateToProps = createStructuredSelector({
   hidden: selectIsProductsSizeHidden,
   variantProduct: selectVariantProduct,
   checkout: selectCartCheckout,
-  inventoryQuantity: selectCartInventoryQuantity
+  inventoryQuantity: selectCartInventoryQuantity,
+  allProducts: selectProductsForCatalogPage
 })
 
 const mapDispatchToProps = dispatch => ({

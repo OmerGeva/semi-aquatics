@@ -13,7 +13,7 @@ const Sustainability = () => (
       <div className="example-card-sustainability-text">
         <h4>Innovative Farming</h4>
         <p>Supima Cotton farmers utilize GPS and Satellite technology to ensure that they are growing the best quality cotton in the world with as little impact on the environment as possible. Supima is twice as strong as regular cotton, which makes for extraordinarily resilient products. The longer fiber resists pilling, breaking and tearing resulting in fashion and home products that are incredibly resilient and keep their form for a longer-lasting product.</p>
-         <p>To learn more about our Supima Tees, visit <a href="https://supima.com/" className='supima-link' target="_blank">Supima</a></p>
+         <p>To learn more about our Supima Tees, visit <a href="https://supima.com/" className='supima-link' target="_blank" rel="noopener noreferrer" >Supima</a></p>
       </div>
       <img src={supimaCotton} alt="tshirt-sizing-chart"/>
     </div>
