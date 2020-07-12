@@ -27,7 +27,7 @@ class  Navbar extends React.Component{
 
   render(){
     const winterDrops = [1,2,3,4,5,6].reverse()
-    const summerDrops = [7,8,10].reverse()
+    const summerDrops = [7,8,10,11].reverse()
     const navHeight  = window.innerHeight
     const {numberOfCartItems, toggleDarkTheme, isDark} = this.props
     return(
@@ -44,13 +44,18 @@ class  Navbar extends React.Component{
           </LinkContainer>
           <div className="summer-season">
             SPRING/SUMMER 2020
+            <p className="new-drop-top">NEW!</p>
             <div className="summer-drops">
+              <LinkContainer to={`/shop/drops/${11}`}>
+              DROP 4
+              </LinkContainer>
+              <p className="new-drop">NEW!</p>
               <LinkContainer to={`/shop/drops/${10}`}>
               DROP 3
               </LinkContainer>
               {
                 summerDrops.map(drop =>
-                  drop !== 10 ?
+                  drop !== 10 && drop !== 11 ?
                   <LinkContainer key={drop.id} to={`/shop/drops/${drop}`}>
                   DROP {drop - 6}
                   </LinkContainer>
@@ -106,13 +111,19 @@ class  Navbar extends React.Component{
         </LinkContainer>
         <div className="summer-season">
           <div className="mobile-nav-titles">SPRING/SUMMER 2020</div>
+          <p className="new-drop-top">NEW!</p>
           <div className="summer-drops">
+
+            <LinkContainer to={`/shop/drops/11`} onClick={() => this.toggleList()}>
+            DROP 4
+            </LinkContainer>
+            <p className="new-drop">NEW!</p>
             <LinkContainer to={`/shop/drops/10`} onClick={() => this.toggleList()}>
             DROP 3
             </LinkContainer>
             {
               summerDrops.map(drop =>
-                drop !== 10 ?
+                drop !== 10 && drop !== 11 ?
                 <LinkContainer to={`/shop/drops/${drop}`} key={drop.id} onClick={() => this.toggleList()}>
                 DROP {drop - 6}
                 </LinkContainer>

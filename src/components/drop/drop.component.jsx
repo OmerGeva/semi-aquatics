@@ -12,8 +12,16 @@ import CountdownTimer from '../../components/countdown-timer/countdown-timer.com
 
 
 const Drop = ({products, match, chooseProduct}) => {
+  console.log(match)
     const calculateTimeLeft = () => {
-      const difference = new Date(2020, 5, 23, 1, 1) - new Date();
+
+      const localTimeNow = new Date();
+      const utcTimeNow = localTimeNow.getTime() + (localTimeNow.getTimezoneOffset() * 60000);
+
+      const utcTime = new Date(Date.UTC(2020, 6, 20, 18, 0));
+
+
+      const difference = utcTime - new Date(utcTimeNow);;
       let timeLeft = {};
 
       if (difference > 0) {
@@ -70,9 +78,15 @@ const Drop = ({products, match, chooseProduct}) => {
         <div className="drop-title">
           <h2>{currentDropHeader(parseInt(match.params.dropId))}</h2>
           <h4>{currentDrop[0].description}</h4>
-          <h5>{match.params.dropId === 7 ?
+          <h5>{match.params.dropId === '7' ?
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
+          {
+           match.params.dropId === '11' && timeLeft.seconds  ?
+            <CountdownTimer timeLeft={timeLeft}/>
+          :
+            ""
+          }
 
         </div>
 
