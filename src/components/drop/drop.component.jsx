@@ -12,7 +12,6 @@ import CountdownTimer from '../../components/countdown-timer/countdown-timer.com
 
 
 const Drop = ({products, match, chooseProduct}) => {
-  console.log(match)
     const calculateTimeLeft = () => {
 
       const localTimeNow = new Date();
@@ -82,7 +81,7 @@ const Drop = ({products, match, chooseProduct}) => {
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
           {
-           match.params.dropId === '11' && timeLeft.seconds  ?
+           match.params.dropId === '11' && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
             <CountdownTimer timeLeft={timeLeft}/>
           :
             ""

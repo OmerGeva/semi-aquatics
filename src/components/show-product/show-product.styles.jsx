@@ -6,7 +6,7 @@ display: flex;
 height: 100%;
 width: 100%;
 overflow: hidden;
-padding: 42px 10px;
+padding: 0px 10px;
 align-items: center;
 margin-top: 2%;
 .product-info{
@@ -33,7 +33,12 @@ img{
 }
 p{
   font-size: 12px;
-  line-height: 2;
+  line-height: 1.7;
+}
+.sizing-guide{
+  text-align: left;
+  padding-left: 34px;
+  margin-bottom: 24px;
 }
 .product-size{
   margin: 12px auto;
@@ -92,6 +97,8 @@ button{
   display: none;
 }
 @media only screen and (max-width: 768px) {
+  padding: 40px 10px;
+
   overflow-y: scroll;
   .desktop-sizes-btn{
     display: none;

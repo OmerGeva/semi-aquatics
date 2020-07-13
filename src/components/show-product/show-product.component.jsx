@@ -35,6 +35,8 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
   const slides = product.images.map(image =>
                (<img src={image.src} alt=""/>)
                 )
+
+
 return (
     <ShowProductContainer>
     <div className="other-text">
@@ -55,8 +57,7 @@ return (
         <h4>{product.title}</h4>
 
         <div className="product-description" dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></div>
-
-        <h4>${product.variants[0].price}</h4>
+        <p className='sizing-guide'>See sizing guide</p>
         {
           product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1OTAxNzMxMjY3MzE=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1ODg2MTcwNzI3MTU=' ?
           <p className='smaller-text'>
