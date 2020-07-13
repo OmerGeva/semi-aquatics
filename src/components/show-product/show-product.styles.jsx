@@ -132,7 +132,9 @@ button{
     p{
       display: none;
     }
-
+    .product-description{
+      display: none;
+    }
     .mobile-description{
       line-height: normal;
       text-align: left;

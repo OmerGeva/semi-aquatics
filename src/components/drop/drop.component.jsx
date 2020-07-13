@@ -19,13 +19,16 @@ const Drop = ({products, match, chooseProduct}) => {
 
       // const utcTime = new Date(Date.UTC(2020, 6, 20, 18, 0));
       const startDate = new Date();
-      const endDate = new Date("2020/07/20 23:00:00");
+      const endDate = new Date("2020/07/20 17:00:00 EST");
 
       const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
       const endDateInUTC = new Date(endDate.getUTCFullYear(), endDate.getUTCMonth(), endDate.getUTCDate(), endDate.getUTCHours(), endDate.getUTCMinutes(), endDate.getUTCSeconds());
 
 
       const difference = Date.parse(endDateInUTC) - Date.parse(startDateInUTC);
+
+
+
       let timeLeft = {};
 
       if (difference > 0) {
