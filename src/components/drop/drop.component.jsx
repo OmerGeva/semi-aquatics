@@ -14,13 +14,18 @@ import CountdownTimer from '../../components/countdown-timer/countdown-timer.com
 const Drop = ({products, match, chooseProduct}) => {
     const calculateTimeLeft = () => {
 
-      const localTimeNow = new Date();
-      const utcTimeNow = localTimeNow.getTime() + (localTimeNow.getTimezoneOffset() * 60000);
+      // const localTimeNow = new Date();
+      // const utcTimeNow = localTimeNow.getTime() + (localTimeNow.getTimezoneOffset() * 60000);
 
-      const utcTime = new Date(Date.UTC(2020, 6, 20, 18, 0));
+      // const utcTime = new Date(Date.UTC(2020, 6, 20, 18, 0));
+      const startDate = new Date();
+      const endDate = new Date("2020/07/20 23:00:00");
+
+      const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
+      const endDateInUTC = new Date(endDate.getUTCFullYear(), endDate.getUTCMonth(), endDate.getUTCDate(), endDate.getUTCHours(), endDate.getUTCMinutes(), endDate.getUTCSeconds());
 
 
-      const difference = utcTime - new Date(utcTimeNow);;
+      const difference = Date.parse(endDateInUTC) - Date.parse(startDateInUTC);
       let timeLeft = {};
 
       if (difference > 0) {

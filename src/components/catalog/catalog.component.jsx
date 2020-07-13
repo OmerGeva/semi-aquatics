@@ -44,7 +44,7 @@ return(
           currentProducts.map((product) => (
             <Link to={`/shop/drops/${product[1].title[product[1].title.length-1]}/${product[0].id}`} key={product[0].id} >
             <div onClick={() => chooseProduct(product[0])}>
-              <ShopItem  product={product[0]} key={product[0].id}  dropId={product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1OTc2ODkxMjI4OTE=' || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1OTc2OTIxMzc1NDc=' ? '10' : '1'} />
+              <ShopItem  product={product[0]} key={product[0].id}  dropId={product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ2MjA1Nzk5MzAxODc=' || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ2MjA1ODE3NjUxOTU=' ? '11' : '1'} />
             </div>
             </Link>
             )
