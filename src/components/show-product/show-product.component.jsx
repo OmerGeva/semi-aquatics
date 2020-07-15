@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import 'react-notifications/lib/notifications.css';
@@ -16,10 +16,12 @@ import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import Modal from '../modal/modal.component'
 
 const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, allProducts, inventoryQuantity, isDark}) =>
 {
 
+  const [modalOpen, setModalOpen] = useState(false);
   const params = useParams();
   product = product && product.id === params.productId ? product : allProducts.filter(individualProduct => individualProduct[0].id === params.productId)[0][0]
 
@@ -57,7 +59,8 @@ return (
         <h4>{product.title}</h4>
 
         <div className="product-description" dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></div>
-        <p className='sizing-guide'></p>
+        <p className='see-sizing-guide-desktop' onClick={() => setModalOpen(true)}>See size guide</p>
+        <Modal open={modalOpen} setOpen={setModalOpen} type={product.productType}/>
         {
           product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1OTAxNzMxMjY3MzE=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1ODg2MTcwNzI3MTU=' ?
           <p className='smaller-text'>
@@ -122,8 +125,10 @@ return (
           }
 
         </div>
+        <p className='see-sizing-guide-mobile' onClick={() => setModalOpen(true)}>See size guide</p>
+        <div className="mobile-description" dangerouslySetInnerHTML={{__html: product.descriptionHtml}}>
+        </div>
 
-        <div className="mobile-description" dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></div>
 
       </div>
       {

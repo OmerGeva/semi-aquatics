@@ -31,6 +31,7 @@ return(
           <h5 className={chosenFilter === '' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter(''); setModalOpen(false)}}>ALL</h5>
           <h5 className={chosenFilter === 'T-Shirts' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('T-Shirts'); setModalOpen(false)}}>T-Shirts</h5>
           <h5 className={chosenFilter === 'Organic Cotton Hoodies' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('Organic Cotton Hoodies'); setModalOpen(false)}}>Organic Cotton Hoodies</h5>
+          <h5 className={chosenFilter === 'Organic Cotton Sweatpants' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('Organic Cotton Sweatpants'); setModalOpen(false)}}>Organic Cotton Sweatpants</h5>
           <h5 className={chosenFilter === 'Organic Cotton Crews' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('Organic Cotton Crews'); setModalOpen(false)}}>Organic Cotton Crews</h5>
           <h5 className={chosenFilter === 'French Terry Shorts' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('French Terry Shorts'); setModalOpen(false)}}>French Terry Shorts</h5>
           <h5 className={chosenFilter === 'Organic Cotton Face Masks' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('Organic Cotton Face Masks'); setModalOpen(false)}}>Organic Cotton Face Masks</h5>

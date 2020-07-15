@@ -35,10 +35,16 @@ p{
   font-size: 12px;
   line-height: 1.7;
 }
-.sizing-guide{
+.see-sizing-guide-desktop{
+  display: block;
   text-align: left;
   padding-left: 34px;
   margin-bottom: 24px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.see-sizing-guide-mobile{
+  display: none;
 }
 .product-size{
   margin: 12px auto;
@@ -77,6 +83,7 @@ p{
   width: 200px;
 }
 .buy-product{
+  position: relative;
   width: 40%;
   padding: 42px;
   .product-description{
@@ -109,6 +116,7 @@ button{
 }
 
 
+
   .mobile-sizes-btn{
     display: block;
   }
@@ -129,8 +137,16 @@ button{
   .buy-product{
     width: 90%;
     padding:12px;
-    p{
+    .see-sizing-guide-desktop{
       display: none;
+    }
+    .see-sizing-guide-mobile{
+      text-align: left;
+      display: block;
+      padding-left: 34px;
+      margin-bottom: 24px;
+      cursor: pointer;
+      font-size: 14px;
     }
     .product-description{
       display: none;
