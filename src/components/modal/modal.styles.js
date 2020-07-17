@@ -18,7 +18,7 @@ export const ModalContainer = styled.div`
   width: 80vw;
   left: -42vw;
   height: 70vh;
-  top: -3vh;
+  top: -12vh;
   position: absolute;
   h3{
     color: black;
@@ -32,8 +32,8 @@ export const ModalContainer = styled.div`
   @media only screen and (max-width: 768px) {
     width: 90%;
     left: 0;
-    height: 30vh;
-    top: -40vh;
+    height: 25vh;
+    top: -10vh;
     img{
       width: 110%;
     }

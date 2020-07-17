@@ -9,7 +9,6 @@ import { addItemToCart } from '../../redux/cart/cart.actions'
 
 const ShopItem = ({ product, match, dropId }) => {
   const { images, title, availableForSale } = product
-  console.log(dropId)
   return (
         <div className="shop-item">
           {
