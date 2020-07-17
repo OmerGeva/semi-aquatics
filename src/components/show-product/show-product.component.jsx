@@ -38,7 +38,6 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
                (<img src={image.src} alt=""/>)
                 )
 
-
 return (
     <ShowProductContainer>
     <div className="other-text">
@@ -46,17 +45,17 @@ return (
     </div>
       <div className="product-info">
       <Carousel
-          arrowLeft={<FontAwesomeIcon icon={faAngleDoubleLeft}/>}
-          arrowLeftDisabled={<FontAwesomeIcon icon={faAngleLeft}/>}
-          arrowRight={<FontAwesomeIcon icon={faAngleDoubleRight}/>}
-          arrowRightDisabled={<FontAwesomeIcon icon={faAngleRight}/>}
-          addArrowClickHandler
-          slides={slides}
-      >
-      </Carousel>
+            arrowLeft={<FontAwesomeIcon icon={faAngleDoubleLeft}/>}
+            arrowLeftDisabled={<FontAwesomeIcon icon={faAngleLeft}/>}
+            arrowRight={<FontAwesomeIcon icon={faAngleDoubleRight}/>}
+            arrowRightDisabled={<FontAwesomeIcon icon={faAngleRight}/>}
+            addArrowClickHandler
+            slides={slides}
+        >
+        </Carousel>
+        <h4>{product.title}</h4>
       </div>
       <div className="buy-product">
-        <h4>{product.title}</h4>
 
         <div className="product-description" dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></div>
         <p className='see-sizing-guide-desktop' onClick={() => setModalOpen(true)}>See size guide</p>

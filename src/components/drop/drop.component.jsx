@@ -70,7 +70,7 @@ const Drop = ({products, match, chooseProduct}) => {
       }
       else
       {
-        return `Spring / Summer ${dropId !== 10 ? dropId - 6 : dropId - 7}`
+        return `Spring / Summer ${dropId !== 11 ? dropId - 6 : dropId - 7}`
       }
     }
 

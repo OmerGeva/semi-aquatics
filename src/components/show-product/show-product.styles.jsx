@@ -22,6 +22,11 @@ margin-top: 2%;
 .italic-font{
   font-style: italic;
 }
+.product-info{
+  h4{
+    margin-top: 4px;
+  }
+}
 .bolder-font{
   font-weight: bolder;
 }
@@ -56,7 +61,8 @@ p{
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 24px 0 24px;
+  width: 32px;
+  padding: 0 16px 0 16px;
   font-size: 15px;
   text-transform: uppercase;
   font-family: 'VCR_OSD_MONO_1';
@@ -83,6 +89,7 @@ p{
   width: 200px;
 }
 .buy-product{
+  margin-top: 7%;
   position: relative;
   width: 40%;
   padding: 42px;
@@ -112,7 +119,7 @@ button{
   }
   .product-size{
     width: 32px;
-  padding: 0 8px 0 8px;
+  padding: 0 10px 0 10px;
 }
 
 

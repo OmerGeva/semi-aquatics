@@ -18,7 +18,7 @@ const ref = useRef();
 const currentProducts = chosenFilter === "" ? products : products.filter(product => product[0].productType === chosenFilter)
 
 useOnClickOutside(ref, () => setModalOpen(false));
-
+  console.log(currentProducts)
 return(
   <CatalogContainer>
     <div className="drop-page">
@@ -30,6 +30,7 @@ return(
         <div className={isModalOpen ? 'product-filters' : 'product-filters-closed'}>
           <h5 className={chosenFilter === '' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter(''); setModalOpen(false)}}>ALL</h5>
           <h5 className={chosenFilter === 'T-Shirts' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('T-Shirts'); setModalOpen(false)}}>T-Shirts</h5>
+          <h5 className={chosenFilter === 'Boxy Tee' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('Boxy Tee'); setModalOpen(false)}}>Boxy Tee</h5>
           <h5 className={chosenFilter === 'Organic Cotton Hoodies' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('Organic Cotton Hoodies'); setModalOpen(false)}}>Organic Cotton Hoodies</h5>
           <h5 className={chosenFilter === 'Organic Cotton Sweatpants' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('Organic Cotton Sweatpants'); setModalOpen(false)}}>Organic Cotton Sweatpants</h5>
           <h5 className={chosenFilter === 'Organic Cotton Crews' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('Organic Cotton Crews'); setModalOpen(false)}}>Organic Cotton Crews</h5>

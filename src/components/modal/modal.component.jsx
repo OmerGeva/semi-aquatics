@@ -25,6 +25,8 @@ const Modal = ({open, setOpen, type}) =>
         return sweatpants
       case 'French Terry Shorts':
         return shorts
+      case 'Boxy Tee':
+        return boxyTee
       default:
         return null
     }
