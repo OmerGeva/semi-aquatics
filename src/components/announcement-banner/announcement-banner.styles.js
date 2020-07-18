@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const AnnouncementBannerContainer = styled.div`
   padding: 8px;
   position: fixed;
@@ -11,6 +12,7 @@ export const AnnouncementBannerContainer = styled.div`
   height: 2vh;
   z-index: 7;
   background-color: #54a8c9;
+  color: white;
 
 
 
