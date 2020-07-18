@@ -16,7 +16,6 @@ span {
    transform: translate3d(0, 0, 0);
  }
 }
-
 `
 
 const LightStyles = css`
@@ -36,6 +35,8 @@ span {
 
 const DarkStylesBackground = css`
  @media only screen and (max-width: 768px) {
+
+
   .nav-mobile-open{
     background-color: #2D2D2D;
     }
@@ -43,6 +44,7 @@ const DarkStylesBackground = css`
 `
 const LightStylesBackground = css`
  @media only screen and (max-width: 768px) {
+
   .nav-mobile-open{
     background-color: white;
   }
@@ -261,7 +263,6 @@ export const NavbarContainer = styled.div`
     }
   .mobile-toggle-btn-open{
     z-index: 11;
-    background-color: #2D2D2D;
     padding-left: 16px;
     display: block;
     font-size: 24px;
