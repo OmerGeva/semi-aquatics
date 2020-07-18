@@ -42,7 +42,7 @@ export const AnnouncementBannerContainer = styled.div`
   @media only screen and (max-width: 768px) {
     h5{
       animation-duration: 15s;
-      width: 170vw;
+      width: 190vw;
       font-size: 12px;
     }
     @keyframes slide{
@@ -50,7 +50,7 @@ export const AnnouncementBannerContainer = styled.div`
     transform: translateX(120vw);
     }
     to {
-    transform: translateX(-145vw);
+    transform: translateX(-170vw);
      }
     }
 }
