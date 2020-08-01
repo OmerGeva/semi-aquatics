@@ -33,7 +33,7 @@ const Modal = ({open, setOpen, type, description}) =>
   }
 return(
   open ?
-  <ModalContainer  ref={ref}>
+  <ModalContainer  ref={ref} hasDescription={description}>
     {
       type ?
           chosenSizingChart(type)  ?

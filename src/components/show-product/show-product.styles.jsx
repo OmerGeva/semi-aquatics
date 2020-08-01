@@ -1,5 +1,18 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
+const lightStyles = css`
+color: #ABABAB;
+`
+const darkStyles = css`
+color: white;
+`
+
+const isDark = ({isDark}) => (
+  isDark ?
+    darkStyles
+  :
+    lightStyles
+  )
 
 export const ShowProductContainer = styled.div`
 display: flex;
@@ -61,7 +74,7 @@ p{
   margin: 12px auto;
   display: block;
   cursor: pointer;
-  color: white;
+  ${isDark}
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;

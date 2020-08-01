@@ -1,5 +1,19 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
+const descriptionStyles = css`
+width: 87%;
+top: -50vh;
+`
+const sizeStyles = css`
+width: 90%;
+top: -30vh;
+`
+const hasDescription = (description) => (
+  description ?
+    descriptionStyles
+  :
+    sizeStyles
+)
 export const ModalContainer = styled.div`
   margin: 70px auto;
   padding: 20px;
@@ -17,7 +31,7 @@ export const ModalContainer = styled.div`
   justify-content: center;
   width: 80vw;
   left: -42vw;
-  height: 70vh;
+
   top: -12vh;
   position: absolute;
   h3{
@@ -35,10 +49,9 @@ export const ModalContainer = styled.div`
 
 
   @media only screen and (max-width: 768px) {
-    width: 90%;
+    min-height: 25vh;
     left: 1.5%;
-    height: 25vh;
-    top: -30vh;
+    ${hasDescription};
     img{
       width: 110%;
     }

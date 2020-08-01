@@ -8,6 +8,7 @@ import { ShowProductContainer } from './show-product.styles';
 import CustomButtom from '../custom-button/custom-button.component'
 import { createStructuredSelector } from 'reselect';
 import { selectCartCheckout, selectCartInventoryQuantity } from '../../redux/cart/cart.selectors';
+import { selectIsDark } from '../../redux/style/style.selectors'
 import { selectChosenProduct, selectProductSizes, selectIsProductsSizeHidden, selectVariantProduct, selectProductsForCatalogPage } from '../../redux/product/product.selectors';
 import { toggleProductSize, chooseVariantProduct } from '../../redux/product/product.actions';
 import { addItemToCartAsync } from '../../redux/cart/cart.actions';
@@ -45,7 +46,7 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
                 )
 
 return (
-    <ShowProductContainer>
+    <ShowProductContainer isDark={isDark}>
     <div className="other-text">
       Hoodie Crewneck Sweatshirt T-Shirt Sweater Jacket Outerwear Style Fashion Comfort Design Streetwear 
     </div>
@@ -196,7 +197,8 @@ const mapStateToProps = createStructuredSelector({
   variantProduct: selectVariantProduct,
   checkout: selectCartCheckout,
   inventoryQuantity: selectCartInventoryQuantity,
-  allProducts: selectProductsForCatalogPage
+  allProducts: selectProductsForCatalogPage,
+  isDark: selectIsDark
 })
 
 const mapDispatchToProps = dispatch => ({
