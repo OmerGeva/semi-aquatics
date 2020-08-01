@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import 'react-notifications/lib/notifications.css';
@@ -18,16 +18,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import Modal from '../modal/modal.component'
 
+
 const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, allProducts, inventoryQuantity, isDark}) =>
 {
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [descriptionModalOpen, setDescriptionModalOpen] = useState(false);
   const params = useParams();
   product = product && product.id === params.productId ? product : allProducts.filter(individualProduct => individualProduct[0].id === params.productId)[0][0]
 
   const createNotification = (product) => {
       return NotificationManager.success(`${product.title} was added to cart!`);
       };
+
+  useEffect(() => {
+    chooseProduct(null)
+  },[])
 
   const handleAddToCart = (variantProduct, product, checkout, inventoryQuantity) => {
     addToCart(variantProduct, product, checkout, inventoryQuantity);
@@ -44,22 +50,46 @@ return (
       Hoodie Crewneck Sweatshirt T-Shirt Sweater Jacket Outerwear Style Fashion Comfort Design Streetwear 
     </div>
       <div className="product-info">
-      <Carousel
-            arrowLeft={<FontAwesomeIcon icon={faAngleDoubleLeft}/>}
-            arrowLeftDisabled={<FontAwesomeIcon icon={faAngleLeft}/>}
-            arrowRight={<FontAwesomeIcon icon={faAngleDoubleRight}/>}
-            arrowRightDisabled={<FontAwesomeIcon icon={faAngleRight}/>}
-            addArrowClickHandler
-            slides={slides}
-        >
-        </Carousel>
-        <h4>{product.title}</h4>
+        <div className="product-image">
+          <Carousel
+                arrowLeft={<FontAwesomeIcon icon={faAngleDoubleLeft}/>}
+                arrowLeftDisabled={<FontAwesomeIcon icon={faAngleLeft}/>}
+                arrowRight={<FontAwesomeIcon icon={faAngleDoubleRight}/>}
+                arrowRightDisabled={<FontAwesomeIcon icon={faAngleRight}/>}
+                addArrowClickHandler
+                slides={slides}
+            >
+            </Carousel>
+        </div>
+        <div className="title-desktop">
+          <h4>{product.title}</h4>
+        </div>
       </div>
+      <div className="title-and-price-mobile">
+        <div className="product-title-mobile">
+          <h4>{product.title}</h4>
+        </div>
+        <div className="product-price-mobile">
+          <h4>${product.variants[0].price}</h4>
+        </div>
+      </div>
+
+      <div className="see-size-guide-and-info-mobile">
+        <div className="see-size-guide">
+          <h5 className='see-sizing-guide-mobile' onClick={() => setModalOpen(true)}>See size guide</h5>
+        </div>
+        <div className="see-more-info">
+          <h5 className='see-sizing-guide-mobile' onClick={() => setDescriptionModalOpen(true)}>Tap for details</h5>
+        </div>
+      </div>
+
       <div className="buy-product">
 
         <div className="product-description" dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></div>
         <p className='see-sizing-guide-desktop' onClick={() => setModalOpen(true)}>See size guide</p>
         <Modal open={modalOpen} setOpen={setModalOpen} type={product.productType}/>
+        <Modal open={descriptionModalOpen} setOpen={setDescriptionModalOpen} description={product.descriptionHtml}/>
+
         {
           product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1OTAxNzMxMjY3MzE=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1ODg2MTcwNzI3MTU=' ?
           <p className='smaller-text'>
@@ -110,11 +140,21 @@ return (
             :
             <div onClick={() =>  (variantProduct && variantProduct.available) ? handleAddToCart(variantProduct, product, checkout, inventoryQuantity): ''} className="addToCartButton">
               {
-                (variantProduct && variantProduct.available) || (product.availableForSale & variantProduct == null) ?
-                  <CustomButtom soldOut={false}>
-                     ADD TO CART
+                product.availableForSale ?
+                (!variantProduct) ?
+                  <CustomButtom soldOut={true}>
+                     PICK SIZE
                   </CustomButtom>
                  :
+                 variantProduct && variantProduct.available ?
+                  <CustomButtom soldOut={false}>
+                    ADD TO CART
+                  </CustomButtom>
+                  :
+                  <CustomButtom soldOut={true}>
+                     SOLD OUT
+                  </CustomButtom>
+                :
                   <CustomButtom soldOut={true}>
 
                      SOLD OUT
@@ -124,9 +164,8 @@ return (
           }
 
         </div>
-        <p className='see-sizing-guide-mobile' onClick={() => setModalOpen(true)}>See size guide</p>
-        <div className="mobile-description" dangerouslySetInnerHTML={{__html: product.descriptionHtml}}>
-        </div>
+
+
 
 
       </div>

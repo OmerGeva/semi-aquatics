@@ -27,13 +27,18 @@ export const ModalContainer = styled.div`
   img{
     width: 90%;
   }
+  .modal-description{
+    color: #2D2D2D;
+    justify-content: flex-start;
+    text-align: left;
+  }
 
 
   @media only screen and (max-width: 768px) {
     width: 90%;
-    left: 0;
+    left: 1.5%;
     height: 25vh;
-    top: -10vh;
+    top: -30vh;
     img{
       width: 110%;
     }

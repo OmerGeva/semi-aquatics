@@ -8,7 +8,7 @@ import tShirt from '../../assets/sizing-chart-tshirt.png';
 import hoodie from '../../assets/sizing-chart-hoodie.png';
 import { ModalContainer } from './modal.styles';
 
-const Modal = ({open, setOpen, type}) =>
+const Modal = ({open, setOpen, type, description}) =>
 {
   const ref = useRef();
   useOnClickOutside(ref, () => setOpen(false));
@@ -35,10 +35,15 @@ return(
   open ?
   <ModalContainer  ref={ref}>
     {
-      chosenSizingChart(type)  ?
-    <img src={chosenSizingChart(type)} alt="crewneck chart"/>
+      type ?
+          chosenSizingChart(type)  ?
+        <img src={chosenSizingChart(type)} alt="crewneck chart"/>
+          :
+        <h3>NO SIZING CHART</h3>
       :
-    <h3>NO SIZING CHART</h3>
+      <div className='modal-description' dangerouslySetInnerHTML={{__html: description}}>
+      </div>
+
     }
   </ModalContainer>
   :

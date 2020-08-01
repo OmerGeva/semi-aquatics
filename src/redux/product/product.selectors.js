@@ -41,6 +41,7 @@ export const selectProductsForCatalogPage = state => {
     return allProducts.find(product => product[0].id === productId)
   }
   const productArrayIdsWithDuplicates = []
+
   products.forEach(drop => drop.products.forEach(product => productArrayIdsWithDuplicates.push(product.id)))
   const productsArrayWithDuplicates = []
   products.forEach(drop => drop.products.forEach(product => productsArrayWithDuplicates.push([product, drop])))
