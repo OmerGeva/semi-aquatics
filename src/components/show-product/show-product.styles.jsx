@@ -14,6 +14,21 @@ const isDark = ({isDark}) => (
     lightStyles
   )
 
+const lightStylesMobile = css`
+  border: 1px solid #ABABAB;
+`
+const darkStylesMobile = css`
+  border: 1px solid white;
+
+`
+
+const isDarkMobile = ({isDark}) => (
+  isDark ?
+    darkStylesMobile
+  :
+    lightStylesMobile
+  )
+
 export const ShowProductContainer = styled.div`
 display: flex;
 height: 100vh;
@@ -133,10 +148,9 @@ button{
     display: none;
   }
   .sizes{
-    border: 1px solid white;
+    ${isDarkMobile}
     border-right: 1px solid rgba(0,0,0,0);
     border-left: 1px solid rgba(0,0,0,0);
-    border-bottom: 2px solid white;
   }
   .product-size{
     width: 32px;
@@ -149,7 +163,7 @@ button{
 .title-and-price-mobile{
   display: flex;
   .product-title-mobile{
-    border: 1px solid white;
+    ${isDarkMobile}
     border-left: 1px solid rgba(0,0,0,0);
     width: 60%;
     display: flex;
@@ -160,7 +174,7 @@ button{
     }
   }
   .product-price-mobile{
-    border: 1px solid white;
+    ${isDarkMobile}
     border-right: 1px solid rgba(0,0,0,0);
     width: 40%;
     display: flex;
@@ -174,7 +188,7 @@ button{
 .see-size-guide-and-info-mobile{
   display: flex;
   .see-size-guide{
-    border: 1px solid white;
+    ${isDarkMobile}
     border-left: 1px solid rgba(0,0,0,0);
     width: 50%;
     display: flex;
@@ -185,7 +199,7 @@ button{
     }
   }
   .see-more-info{
-    border: 1px solid white;
+    ${isDarkMobile}
     border-right: 1px solid rgba(0,0,0,0);
     width: 50%;
     display: flex;
@@ -212,8 +226,7 @@ button{
       margin-bottom: 0;
       margin-top: 20%;
       height: calc(40vh + 10vw/10);
-      border-top:2px solid white;
-      border-bottom: 1px solid white;
+      ${isDarkMobile}
     .product-image{
       margin: auto;
       width: 85%;
