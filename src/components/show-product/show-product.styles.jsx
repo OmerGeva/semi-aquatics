@@ -211,7 +211,7 @@ button{
       overflow: hidden;
       margin-bottom: 0;
       margin-top: 20%;
-      height: calc(45vh + 10vw/10);
+      height: calc(40vh + 10vw/10);
       border-top:2px solid white;
       border-bottom: 1px solid white;
     .product-image{
