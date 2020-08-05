@@ -14,6 +14,9 @@ const ShopItem = ({ product, match, dropId }) => {
           {
             availableForSale ? <span></span> : <p className="sold-out">SOLD OUT</p>
           }
+          {
+             dropId === '12' && !availableForSale ? <p className="sold-out">COMING SOON</p> : <span></span>
+          }
           <img src={ images[0].src } alt={title}/>
           <h5>{title}</h5>
         </div>
@@ -26,6 +29,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(null, mapDispatchToProps)(ShopItem);
 
 
-          // {
-          //   dropId === '11' && !availableForSale ? <p className="sold-out">COMING SOON</p> : <span></span>
-          // }
+

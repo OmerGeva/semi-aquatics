@@ -62,7 +62,7 @@ align-items: center;
   display: none;
 }
 img{
-  width: 90%;
+  width: 80%;
 }
 p{
   font-size: 12px;
@@ -156,7 +156,9 @@ button{
     width: 32px;
     padding: 0 10px 0 10px;
 }
-
+img{
+  width: 85%;
+}
 .title-desktop{
   display: none;
 }

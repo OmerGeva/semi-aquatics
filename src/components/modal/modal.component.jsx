@@ -5,6 +5,7 @@ import boxyTee from '../../assets/sizing-boxy.png';
 import sweatpants from '../../assets/sweatpants-chart.png';
 import shorts from '../../assets/sizing-chart-shorts.png';
 import tShirt from '../../assets/sizing-chart-tshirt.png';
+import longSleeve from '../../assets/sizing-chart-long-sleeve.png';
 import hoodie from '../../assets/sizing-chart-hoodie.png';
 import { ModalContainer } from './modal.styles';
 
@@ -27,6 +28,8 @@ const Modal = ({open, setOpen, type, description}) =>
         return shorts
       case 'Boxy Tee':
         return boxyTee
+      case 'Long Sleeve Tee':
+        return longSleeve
       default:
         return null
     }

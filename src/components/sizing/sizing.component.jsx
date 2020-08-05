@@ -6,6 +6,7 @@ import sweatpants from '../../assets/sweatpants-chart.png';
 import shorts from '../../assets/sizing-chart-shorts.png';
 import tShirt from '../../assets/sizing-chart-tshirt.png';
 import hoodie from '../../assets/sizing-chart-hoodie.png';
+import longSleeve from '../../assets/sizing-chart-long-sleeve.png';
 
 import { SizingContainer } from './sizing.styles'
 
@@ -22,6 +23,8 @@ export const Sizing = () => (
     <img src={tShirt}  alt="tshirt sizing chart"/>
     <h5>BOXY TEE</h5>
     <img src={boxyTee} alt="boxy tshirt sizing chart"/>
+    <h5>LONG SLEEVE</h5>
+    <img src={longSleeve} alt="long sleeve sizing chart"/>
     <h5>SHORTS</h5>
     <img src={shorts} alt="shorts tshirt sizing chart"/>
   </SizingContainer>

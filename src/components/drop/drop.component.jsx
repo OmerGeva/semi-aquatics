@@ -19,7 +19,7 @@ const Drop = ({products, match, chooseProduct}) => {
 
       // const utcTime = new Date(Date.UTC(2020, 6, 20, 18, 0));
       const startDate = new Date();
-      const endDate = new Date("2020/07/20 17:00:00 EST");
+      const endDate = new Date("2020/08/10 16:00:00 EST");
 
       const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
       const endDateInUTC = new Date(endDate.getUTCFullYear(), endDate.getUTCMonth(), endDate.getUTCDate(), endDate.getUTCHours(), endDate.getUTCMinutes(), endDate.getUTCSeconds());
@@ -70,7 +70,7 @@ const Drop = ({products, match, chooseProduct}) => {
       }
       else
       {
-        return `Spring / Summer ${dropId !== 11 ? dropId - 6 : dropId - 7}`
+        return `Spring / Summer ${dropId < 9  ? dropId - 6 : dropId - 7}`
       }
     }
 
@@ -89,7 +89,7 @@ const Drop = ({products, match, chooseProduct}) => {
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
           {
-           match.params.dropId === '11' && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
+           match.params.dropId === '12' && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
             <CountdownTimer timeLeft={timeLeft}/>
           :
             ""
