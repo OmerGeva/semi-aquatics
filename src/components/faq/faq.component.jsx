@@ -20,7 +20,7 @@ const Faq = () => (
         What’s the Return Policy?
       </div>
       <div className="faq-answer">
-        While we are sure you will be happy with our garments, if for some reason you wish to return a produc<a href="https://www.buycoffeeworldwide.com/" className='bcw'target="_blank" >t</a>, we are happy to exchange the item or supply store credit within 30 days after purchase. The order must be sent back in the condition it was received, completely unworn with the original tags.
+        While we are sure you will be happy with our garments, if for some reason you wish to return a product, we are happy to exchange the item or supply store credit within 30 days after purchase. The order must be sent back in the condition it was received, completely unworn with the original tags.
       </div>
       <div className="faq-question">
         Are The Garments Unisex?
