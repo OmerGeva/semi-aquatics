@@ -12,56 +12,56 @@ import CountdownTimer from '../../components/countdown-timer/countdown-timer.com
 
 
 const Drop = ({products, match, chooseProduct}) => {
-    const calculateTimeLeft = () => {
+    // const calculateTimeLeft = () => {
 
-      // const localTimeNow = new Date();
-      // const utcTimeNow = localTimeNow.getTime() + (localTimeNow.getTimezoneOffset() * 60000);
+    //   // const localTimeNow = new Date();
+    //   // const utcTimeNow = localTimeNow.getTime() + (localTimeNow.getTimezoneOffset() * 60000);
 
-      // const utcTime = new Date(Date.UTC(2020, 6, 20, 18, 0));
-      const startDate = new Date();
-      const endDate = new Date("2020/08/10 17:00:00 EST");
+    //   // const utcTime = new Date(Date.UTC(2020, 6, 20, 18, 0));
+    //   const startDate = new Date();
+    //   const endDate = new Date("2020/08/10 17:00:00 EST");
 
-      const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
-      const endDateInUTC = new Date(endDate.getUTCFullYear(), endDate.getUTCMonth(), endDate.getUTCDate(), endDate.getUTCHours(), endDate.getUTCMinutes(), endDate.getUTCSeconds());
-
-
-      const difference = Date.parse(endDateInUTC) - Date.parse(startDateInUTC);
+    //   const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
+    //   const endDateInUTC = new Date(endDate.getUTCFullYear(), endDate.getUTCMonth(), endDate.getUTCDate(), endDate.getUTCHours(), endDate.getUTCMinutes(), endDate.getUTCSeconds());
 
 
+    //   const difference = Date.parse(endDateInUTC) - Date.parse(startDateInUTC);
 
-      let timeLeft = {};
 
-      if (difference > 0) {
-        timeLeft = {
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
-        };
-      }
-      return timeLeft;
-    };
 
-    const timerComponents = [];
+    //   let timeLeft = {};
 
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+    //   if (difference > 0) {
+    //     timeLeft = {
+    //       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    //       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    //       minutes: Math.floor((difference / 1000 / 60) % 60),
+    //       seconds: Math.floor((difference / 1000) % 60)
+    //     };
+    //   }
+    //   return timeLeft;
+    // };
+
+    // const timerComponents = [];
+
+    // const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     useEffect(() => {
-      setTimeout(() => {
-        setTimeLeft(calculateTimeLeft());
-      }, 1000);
+      // setTimeout(() => {
+      //   setTimeLeft(calculateTimeLeft());
+      // }, 1000);
     });
 
-    Object.keys(timeLeft).forEach(interval => {
-      if (!timeLeft[interval]) {
-        return;
-      }
-      timerComponents.push(
-        <span>
-          {timeLeft[interval]} {interval}{" "}
-        </span>
-      );
-    });
+    // Object.keys(timeLeft).forEach(interval => {
+    //   if (!timeLeft[interval]) {
+    //     return;
+    //   }
+    //   timerComponents.push(
+    //     <span>
+    //       {timeLeft[interval]} {interval}{" "}
+    //     </span>
+    //   );
+    // });
 
     const currentDropHeader = (dropId) => {
       if(dropId <= 6)
@@ -88,12 +88,7 @@ const Drop = ({products, match, chooseProduct}) => {
           <h5>{match.params.dropId === '7' ?
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
-          {
-           match.params.dropId === '12' && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
-            <CountdownTimer timeLeft={timeLeft}/>
-          :
-            ""
-          }
+
 
         </div>
 
