@@ -88,6 +88,9 @@ const Drop = ({products, match, chooseProduct}) => {
           <h5>{match.params.dropId === '7' ?
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
+          <h5>{match.params.dropId === '12' ?
+            "Collection will be available on 8/10/20 at 6:00 PM EST"
+          : "" }</h5>
 
 
         </div>
