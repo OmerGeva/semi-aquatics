@@ -18,7 +18,6 @@ const ref = useRef();
 const currentProducts = chosenFilter === "" ? products : products.filter(product => product[0].productType === chosenFilter)
 
 useOnClickOutside(ref, () => setModalOpen(false));
-  console.log(currentProducts)
 return(
   <CatalogContainer>
     <div className="drop-page">
