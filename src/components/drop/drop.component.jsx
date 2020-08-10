@@ -75,11 +75,13 @@ const Drop = ({products, match, chooseProduct}) => {
     }
 
     const currentDrop = []
-    products.forEach((drop) => {
-      if (drop.title.includes(match.params.dropId)) {
-        currentDrop.push(drop)
-      }
-    })
+    if(products){
+      products.forEach((drop) => {
+        if (drop.title.includes(match.params.dropId)) {
+          currentDrop.push(drop)
+        }
+      })
+    }
     return (
       <div className="drop-page">
         <div className="drop-title">

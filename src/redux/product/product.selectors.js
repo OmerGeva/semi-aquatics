@@ -42,9 +42,13 @@ export const selectProductsForCatalogPage = state => {
   }
   const productArrayIdsWithDuplicates = []
 
-  products.forEach(drop => drop.products.forEach(product => productArrayIdsWithDuplicates.push(product.id)))
+  if(products){
+    products.forEach(drop => drop.products.forEach(product => productArrayIdsWithDuplicates.push(product.id)))
+  }
   const productsArrayWithDuplicates = []
-  products.forEach(drop => drop.products.forEach(product => productsArrayWithDuplicates.push([product, drop])))
+  if(products){
+    products.forEach(drop => drop.products.forEach(product => productsArrayWithDuplicates.push([product, drop])))
+  }
 
   const productArrayIdsWithoutDuplicates = productArrayIdsWithDuplicates.filter(unique)
 
