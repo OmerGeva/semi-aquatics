@@ -44,10 +44,9 @@ export const updateCheckoutAsync = (checkout) => {
       domain: 'semi-aquatics.myshopify.com',
       storefrontAccessToken: process.env.REACT_APP_STORE_FRONT_ACCESS_TOKEN
     });
-
     if (checkout){
       client.checkout.fetch(checkout.id).then((checkout) => {
-        if(checkout.completedAt != null || checkout.createdAt.split('T')[0] <= new Date('2020-06-21'))
+        if(checkout.completedAt != null || checkout.createdAt.split('T')[0] <= new Date('2020-08-11'))
         {
          dispatch(resetCart([]));
          client.checkout.create().then((checkout) => {

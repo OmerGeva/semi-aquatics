@@ -10,7 +10,8 @@ import styleReducer from './style/style.reducer'
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['product', 'cart', 'style']
+  whitelist: ['product', 'cart', 'style'],
+  stateReconciler: hardSet
 }
 
 const rootReducer = combineReducers({
