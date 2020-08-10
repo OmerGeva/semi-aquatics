@@ -90,7 +90,12 @@ const Drop = ({products, match, chooseProduct}) => {
           <h5>{match.params.dropId === '7' ?
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           : "" }</h5>
-
+          {
+           match.params.dropId === '12' && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
+            <CountdownTimer timeLeft={timeLeft}/>
+          :
+            ""
+          }
 
         </div>
 
