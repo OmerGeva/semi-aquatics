@@ -1,7 +1,8 @@
 import styleActionTypes from './style.types'
 
 const INITIAL_STATE = {
-  isDark: true
+  isDark: true,
+  modalOpen: true
 }
 
 const styleReducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +11,11 @@ const styleReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isDark: !state.isDark
+      }
+    case styleActionTypes.ClOSE_MODAL:
+      return {
+        ...state,
+        modalOpen: false
       }
 
     default:

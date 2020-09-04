@@ -1,176 +1,110 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCartItemCount } from '../../redux/cart/cart.selectors';
 import { NavbarContainer, LinkContainer } from './navbar.styles';
 
+import NavbarDrop from '../navbar-drop/navbar-drop.component'
 import { selectIsDark } from '../../redux/style/style.selectors'
 import { selectProducts } from '../../redux/product/product.selectors'
-import onClickOutside from "react-onclickoutside"
+import useOnClickOutside from '../../effects/use-on-click-outside.effect'
+
 import { toggleDarkTheme } from '../../redux/style/style.actions';
 
-class  Navbar extends React.Component{
-  state = {
-    navbarOpen: false
-  }
-  handleClickOutside(){
-    this.setState({
-      navbarOpen: false
-    })
-  }
-  toggleList(){
-    this.setState(() => ({
-      navbarOpen: !this.state.navbarOpen
-    }))
-  }
+const Navbar = ({numberOfCartItems, toggleDarkTheme, isDark}) =>
+{
+
+  const [navbarOpen, setNavbarOpen] = useState(false)
+  const ref = useRef();
+
+  useOnClickOutside(ref, () => setNavbarOpen(false));
 
 
-  render(){
-    const winterDrops = [1,2,3,4,5,6].reverse()
-    const summerDrops = [7,8,10,11,12].reverse()
-    const navHeight  = window.innerHeight
-    const {numberOfCartItems, toggleDarkTheme, isDark} = this.props
-    return(
-      <NavbarContainer isDark={isDark} navHeight = {navHeight}>
-        <div className="nav-desktop">
-          <LinkContainer to="/" className="home-link">
-          HOME
-          </LinkContainer>
-          <LinkContainer to="/checkout" className="cart-link">
-          CART ({numberOfCartItems})
-          </LinkContainer>
-          <LinkContainer to="/shop/catalog">
-          CATALOG
-          </LinkContainer>
-          <div className="summer-season">
-            SPRING/SUMMER 2020
-            <div className="summer-drops">
-              {
-                summerDrops.map(drop =>
-                  drop < 9 ?
-                    <LinkContainer key={drop.id} to={`/shop/drops/${drop}`}>
-                    DROP {drop - 6}
-                    </LinkContainer>
-                  :
-                    drop === summerDrops[0] ?
-                    <div>
-                      <LinkContainer key={drop.id} to={`/shop/drops/${drop}`}>
-                      DROP {drop - 7}
-                      </LinkContainer>
-                    </div>
-                    :
-                      <LinkContainer key={drop.id} to={`/shop/drops/${drop}`}>
-                      DROP {drop - 7}
-                      </LinkContainer>
-                  )
-              }
-            </div>
-          </div>
-          <div className="winter-season">
-            FALL/WINTER <br />2019/20
-            <div className="winter-drops">
-            {
-              winterDrops.map(drop =>
-                <LinkContainer key={drop.id} to={`/shop/drops/${drop}`}>
-                DROP {drop}
-                </LinkContainer>
-                )
-            }
-            </div>
-          </div>
-          <div className="pages-space"></div>
-          <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
-          <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
-            <span></span>
-          </label>
-          <LinkContainer to="/info/sizing">
-          SIZING
-          </LinkContainer>
-          <LinkContainer to="/info/sustainability">
-          SUSTAINABILITY
-          </LinkContainer>
-          <LinkContainer to="/info/faq">
-          FAQ
-        </LinkContainer>
-        </div>
+  const winterDrops19 = [1,2,3,4,5,6].reverse()
+  const summerDrops20 = [7,8,10,11,12].reverse()
 
-      {
-        //////////////// MOBILE ////////////////
-      }
-      <div className={this.state.navbarOpen ? "mobile-toggle-btn-open" : "mobile-toggle-btn-closed"} onClick={() => this.toggleList()}>
-        <i className="fas fa-bars"></i>
-      </div>
-      <div className={this.state.navbarOpen ? "nav-mobile-open" : "nav-mobile-closed"}>
-        <LinkContainer to="/" className="home-link"  onClick={() => this.toggleList()}>
+  const navHeight  = window.innerHeight
+
+  return(
+    <NavbarContainer isDark={isDark} navHeight = {navHeight} ref={ref}>
+      <div className="nav-desktop">
+        <LinkContainer to="/" className="home-link">
         HOME
         </LinkContainer>
-        <LinkContainer to="/checkout" className="cart-link" onClick={() => this.toggleList()}>
+        <LinkContainer to="/checkout" className="cart-link">
         CART ({numberOfCartItems})
         </LinkContainer>
-        <LinkContainer to="/shop/catalog"  onClick={() => this.toggleList()}>
+        <LinkContainer to="/shop/catalog">
         CATALOG
         </LinkContainer>
-        <div className="summer-season">
-          <div className="mobile-nav-titles">SPRING/SUMMER 2020</div>
-          <div className="summer-drops">
-            {
-              summerDrops.map(drop =>
-                drop < 9 ?
-                  <LinkContainer key={drop.id} to={`/shop/drops/${drop}`}  onClick={() => this.toggleList()}>
-                  DROP {drop - 6}
-                  </LinkContainer>
-                :
-                  drop === summerDrops[0] ?
-                  <div>
-                    <LinkContainer key={drop.id} to={`/shop/drops/${drop}`}  onClick={() => this.toggleList()}>
-                    DROP {drop - 7}
-                    </LinkContainer>
-                  </div>
-                  :
-                    <LinkContainer key={drop.id} to={`/shop/drops/${drop}`}  onClick={() => this.toggleList()}>
-                    DROP {drop - 7}
-                    </LinkContainer>
-                )
-            }
-          </div>
-        </div>
-        <div className="winter-season">
-          <div className="mobile-nav-titles">FALL/WINTER 2019/20</div>
-          <div className="winter-drops">
-            {
-              winterDrops.map(drop =>
-                <LinkContainer to={`/shop/drops/${drop}`} key={drop.id}  onClick={() => this.toggleList()}>
-                DROP {drop}
-                </LinkContainer>
-                )
-            }
-          </div>
-        </div>
+
+        <NavbarDrop  title='SPRING/SUMMER 2020' drops={summerDrops20}/>
+
+        <NavbarDrop  title='FALL/WINTER 2019/20' drops={winterDrops19}/>
+
         <div className="pages-space"></div>
         <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
         <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
           <span></span>
         </label>
-        <LinkContainer to="/info/sizing" className="non-drop-page" onClick={() => this.toggleList()}>
+        <LinkContainer to="/info/sizing">
         SIZING
         </LinkContainer>
-        <LinkContainer to="/info/sustainability" className="non-drop-page" onClick={() => this.toggleList()}>
+        <LinkContainer to="/info/sustainability">
         SUSTAINABILITY
         </LinkContainer>
-        <LinkContainer to="/info/faq" className="non-drop-page" onClick={() => this.toggleList()}>
+        <LinkContainer to="/info/faq">
         FAQ
-        </LinkContainer>
-        <a href="https://www.instagram.com/semiaquatics">
-          <i className="fab fa-instagram footer-item" ></i>
-        </a>
-        <h6 className="footer-item copyright">© 2020 Semi Aquatics</h6>
+      </LinkContainer>
       </div>
 
+    {
+      //////////////// MOBILE ////////////////
+    }
+    <div className={navbarOpen ? "mobile-toggle-btn-open" : "mobile-toggle-btn-closed"} onClick={() => setNavbarOpen(!navbarOpen)}>
+      <i className="fas fa-bars"></i>
+    </div>
+    <div className={navbarOpen ? "nav-mobile-open" : "nav-mobile-closed"}>
+      <LinkContainer to="/" className="home-link"  onClick={() => setNavbarOpen(!navbarOpen)}>
+      HOME
+      </LinkContainer>
+      <LinkContainer to="/checkout" className="cart-link" onClick={() => setNavbarOpen(!navbarOpen)}>
+      CART ({numberOfCartItems})
+      </LinkContainer>
+      <LinkContainer to="/shop/catalog"  onClick={() => setNavbarOpen(!navbarOpen)}>
+      CATALOG
+      </LinkContainer>
 
-      </NavbarContainer>
-      )
+
+
+      <NavbarDrop  title='SPRING/SUMMER 2020' drops={summerDrops20} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
+
+      <NavbarDrop  title='FALL/WINTER 2019/20' drops={winterDrops19} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
+
+      <div className="pages-space"></div>
+      <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
+      <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
+        <span></span>
+      </label>
+      <LinkContainer to="/info/sizing" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
+      SIZING
+      </LinkContainer>
+      <LinkContainer to="/info/sustainability" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
+      SUSTAINABILITY
+      </LinkContainer>
+      <LinkContainer to="/info/faq" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
+      FAQ
+      </LinkContainer>
+      <a href="https://www.instagram.com/semiaquatics">
+        <i className="fab fa-instagram footer-item" ></i>
+      </a>
+      <h6 className="footer-item copyright">© 2020 Semi Aquatics</h6>
+    </div>
+
+
+    </NavbarContainer>
+    )
   }
-}
 
 const mapStateToProps = createStructuredSelector({
   numberOfCartItems: selectCartItemCount,
@@ -180,4 +114,4 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = dispatch => ({
   toggleDarkTheme: () => dispatch(toggleDarkTheme())
 })
-export default connect(mapStateToProps, mapDispatchToProps)(onClickOutside(Navbar));
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

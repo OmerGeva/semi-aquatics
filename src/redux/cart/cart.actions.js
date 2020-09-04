@@ -46,7 +46,7 @@ export const updateCheckoutAsync = (checkout) => {
     });
     if (checkout){
       client.checkout.fetch(checkout.id).then((checkout) => {
-        if(checkout.completedAt != null || Date.parse(checkout.createdAt.split('T')[0])  < new Date('2020-08-09'))
+        if(checkout.completedAt != null && new Date(checkout.createdAt) < new Date("2020/09/1 17:00:00 EST"))
         {
          dispatch(resetCart([]));
          client.checkout.create().then((checkout) => {

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
+import EmailForm from '../email-form/email-form.component'
+
 import crewneck from '../../assets/sizing-chart-crewneck.png'
 import boxyTee from '../../assets/sizing-boxy.png';
 import sweatpants from '../../assets/sweatpants-chart.png';
@@ -9,10 +11,10 @@ import longSleeve from '../../assets/sizing-chart-long-sleeve.png';
 import hoodie from '../../assets/sizing-chart-hoodie.png';
 import { ModalContainer } from './modal.styles';
 
-const Modal = ({open, setOpen, type, description}) =>
+const Modal = ({open, setOpen, type, description, closeEmailModal}) =>
 {
   const ref = useRef();
-  useOnClickOutside(ref, () => setOpen(false));
+  useOnClickOutside(ref, () => setOpen ? setOpen(false) : '');
 
   const chosenSizingChart = (type) => {
     switch(type){
@@ -35,9 +37,17 @@ const Modal = ({open, setOpen, type, description}) =>
     }
   }
 return(
-  open ?
-  <ModalContainer  ref={ref} hasDescription={description}>
+  open || (!open && type == 'email form') ?
+  <ModalContainer  ref={ref} hasDescription={description} type={type}>
     {
+      type == 'email form' ?
+        <div className='email-modal'>
+          <h2>Be the first to know about our drops.</h2>
+          <span className='flex-grower'></span>
+          <EmailForm inModal />
+          <p className="no-thanks" onClick={closeEmailModal}>No thanks.</p>
+        </div>
+      :
       type ?
           chosenSizingChart(type)  ?
         <img src={chosenSizingChart(type)} alt="crewneck chart"/>

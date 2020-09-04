@@ -3,17 +3,53 @@ import styled, { css } from 'styled-components';
 const descriptionStyles = css`
 width: 87%;
 top: -50vh;
+top: -12vh;
+width: 80vw;
 `
 const sizeStyles = css`
 width: 90%;
 top: -30vh;
+left: 5vw;
+width: 80vw;
 `
-const hasDescription = (description) => (
+
+
+const emailStyles = css`
+top: -30vh;
+height: 40vh;
+left: 30vw;
+top: 30vh;
+color: black;
+width: 40vw;
+border-radius: 2px;
+
+@media only screen and (max-width: 768px) {
+  width: 80vw;
+  left: 5vw;
+  .email-modal{
+    h2{
+      font-size: 32px;
+    }
+    .no-thanks{
+      padding: 0;
+    }
+  }
+}
+
+
+`
+
+
+const hasDescription = ({description, type}) => (
   description ?
     descriptionStyles
   :
-    sizeStyles
+    type === 'email form' ?
+      emailStyles
+    :
+      sizeStyles
 )
+
 export const ModalContainer = styled.div`
   margin: 70px auto;
   padding: 20px;
@@ -21,7 +57,6 @@ export const ModalContainer = styled.div`
   background: #fff;
   border-radius: 5px;
   position: relative;
-  z-index:3;
   max-height:85vh;
   box-shadow: 0 16px 128px rgba(2,2,2,0.2);
   overflow-y: scroll;
@@ -29,11 +64,10 @@ export const ModalContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80vw;
-  left: -42vw;
 
-  top: -12vh;
   position: absolute;
+  ${hasDescription}
+
   h3{
     color: black;
   }
@@ -45,6 +79,25 @@ export const ModalContainer = styled.div`
     color: #2D2D2D;
     justify-content: flex-start;
     text-align: left;
+  }
+  .email-modal{
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: space-around;
+    h2{
+      font-size: 52px;
+    }
+    .flex-grower{
+      flex-grow: 1;
+    }
+    .no-thanks{
+      cursor: pointer;
+
+      padding: 5% 0;
+      text-decoration: underline;
+    }
   }
 
 
