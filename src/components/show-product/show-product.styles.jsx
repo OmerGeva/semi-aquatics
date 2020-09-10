@@ -68,6 +68,9 @@ p{
   font-size: 12px;
   line-height: 1.7;
 }
+.hide-on-mobile{
+  display: block;
+}
 .see-sizing-guide-desktop{
   display: block;
   text-align: left;
@@ -142,6 +145,7 @@ button{
   display: none;
 }
 @media only screen and (max-width: 768px) {
+
   padding: 0px;
   overflow-y: hidden;
   .desktop-sizes-btn{
@@ -237,6 +241,9 @@ img{
     width: 100%
   }
   .buy-product{
+      .hide-on-mobile{
+      display: none;
+    }
     margin: 0px;
     width: 100%;
     padding:0px;

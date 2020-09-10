@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 import { ShowProductContainer } from './show-product.styles';
 import CustomButtom from '../custom-button/custom-button.component'
-import { createStructuredSelector } from 'reselect';
-import { selectCartCheckout, selectCartInventoryQuantity } from '../../redux/cart/cart.selectors';
-import { selectIsDark } from '../../redux/style/style.selectors'
-import { selectChosenProduct, selectProductSizes, selectIsProductsSizeHidden, selectVariantProduct, selectProductsForCatalogPage } from '../../redux/product/product.selectors';
-import { toggleProductSize, chooseVariantProduct } from '../../redux/product/product.actions';
+import { chooseVariantProduct } from '../../redux/product/product.actions';
 import { addItemToCartAsync } from '../../redux/cart/cart.actions';
 import { productText } from './text'
 import Carousel from '@brainhubeu/react-carousel';
@@ -18,14 +15,25 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import Modal from '../modal/modal.component'
+import { useSelectProductForCatalogPage } from '../../effects/use-select-products-for-catalog-page';
 
 
-const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, variantProduct, checkout, allProducts, inventoryQuantity, isDark}) =>
+
+const ShowProduct = () =>
 {
+  const dispatch = useDispatch();
+  const variantProduct = useSelector(state => state.product.chosenVariantProduct)
+  const isDark = useSelector(state => state.style.isDark)
+  const checkout = useSelector(state => state.cart.checkout)
+  const inventoryQuantity = useSelector(state => state.cart.inventoryQuantity)
+  let product = useSelector(state => state.product.chosenProduct)
+  const allProducts = useSelectProductForCatalogPage();
 
   const [modalOpen, setModalOpen] = useState(false);
   const [descriptionModalOpen, setDescriptionModalOpen] = useState(false);
   const params = useParams();
+
+
   product = product && product.id === params.productId ? product : allProducts.filter(individualProduct => individualProduct[0].id === params.productId)[0][0]
 
   const createNotification = (product) => {
@@ -33,11 +41,11 @@ const ShowProduct = ({ product, addToCart, hidden, toggleHidden, chooseProduct, 
       };
 
   useEffect(() => {
-    chooseProduct(null)
+    chooseVariantProduct(null)
   },[])
 
   const handleAddToCart = (variantProduct, product, checkout, inventoryQuantity) => {
-    addToCart(variantProduct, product, checkout, inventoryQuantity);
+    dispatch(addItemToCartAsync(variantProduct, product, checkout, inventoryQuantity));
     createNotification(product);
   }
 
@@ -107,15 +115,16 @@ return (
           :
           ""
         }
+        <h4 className='hide-on-mobile'>${product.variants[0].price}</h4>
         {
           product.variants.length !== 1 ?
           <div className="sizes">
             {
             product.variants.map(variant =>
                 variant === variantProduct ?
-                <span onClick={() => chooseProduct(variant)} className="product-size chosen" key={variant.id}>{variant.title}</span>
+                <span onClick={() => dispatch(chooseVariantProduct(variant))} className="product-size chosen" key={variant.id}>{variant.title}</span>
                   :
-                <span onClick={() => chooseProduct(variant)} className="product-size" key={variant.id}>{variant.title}</span>
+                <span onClick={() => dispatch(chooseVariantProduct(variant))} className="product-size" key={variant.id}>{variant.title}</span>
               )
             }
           </div>
@@ -125,7 +134,7 @@ return (
         <div className="add-to-cart">
           {
             product.variants.length === 1 ?
-            <div onClick={() => addToCart(product.variants[0], product, checkout, inventoryQuantity)} className="addToCartButton">
+            <div onClick={() => dispatch(addItemToCartAsync(product.variants[0], product, checkout, inventoryQuantity))} className="addToCartButton">
 
               {
                 (variantProduct && variantProduct.available) || (product.availableForSale & variantProduct == null) ?
@@ -190,21 +199,4 @@ return (
   )
 }
 
-const mapStateToProps = createStructuredSelector({
-  product: selectChosenProduct,
-  sizes: selectProductSizes,
-  hidden: selectIsProductsSizeHidden,
-  variantProduct: selectVariantProduct,
-  checkout: selectCartCheckout,
-  inventoryQuantity: selectCartInventoryQuantity,
-  allProducts: selectProductsForCatalogPage,
-  isDark: selectIsDark
-})
-
-const mapDispatchToProps = dispatch => ({
-  addToCart: (variantProduct, product, checkout, inventoryQuantity) =>  dispatch(addItemToCartAsync(variantProduct, product, checkout, inventoryQuantity)),
-  toggleHidden: () => dispatch(toggleProductSize()),
-  chooseProduct: (variant) => dispatch(chooseVariantProduct(variant))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShowProduct);
+export default ShowProduct;

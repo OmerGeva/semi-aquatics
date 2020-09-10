@@ -1,19 +1,19 @@
 import React, { useState, useRef } from 'react';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { selectCartItemCount } from '../../redux/cart/cart.selectors';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { NavbarContainer, LinkContainer } from './navbar.styles';
 
 import NavbarDrop from '../navbar-drop/navbar-drop.component'
-import { selectIsDark } from '../../redux/style/style.selectors'
-import { selectProducts } from '../../redux/product/product.selectors'
 import useOnClickOutside from '../../effects/use-on-click-outside.effect'
 
 import { toggleDarkTheme } from '../../redux/style/style.actions';
 
-const Navbar = ({numberOfCartItems, toggleDarkTheme, isDark}) =>
+const Navbar = () =>
 {
+  const dispatch = useDispatch();
 
+  const numberOfCartItems = useSelector(state => state.cart.cartItems.reduce((accumalatedQuantity, cartItem) => accumalatedQuantity + cartItem.quantity, 0))
+  const isDark = useSelector(state => state.style.isDark)
   const [navbarOpen, setNavbarOpen] = useState(false)
   const ref = useRef();
 
@@ -44,7 +44,7 @@ const Navbar = ({numberOfCartItems, toggleDarkTheme, isDark}) =>
 
         <div className="pages-space"></div>
         <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
-        <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
+        <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => dispatch(toggleDarkTheme())}>
           <span></span>
         </label>
         <LinkContainer to="/info/sizing">
@@ -83,7 +83,7 @@ const Navbar = ({numberOfCartItems, toggleDarkTheme, isDark}) =>
 
       <div className="pages-space"></div>
       <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
-      <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => toggleDarkTheme()}>
+      <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => dispatch(toggleDarkTheme())}>
         <span></span>
       </label>
       <LinkContainer to="/info/sizing" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
@@ -106,12 +106,6 @@ const Navbar = ({numberOfCartItems, toggleDarkTheme, isDark}) =>
     )
   }
 
-const mapStateToProps = createStructuredSelector({
-  numberOfCartItems: selectCartItemCount,
-  isDark: selectIsDark,
-  products: selectProducts
-})
-const mapDispatchToProps = dispatch => ({
-  toggleDarkTheme: () => dispatch(toggleDarkTheme())
-})
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+
+
+export default Navbar;

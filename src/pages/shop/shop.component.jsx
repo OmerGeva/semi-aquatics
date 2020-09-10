@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {useEffect} from 'react'
-import { createStructuredSelector } from 'reselect';
 
 import { ShopPageContainer } from './shop.styles'
 import Drop from '../../components/drop/drop.component'
@@ -11,9 +10,6 @@ import Catalog from '../../components/catalog/catalog.component'
 import ShowProduct from '../../components/show-product/show-product.component'
 
 import WithSpinner from '../../components/with-spinner/with-spinner.component'
-
-import { selectIsProductsFetching, selectProducts } from '../../redux/product/product.selectors'
-import { selectCheckout } from '../../redux/cart/cart.selectors'
 
 import { fetchProductsStartAsync } from '../../redux/product/product.actions'
 import { updateCheckoutAsync } from '../../redux/cart/cart.actions'
@@ -24,12 +20,17 @@ const DropWithSpinner = WithSpinner(Drop);
 const CatalogWithSpinner = WithSpinner(Catalog);
 const ShowProductWithSpinner = WithSpinner(ShowProduct);
 
-const ShopPage = ({ fetchProductsStartAsync, updateCart, selectCheckout, match, isProductsFetching, products }) => {
+const ShopPage = ({ match }) => {
+
+  const dispatch = useDispatch();
+  const isProductsFetching = useSelector(state => state.product.isFetching)
+  const products = useSelector(state => state.product)
+  const checkout = useSelector(state => state.cart.checkout)
 
   useEffect(() => {
-    updateCart(selectCheckout);
+    dispatch(updateCheckoutAsync(checkout));
 
-    fetchProductsStartAsync();
+    dispatch(fetchProductsStartAsync());
   }, [])
 
     return(
@@ -41,16 +42,5 @@ const ShopPage = ({ fetchProductsStartAsync, updateCart, selectCheckout, match, 
       )
   }
 
-const mapStateToProps = createStructuredSelector({
-  isProductsFetching: selectIsProductsFetching,
-  products: selectProducts,
-  checkout: selectCheckout
-})
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchProductsStartAsync: () => dispatch(fetchProductsStartAsync()),
-  updateCart: (checkout) => dispatch(updateCheckoutAsync(checkout))
-})
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
+export default ShopPage;

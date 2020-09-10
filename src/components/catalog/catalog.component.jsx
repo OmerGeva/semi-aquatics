@@ -1,17 +1,19 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
+
 import { CatalogContainer } from './catalog.styles';
-import { createStructuredSelector } from 'reselect';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
 import { Link } from 'react-router-dom';
 
-import { selectProductsForCatalogPage } from '../../redux/product/product.selectors'
 import ShopItem from '../shop-item/shop-item.component'
 import { chooseProduct } from '../../redux/product/product.actions'
+import { useSelectProductForCatalogPage } from '../../effects/use-select-products-for-catalog-page';
 
+const Catalog = () => {
 
-const Catalog = ({products, chooseProduct}) => {
-
+const products = useSelectProductForCatalogPage();
+const dispatch = useDispatch();
 const [chosenFilter, setChosenFilter] = useState("")
 const [isModalOpen, setModalOpen] = useState(false);
 const ref = useRef();
@@ -45,7 +47,7 @@ return(
         {
           currentProducts.map((product) => (
             <Link to={`/shop/drops/${product[1].title[product[1].title.length-1]}/${product[0].id}`} key={product[0].id} >
-            <div onClick={() => chooseProduct(product[0])}>
+            <div onClick={() => dispatch(chooseProduct(product[0]))}>
               <ShopItem  product={product[0]} key={product[0].id}  dropId={product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ2MjA1Nzk5MzAxODc=' || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ2MjA1ODE3NjUxOTU=' ? '11' : '1'} />
             </div>
             </Link>
@@ -58,14 +60,8 @@ return(
   )
 }
 
-const mapStateToProps = createStructuredSelector({
-  products: selectProductsForCatalogPage
-})
 
-const mapDispatchToProps = dispatch => ({
-  chooseProduct: product => dispatch(chooseProduct(product))
-})
-export default connect(mapStateToProps, mapDispatchToProps)(Catalog);
+export default Catalog;
 
 const useOnClickOutside = (ref, handler) => {
   useEffect(

@@ -5,13 +5,16 @@ width: 87%;
 top: -50vh;
 top: -12vh;
 width: 80vw;
+
 `
 const sizeStyles = css`
 width: 90%;
-top: -30vh;
-left: 5vw;
+top: -10vh;
+left: -50vw;
 width: 80vw;
+
 `
+
 
 
 const emailStyles = css`
@@ -24,8 +27,10 @@ width: 40vw;
 border-radius: 2px;
 
 @media only screen and (max-width: 768px) {
+  height: 60vh;
   width: 80vw;
   left: 5vw;
+  top: 10vh;
   .email-modal{
     h2{
       font-size: 32px;
@@ -35,10 +40,21 @@ border-radius: 2px;
     }
   }
 }
-
-
 `
 
+const emailMobile = css`
+top: 10vh;
+`
+const notEmailMobile = css`
+top: -55vh;
+`
+
+const isEmailForm = ({type}) => (
+  type === 'email form' ?
+  emailMobile
+  :
+  notEmailMobile
+  )
 
 const hasDescription = ({description, type}) => (
   description ?
@@ -102,12 +118,15 @@ export const ModalContainer = styled.div`
 
 
   @media only screen and (max-width: 768px) {
+
+    width: 85vw;
+    left: 1.5vw;
+    ${isEmailForm}
     min-height: 25vh;
-    left: 1.5%;
-    ${hasDescription};
     img{
       width: 110%;
     }
+
 
   }
 
