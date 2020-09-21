@@ -42,7 +42,7 @@ return(
     {
       type == 'email form' ?
         <div className='email-modal'>
-          <h2>Be the first to know about our drops.</h2>
+          <h2>Currently, all sold out. Add your email to find out when our next drop is.</h2>
           <span className='flex-grower'></span>
           <EmailForm inModal />
           <p className="no-thanks" onClick={closeEmailModal}>No thanks.</p>

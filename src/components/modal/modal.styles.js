@@ -67,6 +67,7 @@ const hasDescription = ({description, type}) => (
 )
 
 export const ModalContainer = styled.div`
+
   margin: 70px auto;
   padding: 20px;
   padding-top:0;
@@ -97,6 +98,7 @@ export const ModalContainer = styled.div`
     text-align: left;
   }
   .email-modal{
+
     text-align: center;
     display:flex;
     flex-direction: column;
@@ -104,6 +106,7 @@ export const ModalContainer = styled.div`
     justify-content: space-around;
     h2{
       font-size: 52px;
+
     }
     .flex-grower{
       flex-grow: 1;
@@ -113,6 +116,12 @@ export const ModalContainer = styled.div`
 
       padding: 5% 0;
       text-decoration: underline;
+    }
+    @media only screen and (max-width: 768px) {
+      h2{
+        font-size: 38px;
+
+      }
     }
   }
 
