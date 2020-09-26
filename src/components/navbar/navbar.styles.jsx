@@ -92,6 +92,7 @@ export const NavbarContainer = styled.div`
     text-align: left;
     flex-direction: column;
     .home-link {
+      margin-top: 2vw;
       margin-bottom: 12px;
     }
     .cart-link {
@@ -165,7 +166,7 @@ export const NavbarContainer = styled.div`
   .theme-switch__input,
   .theme-switch__label {
    position: absolute;
-   bottom: 150px;
+   bottom: calc(2vw + 15%);
    left:15px;
    z-index: 1;
   }
@@ -301,6 +302,7 @@ export const NavbarContainer = styled.div`
     justify-content: flex-end;
     flex-direction: column;
     .home-link {
+
       margin-bottom: 12px;
     }
 
