@@ -8,14 +8,22 @@ const NavbarDrop = ({title, drops, closeNavbar}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const ref = useRef();
-
+  console.log(title)
   useOnClickOutside(ref, () => setIsOpen(false));
 
   const closeMobileNavbar = closeNavbar ? closeNavbar : () => console.log('');
 
   return(
   <NavbarDropContainter ref={ref}>
+    {
+      !isOpen && title === 'FALL/WINTER 2020/21' ?
+      <p className="new-drop">NEW!</p>
+      : 
+      ""
+    }
      <p className='drop-title' onClick={() => setIsOpen(!isOpen)}>{title}</p>
+     <div className={isOpen ? 'individual-drops open' : 'individual-drops'}>
+
     {
       isOpen ?
         title=='SPRING/SUMMER 2020'
@@ -42,12 +50,20 @@ const NavbarDrop = ({title, drops, closeNavbar}) => {
         :
         drops.map(drop =>
           <LinkContainer onClick={() => { setIsOpen(false); closeMobileNavbar(); }} key={drop.id} to={`/shop/drops/${drop}`}>
+            {
+              drop === 13 ?
+              <p className='new-drop'> NEW!</p>
+              : 
+              ""
+            }
           DROP {drop}
           </LinkContainer>
           )
       :
         ''
     }
+     </div>
+
 
   </NavbarDropContainter>
     )

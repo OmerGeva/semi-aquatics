@@ -9,9 +9,14 @@ import { addItemToCart } from '../../redux/cart/cart.actions'
 
 const ShopItem = ({ product, match, dropId }) => {
   const { images, title, availableForSale } = product
+  console.log(dropId)
   return (
         <div className="shop-item">
           {
+            dropId === '13' || title === 'Rainy Day Organic Cotton Crew - Golden Yellow' || title === 'Sharkmobile Oversized Tee' ?
+            
+            availableForSale ? <span></span> : <p className="sold-out">COMING SOON</p>
+            :
             availableForSale ? <span></span> : <p className="sold-out">SOLD OUT</p>
           }
 

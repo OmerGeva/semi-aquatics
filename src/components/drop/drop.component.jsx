@@ -121,7 +121,7 @@ const mapDispatchToProps = dispatch => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Drop);
 
 // {
-//            match.params.dropId === '12' && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
+//            match.params.dropId === '13' && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
 //             <CountdownTimer timeLeft={timeLeft}/>
 //           :
 //             ""

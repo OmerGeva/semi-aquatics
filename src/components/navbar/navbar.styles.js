@@ -73,14 +73,7 @@ export const NavbarContainer = styled.div`
       -ms-user-select: none; /* Internet Explorer/Edge */
           user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
-  .new-drop{
-    color: red;
-    margin: 0;
-  }
-  .new-drop-top{
-    color: red;
-    margin: 0;
-  }
+
 
   .nav-desktop{
 
@@ -378,7 +371,8 @@ export const LinkContainer = styled(Link)`
   overflow-x: visible;
   width: 110%;
   display: block;
-  margin-top: 22px;
+  margin-top: 12px;
+  margin-bottom: 22px;
   color: #ABABAB;
   font-size: 14px;
   font-weight: 500;

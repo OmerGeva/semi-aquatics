@@ -4,7 +4,21 @@ import { Link } from 'react-router-dom';
 
 
 export const NavbarDropContainter = styled.div`
+margin-bottom: 1rem;
+
+.new-drop{
+  color: red;
+  margin: 0;
+}
+.individual-drops{
+
+}
+.open{
+  padding-bottom: 8px;
+  border-bottom: 1px solid white;
+}
 .drop-title{
+  margin-top: 0;
   cursor: pointer;
   font-size: 14px;
   &:hover{
@@ -18,6 +32,7 @@ export const LinkContainer = styled(Link)`
   width: 110%;
   display: block;
   margin-top: 22px;
+  margin-bottom: 0;
   color: #ABABAB;
   font-size: 14px;
   font-weight: 500;
