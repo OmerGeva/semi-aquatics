@@ -2,6 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './drop.styles.scss';
 
@@ -11,20 +12,17 @@ import { chooseProduct } from '../../redux/product/product.actions'
 import CountdownTimer from '../../components/countdown-timer/countdown-timer.component'
 
 
-const Drop = ({products, match, chooseProduct}) => {
+const Drop = ({ match }) => {
+    const dispatch = useDispatch();
+    const products = useSelector(state => state.product.products);
+
     const calculateTimeLeft = () => {
-
-
       const startDate = new Date();
       const endDate = new Date("2020/10/05 16:00:00 EST");
 
       const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
       const endDateInUTC = new Date(endDate.getUTCFullYear(), endDate.getUTCMonth(), endDate.getUTCDate(), endDate.getUTCHours(), endDate.getUTCMinutes(), endDate.getUTCSeconds());
-
-
       const difference = Date.parse(endDateInUTC) - Date.parse(startDateInUTC);
-
-
 
       let timeLeft = {};
 
@@ -39,31 +37,21 @@ const Drop = ({products, match, chooseProduct}) => {
       return timeLeft;
     };
 
-    // const timerComponents = [];
-
+    
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-    // useEffect(() => {
-      // setTimeout(() => {
-      //   setTimeLeft(calculateTimeLeft());
-      // }, 1000);
-    // });
-
-    // Object.keys(timeLeft).forEach(interval => {
-    //   if (!timeLeft[interval]) {
-    //     return;
-    //   }
-    //   timerComponents.push(
-    //     <span>
-    //       {timeLeft[interval]} {interval}{" "}
-    //     </span>
-    //   );
-    // });
+    
+    setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
 
     const currentDropHeader = (dropId) => {
       if(dropId <= 6)
       {
         return `Fall / Winter ${dropId}`
+      }
+      else if(dropId >= 13)
+      {
+        return `Fall / Winter ${dropId - 12}`
       }
       else
       {
@@ -100,7 +88,7 @@ const Drop = ({products, match, chooseProduct}) => {
         {
            currentDrop[0].products.map((product) => (
             <Link to={`${match.params.dropId}/${product.id}`} key={product.id} >
-              <div onClick={() => chooseProduct(product)}>
+              <div onClick={() => dispatch(chooseProduct(product))}>
                 <ShopItem  product={product} key={product.id} dropId={(match.params.dropId)}/>
               </div>
             </Link>
@@ -112,15 +100,8 @@ const Drop = ({products, match, chooseProduct}) => {
       )
 }
 
-const mapStateToProps = state => ({
-  products: state.product.products,
-  state: state
-})
 
-const mapDispatchToProps = dispatch => ({
-  chooseProduct: product => dispatch(chooseProduct(product))
-})
-export default connect(mapStateToProps, mapDispatchToProps)(Drop);
+export default Drop;
 
 
 
