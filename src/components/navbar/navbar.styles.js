@@ -159,7 +159,7 @@ export const NavbarContainer = styled.div`
   .theme-switch__input,
   .theme-switch__label {
    position: absolute;
-   bottom: calc(2vw + 15%);
+   bottom: calc(2vw + 20%);
    left:15px;
    z-index: 1;
   }
@@ -333,7 +333,7 @@ export const NavbarContainer = styled.div`
      .theme-switch__input,
      .theme-switch__label {
       position: absolute;
-      bottom: 215px;
+      bottom: calc(10vh + 25%);
       left:7px;
       z-index: 1;
      }
