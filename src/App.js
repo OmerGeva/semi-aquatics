@@ -35,8 +35,7 @@ const App = () =>
       <AppContainer isDark={isDark}>
         {
           modalOpen ?
-          ""
-          // <Modal closeEmailModal={closeModalRedux} type={'email form'}/>
+          <Modal closeEmailModal={closeModalRedux} type={'email form'}/>
           :
           ''
         }

@@ -42,9 +42,9 @@ return(
     {
       type == 'email form' ?
         <div className='email-modal'>
-          <h2>Next drop is on 10/5/20 at 6:00 PM EST</h2>
+          <h2>Current all sold out. Add you email to find out when our next drop is.</h2>
           <span className='flex-grower'></span>
-          <EmailForm inModal />
+          <EmailForm inModal closeEmailModal={closeEmailModal}/>
           <p className="no-thanks" onClick={closeEmailModal}>No thanks.</p>
         </div>
       :
