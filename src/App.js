@@ -13,7 +13,7 @@ import CheckoutPage from './pages/checkout/checkout.component';
 import { AppContainer } from './app.styles.js'
 import Modal from './components/modal/modal.component'
 import { updateCheckoutAsync } from './redux/cart/cart.actions'
-
+import { resetApp } from './redux/root-reducer'
 
 import { closeModal } from './redux/style/style.actions'
 import AnnouncementBanner from './components/announcement-banner/announcement-banner.component'
@@ -26,7 +26,10 @@ const App = () =>
     const checkout = useSelector(state => state.cart.checkout)
     const cartItems = useSelector(state => state.cart.cartItems)
     dispatch(updateCheckoutAsync(checkout, cartItems));
-
+    
+    if(checkout && new Date(checkout.createdAt) < new Date("2020/10/1 17:00:00 EST")){
+      dispatch(resetApp())
+    }
     const closeModalRedux = () => {
       dispatch(closeModal());
     }

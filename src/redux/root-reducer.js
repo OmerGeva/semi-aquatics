@@ -14,10 +14,23 @@ const persistConfig = {
   stateReconciler: hardSet
 }
 
-const rootReducer = combineReducers({
+const allReducers = combineReducers({
   product: productReducer,
   cart: cartReducer,
   style: styleReducer
 });
+
+export const resetApp  = () => ({
+  type: 'RESET_APP'
+})
+
+
+const rootReducer = (state, action) => {
+  if(action.type === 'RESET_APP'){
+    state = undefined;
+  }
+
+  return allReducers(state, action);
+}
 
 export default persistReducer(persistConfig, rootReducer);
