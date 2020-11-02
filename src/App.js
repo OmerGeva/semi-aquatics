@@ -36,12 +36,12 @@ const App = () =>
 
     return(
       <AppContainer isDark={isDark}>
-        {
+        {/* {
           modalOpen ?
           <Modal closeEmailModal={closeModalRedux} type={'email form'}/>
           :
           ''
-        }
+        } */}
         <div className="App">
           <AnnouncementBanner />
           <Navbar />
