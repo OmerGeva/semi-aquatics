@@ -76,12 +76,12 @@ const Drop = ({ match }) => {
           : "" }</h5>
 
         </div>
-         {
+         {/* {
            match.params.dropId === '14' && timeLeft && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
             <CountdownTimer timeLeft={timeLeft}/>
           :
             ""
-          }
+          } */}
 
         <div className='drop-products'>
         {
