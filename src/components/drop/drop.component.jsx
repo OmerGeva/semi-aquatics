@@ -18,7 +18,7 @@ const Drop = ({ match }) => {
 
     const calculateTimeLeft = () => {
       const startDate = new Date();
-      const endDate = new Date("2020/10/05 17:00:00 EST");
+      const endDate = new Date("2020/11/09 16:00:00 EST");
 
       const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
       const endDateInUTC = new Date(endDate.getUTCFullYear(), endDate.getUTCMonth(), endDate.getUTCDate(), endDate.getUTCHours(), endDate.getUTCMinutes(), endDate.getUTCSeconds());
@@ -77,12 +77,12 @@ const Drop = ({ match }) => {
           : "" }</h5>
 
         </div>
-         {/* {
-           match.params.dropId === '13' && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
+         {
+           match.params.dropId === '14' && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
             <CountdownTimer timeLeft={timeLeft}/>
           :
             ""
-          } */}
+          }
 
         <div className='drop-products'>
         {

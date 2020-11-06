@@ -22,7 +22,7 @@ const Navbar = () =>
 
   const winterDrops19 = [1,2,3,4,5,6].reverse()
   const summerDrops20 = [7,8,10,11,12].reverse()
-  const fallDrops20 = [13].reverse()
+  const fallDrops20 = [13, 14].reverse()
 
   const navHeight  = window.innerHeight
 
