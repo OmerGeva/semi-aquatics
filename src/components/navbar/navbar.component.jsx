@@ -81,7 +81,7 @@ const Navbar = () =>
 
 
       <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
-
+      
       <NavbarDrop  title='SPRING/SUMMER 2020' drops={summerDrops20} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
 
       <NavbarDrop  title='FALL/WINTER 2019/20' drops={winterDrops19} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>

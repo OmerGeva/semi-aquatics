@@ -10,6 +10,11 @@ margin-bottom: 1rem;
   color: red;
   margin: 0;
 }
+.new-drop-top{
+  color: red;
+  margin: 0;
+  font-size: 14px;
+}
 .individual-drops{
 
 }

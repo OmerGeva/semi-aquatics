@@ -1,6 +1,5 @@
 import React from 'react';
-import {useState, useEffect} from 'react'
-import { connect } from 'react-redux';
+import {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -78,7 +77,7 @@ const Drop = ({ match }) => {
 
         </div>
          {
-           match.params.dropId === '14' && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
+           match.params.dropId === '14' && timeLeft && (timeLeft.seconds ||  timeLeft.hours||  timeLeft.minutes||  timeLeft.days)  ?
             <CountdownTimer timeLeft={timeLeft}/>
           :
             ""
