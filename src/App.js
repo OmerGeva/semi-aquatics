@@ -27,7 +27,7 @@ const App = () =>
     const cartItems = useSelector(state => state.cart.cartItems)
     dispatch(updateCheckoutAsync(checkout, cartItems));
     
-    if(checkout && new Date(checkout.createdAt) < new Date("2020/10/1 17:00:00 EST")){
+    if(checkout && new Date(checkout.createdAt) < new Date("2020/11/8 10:00:00 EST")){
       dispatch(resetApp())
     }
     const closeModalRedux = () => {
