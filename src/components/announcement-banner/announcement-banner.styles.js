@@ -20,7 +20,7 @@ export const AnnouncementBannerContainer = styled.div`
   h5{
     text-transform: uppercase;
     animation-name: slide;
-    animation-duration: 15s;
+    animation-duration: 16s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -44,16 +44,16 @@ export const AnnouncementBannerContainer = styled.div`
 
   @media only screen and (max-width: 768px) {
     h5{
-      animation-duration: 10s;
-      width: 100vw;
+      animation-duration: 12s;
+      width: 110vw;
       font-size: 12px;
     }
     @keyframes slide{
     from {
-      transform: translateX(100vw);
+      transform: translateX(110vw);
     }
     to {
-      transform: translateX(-100vw);
+      transform: translateX(-110vw);
      }
     }
 }
