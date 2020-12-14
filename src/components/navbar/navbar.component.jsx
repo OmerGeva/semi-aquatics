@@ -53,6 +53,9 @@ const Navbar = () =>
         <LinkContainer to="/info/sizing">
         SIZING
         </LinkContainer>
+        <LinkContainer to="/story">
+        STORY
+        </LinkContainer>
         <LinkContainer to="/info/sustainability">
         SUSTAINABILITY
         </LinkContainer>
@@ -93,6 +96,9 @@ const Navbar = () =>
       </label>
       <LinkContainer to="/info/sizing" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
       SIZING
+      </LinkContainer>
+      <LinkContainer to="/story" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
+      STORY
       </LinkContainer>
       <LinkContainer to="/info/sustainability" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
       SUSTAINABILITY

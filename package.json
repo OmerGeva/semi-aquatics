@@ -26,6 +26,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-flash-message": "^1.0.2",
+    "react-icons": "^4.1.0",
     "react-moment": "^0.9.7",
     "react-notifications": "^1.6.0",
     "react-onclickoutside": "^6.9.0",

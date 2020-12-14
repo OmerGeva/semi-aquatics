@@ -9,6 +9,7 @@ import Footer from './components/footer/footer.component';
 import Home from './pages/home/home.component';
 import ShopPage from './pages/shop/shop.component';
 import InfoPage from './pages/info-page/info-page.component';
+import StoryPage from './pages/story/story.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import { AppContainer } from './app.styles.js'
 import Modal from './components/modal/modal.component'
@@ -37,12 +38,18 @@ const App = () =>
 
     return(
       <AppContainer isDark={isDark}>
-        {/* {
+        {
           modalOpen ?
           <Modal closeEmailModal={closeModalRedux} type={'email form'}/>
           :
           ''
-        } */}
+        }
+        {
+          modalOpen ?
+          <div className='modal-backdrop'> </div>
+          :
+          ''
+        }
         <div className="App">
           <AnnouncementBanner />
           <Navbar />
@@ -51,6 +58,7 @@ const App = () =>
               <Switch>
                 <Route exact path='/' component={Home}/>
                 <Route path='/info' component={InfoPage}/>
+                <Route path='/story' component={StoryPage}/>
                 <Route path='/shop' component={ShopPage}/>
                 <Route path='/checkout' component={CheckoutPage}/>
                 <Route render={() => <Redirect to="/" />} />

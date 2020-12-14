@@ -13,44 +13,52 @@ const EmailForm = ({inModal, closeEmailModal}) =>
   const handleChange = event =>{
     setText(event.target.value)
   }
-  // const handleSubmit = async event => {
-  //   if(event){
-  //     event.preventDefault();
-  //   }
-  //   const apiUrl = `https://us4.api.mailchimp.com/3.0/lists/${process.env.REACT_APP_MAILCHIMP_AUDIENCE_ID}/members`
+  const handleSubmit = async () => {
+    console.log('hello');
+    const apiUrl = `https://cors-anywhere.herokuapp.com/https://api.omnisend.com/v3/contacts`;
+    try{
+    const response = await axios.post(
+          apiUrl,
+          {
+            "identifiers": [
+              {
+                type: "email",
+                id: text,
+                channels: {
+                  email: {
+                    status: "subscribed",
+                    statusDate: "2016-02-29T10:07:28Z"
+                  }
+                }
+              }
+              ]
+          }
+          ,
+            {
+                headers: { 'X-API-KEY': `${process.env.REACT_APP_OMNISEND_API_KEY}` }
+            }
+          )
+      
 
-  //   try{
-  //    const response = await axios.post(
-  //     apiUrl,
-  //       {
-  //         email_address: text,
-  //         status: "subscribed"
-  //       },
-  //       {
-  //         headers: { user: process.env.REACT_APP_MAILCHIMP_API_KEY }
-  //       }
-  //     );
-  //     await console.log(response)
-  //   //  await closeEmailModal();
-  //   }catch(error){
-  //     console.log(error);
-  //   }
+        await setText('');
+        await console.log(response)
+    }catch(error){
+        console.log(error.message);
+      }
 
-  // }
+  }
 
 return(
   <EmailFormContainer isDark={isDark} inModal >
-  <form action="https://gmail.us4.list-manage.com/subscribe/post?u=98190063b370f72608d400f09&amp;id=fbde19324c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
     <div className="form-flex-box">
       <div className="group">
-        <input type="email" name="EMAIL" className="form-input" id="mce-EMAIL"  autoComplete="off" onChange={handleChange}/>
+        <input type="email" value={text} name="EMAIL" className="form-input" id="mce-EMAIL"  autoComplete="off" onChange={handleChange}/>
         <label className={`${text.length ? 'shrink' : ""} form-input-label`}>
         EMAIL
         </label>
       </div>
-      <button className='submit-subscribe-button'>Subscribe</button>
+      <button className='submit-subscribe-button' onClick={() => handleSubmit()}>Subscribe</button>
     </div>
-  </form>
 </EmailFormContainer>
   )
 }

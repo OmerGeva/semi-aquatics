@@ -1,7 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-
-import EmailForm from '../email-form/email-form.component'
-
+import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
 import crewneck from '../../assets/sizing-chart-crewneck.png'
 import boxyTee from '../../assets/sizing-boxy.png';
 import sweatpants from '../../assets/sweatpants-chart.png';
@@ -9,11 +7,18 @@ import shorts from '../../assets/sizing-chart-shorts.png';
 import tShirt from '../../assets/sizing-chart-tshirt.png';
 import longSleeve from '../../assets/sizing-chart-long-sleeve.png';
 import hoodie from '../../assets/sizing-chart-hoodie.png';
+import { IconContext } from "react-icons";
+import { HiOutlineX  } from 'react-icons/hi';
+import { CgArrowLongRight  } from 'react-icons/cg';
+
+import popUpImage from '../../assets/image-for-popup.jpg';
+import popUpImageMobile from '../../assets/modal-mobile-image.jpg';
 import { ModalContainer } from './modal.styles';
 
 const Modal = ({open, setOpen, type, description, closeEmailModal}) =>
 {
   const ref = useRef();
+  const [email, setEmail] = useState('');
   useOnClickOutside(ref, () => setOpen ? setOpen(false) : '');
 
   const chosenSizingChart = (type) => {
@@ -36,16 +41,63 @@ const Modal = ({open, setOpen, type, description, closeEmailModal}) =>
         return null
     }
   }
+
+const submitForm = async () => {
+  const apiUrl = `https://cors-anywhere.herokuapp.com/https://api.omnisend.com/v3/contacts`;
+  try{
+    const response = await axios.post(
+          apiUrl,
+          {
+            "identifiers": [
+              {
+                type: "email",
+                id: email,
+                channels: {
+                  email: {
+                    status: "subscribed",
+                    statusDate: "2016-02-29T10:07:28Z"
+                  }
+                }
+              }
+              ]
+          }
+          ,
+            {
+                headers: { 'X-API-KEY': `${process.env.REACT_APP_OMNISEND_API_KEY}` }
+            }
+          )
+      
+
+        await closeEmailModal();
+        await console.log(response)
+    }catch(error){
+        console.log(error.message);
+      }
+
+}
 return(
   open || (!open && type == 'email form') ?
   <ModalContainer  ref={ref} hasDescription={description} type={type}>
     {
       type == 'email form' ?
         <div className='email-modal'>
-          <h2>Current all sold out. Add you email to find out when our next drop is.</h2>
-          <span className='flex-grower'></span>
-          <EmailForm inModal closeEmailModal={closeEmailModal}/>
-          <p className="no-thanks" onClick={closeEmailModal}>No thanks.</p>
+            <div className="exit-container" onClick={() => closeEmailModal()}>
+              <IconContext.Provider value={{className: 'exit-icon'}}>
+                < HiOutlineX />
+              </IconContext.Provider>
+            </div>
+            <h2>Currently Sold Out</h2>
+            <p>Shopping for new clothing everyday is causing the fashion-related environmental disaster. Shopping the right day, is part of the solution.</p>
+            <p>Sign up with your email to get notified when our next collection become available.</p>
+            <span className='flex-grower'></span>
+            <div className="email-form">
+              <input type="text" value={email} placeholder='semi@aquatics.com' className="email-input" onChange={event => setEmail(event.target.value)}/>
+              <div className="submit-button" onClick={() => submitForm()}>
+                <div className="right-arrow">
+                  Subscribe
+                </div>
+              </div>
+            </div>
         </div>
       :
       type ?

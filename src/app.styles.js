@@ -22,6 +22,14 @@ const isDarkStyles = ({isDark}) => {
   return isDark ? DarkStyles: LightStyles;
 }
 export const AppContainer = styled.div`
+.modal-backdrop{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.4);
+
+}
 .App {
   font-family: 'VCR_OSD_MONO_1';
   text-align: center;
