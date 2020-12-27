@@ -158,9 +158,7 @@ export const NavbarContainer = styled.div`
   // Toggle switch
   .theme-switch__input,
   .theme-switch__label {
-   position: absolute;
-   bottom: calc(2vw + 20%);
-   left:15px;
+   position: relative;
    z-index: 1;
   }
 
@@ -202,7 +200,6 @@ export const NavbarContainer = styled.div`
     font-size: 14px;  }
 }
  @media only screen and (max-width: 768px) {
-
   .summer-season{
     .mobile-nav-titles{
       font-size: 14px;
@@ -288,8 +285,8 @@ export const NavbarContainer = styled.div`
     }
     left:60vw;
     width: 60vw;
-    height: 100vh;
     padding: 8px;
+    height: 100vh;
     text-align: left;
     display: flex;
     justify-content: flex-end;
@@ -322,7 +319,12 @@ export const NavbarContainer = styled.div`
     }
 
     .non-drop-page{
+      font-size: 12px;
+      margin-bottom: 1vh;
       margin-top: 12px;
+    }
+    .copyright{
+      margin-bottom: 1rem;
     }
 
      * {
@@ -332,9 +334,7 @@ export const NavbarContainer = styled.div`
      // Toggle switch
      .theme-switch__input,
      .theme-switch__label {
-      position: absolute;
-      bottom: calc(10vh + 25%);
-      left:7px;
+      
       z-index: 1;
      }
 
