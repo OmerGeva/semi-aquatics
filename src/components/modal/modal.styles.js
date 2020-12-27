@@ -125,7 +125,7 @@ export const ModalContainer = styled.div`
           margin: auto;
           margin-top: 1.5rem;
           border: 3px solid black;
-          background-color: #F7F9F9;
+          background-color: black;
           display: flex;
           height: 2.5rem;
           .email-input{
