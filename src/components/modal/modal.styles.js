@@ -34,6 +34,7 @@ padding: 0;
 .email-modal{
   h2{
     font-size: 36px;
+    margin-bottom: 12px;
   }
   width: 95%;
   .email-form{
@@ -108,7 +109,7 @@ export const ModalContainer = styled.div`
       }
       h2{
         font-size: 52px;
-        letter-spacing: -1.5px;
+        letter-spacing: -2px;
       }
       p{
         font-size: 18px;
@@ -124,6 +125,7 @@ export const ModalContainer = styled.div`
           width: 100%;
           margin: auto;
           margin-top: 1.5rem;
+          border: none;
           border: 3px solid black;
           background-color: black;
           display: flex;
