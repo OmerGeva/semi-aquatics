@@ -31,10 +31,9 @@ const emailMobile = css`
 top: 10vh;
 width: 96vw;
 padding: 0;
-height: 60vh;
 .email-modal{
   h2{
-    font-size: 2.5rem;
+    font-size: 36px;
   }
   width: 95%;
   .email-form{
@@ -109,9 +108,11 @@ export const ModalContainer = styled.div`
       }
       h2{
         font-size: 52px;
+        letter-spacing: -1.5px;
       }
       p{
         font-size: 18px;
+        margin: 8px 0;
       }
 
         flex-direction: column;
@@ -178,7 +179,6 @@ export const ModalContainer = styled.div`
           display: block;
           
           padding: 0;
-          height: 70%;
           p{
             font-size: 14px;
           }
