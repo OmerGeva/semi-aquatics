@@ -119,7 +119,7 @@ export const ModalContainer = styled.div`
           flex-grow: 1;
         }
         .email-form{
-          font-family: 'Lato', sans-serif;
+          font-family: 'Helvetica_Neue', sans-serif;
           width: 100%;
           margin: auto;
           margin-top: 1.5rem;

@@ -3,6 +3,10 @@
   font-family: VCR_OSD_MONO_1;
   src: url(./assets/VCR_OSD_MONO_1.001.ttf);
 }
+@font-face {
+  font-family: Helvetica_Neue;
+  src: url(./assets/HelveticaNeue-01.ttf);
+}
 .App {
 
   font-family: 'VCR_OSD_MONO_1';

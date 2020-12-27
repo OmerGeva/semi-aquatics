@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StoryPageContainer = styled.div`
-font-family: 'Lato', sans-serif;
+font-family: 'Helvetica_Neue', sans-serif;
 overflow: scroll;
 height: 90vh;
 img{
