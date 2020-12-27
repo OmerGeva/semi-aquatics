@@ -124,7 +124,7 @@ export const ModalContainer = styled.div`
           width: 100%;
           margin: auto;
           margin-top: 1.5rem;
-          border: 1px solid black;
+          border: 3px solid black;
           background-color: #F7F9F9;
           display: flex;
           height: 2.5rem;
