@@ -39,13 +39,13 @@ const App = () =>
     return(
       <AppContainer isDark={isDark}>
         {
-          !modalOpen ?
+          modalOpen ?
           <Modal closeEmailModal={closeModalRedux} type={'email form'}/>
           :
           ''
         }
         {
-          !modalOpen ?
+          modalOpen ?
           <div className='modal-backdrop'> </div>
           :
           ''

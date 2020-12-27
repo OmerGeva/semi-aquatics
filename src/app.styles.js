@@ -26,7 +26,7 @@ export const AppContainer = styled.div`
   width: 100vw;
   height: 100vh;
   position: absolute;
-  z-index: 10;
+  z-index: 20;
   background-color: rgba(0,0,0,0.4);
 
 }
