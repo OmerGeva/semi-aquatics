@@ -39,7 +39,7 @@ const  StoryPage = () => {
                 </div>
                 <div className="question-section">
                     <p className="question">
-                        Evolution striped us naked!
+                        Evolution stripped us naked!
                     </p>
                     <p className="answer">
                         Evolution quite literally took all that warm, cozy fur we used to be wrapped in. As a result humans had to produce our own “fur.” However, the way we have been manufacturing clothing has become one of most destructive industries in history. It pollutes our precious water with dyes and micro-particles, while cotton farming has caused us to clear forests on land.  
