@@ -1,44 +1,65 @@
-// const express = require('express');
-// const path = require('path')
-// const request = require('request');
+const express = require('express');
+const path = require('path')
+const request = require('request');
+const axios = require('axios').default;
 
-// const app = express();
+const app = express();
 
-// app.use(function(req, res, next) {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   res.header(
-//     'Access-Control-Allow-Headers',
-//     'Origin, X-Requested-With, Content-Type, Accept'
-//   );
-//   next();
-// });
-
-
-// app.use(express.static(path.join(__dirname, 'build')))
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
 
 
-// app.get('/api/item-info', (req, res) => {
-//   const {productId, variantId } = req.query
-//   const username = process.env.REACT_APP_SHOPIFY_API_KEY;
-//   const password = process.env.REACT_APP_SHOPIFY_API_PASSWORD;
-//   request(
-//     { url: `https://${username}:${password}@semi-aquatics.myshopify.com/admin/api/2020-04/products/${productId}/variants/${variantId}.json` },
-//     (error, response, body) => {
-//       if (error || response.statusCode !== 200) {
-//         return res.status(500).json({ type: 'error', message: error.message });
-//       }
+app.use(express.static(path.join(__dirname, 'build')))
 
-//       res.json(JSON.parse(body));
-//     }
-//   )
-// });
+app.post('/api/subscribe/:email', async (req, res) => {
 
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'))
-// })
+    const {email} = req.params;
+    
+    try{
+        const response = await axios.post(
+            'https://api.omnisend.com/v3/contacts',
+            {
+              "identifiers": [
+                {
+                  type: "email",
+                  id: email,
+                  channels: {
+                    email: {
+                      status: "subscribed",
+                      statusDate: new Date()
+                    }
+                  }
+                }
+                ]
+            },
+            {
+                headers: { 'X-API-KEY': `${process.env.REACT_APP_OMNISEND_API_KEY}` }
+            })
+        await console.log(response.data);
+        res.send(200);
+    }catch(error){
+        console.log(error.response.data.error);
+        res.status(400).send({message: error.response.data.error});
+    }
 
-// app.listen(process.env.PORT || 8080, () =>
-//   console.log('Express server is running on localhost:8080')
-// );
+});
+
+async function subscribeUser(email) {
+    
+    return response.data;
+}
 
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
+
+app.listen(process.env.PORT || 3001, () =>
+  console.log('Express server is running on localhost:3001')
+);

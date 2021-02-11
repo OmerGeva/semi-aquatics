@@ -14,34 +14,12 @@ const EmailForm = ({inModal, closeEmailModal}) =>
     setText(event.target.value)
   }
   const handleSubmit = async () => {
-    console.log('hello');
-    const apiUrl = `https://cors-anywhere.herokuapp.com/https://api.omnisend.com/v3/contacts`;
+    const apiUrl = `/api/subscribe/${text}`;
     try{
-    const response = await axios.post(
-          apiUrl,
-          {
-            "identifiers": [
-              {
-                type: "email",
-                id: text,
-                channels: {
-                  email: {
-                    status: "subscribed",
-                    statusDate: "2016-02-29T10:07:28Z"
-                  }
-                }
-              }
-              ]
-          }
-          ,
-            {
-                headers: { 'X-API-KEY': `${process.env.REACT_APP_OMNISEND_API_KEY}` }
-            }
-          )
+      const response = await axios.post(apiUrl,{})
+      await setText('');
+      await console.log(response)
       
-
-        await setText('');
-        await console.log(response)
     }catch(error){
         console.log(error.message);
       }
