@@ -50,7 +50,7 @@
     "eject": "react-scripts eject",
     "server": "node-env-run server --exec nodemon | pino-colada",
     "dev": "run-p server start",
-    "heroku-postbuild": "cd client && yarn && yarn run build"
+    "heroku-postbuild": "cd server && yarn && yarn run build"
   },
   "eslintConfig": {
     "extends": "react-app"
