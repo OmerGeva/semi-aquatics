@@ -42,39 +42,18 @@ const Modal = ({open, setOpen, type, description, closeEmailModal}) =>
     }
   }
 
-const submitForm = async () => {
-  const apiUrl = `https://cors-anywhere.herokuapp.com/https://api.omnisend.com/v3/contacts`;
-  try{
-    const response = await axios.post(
-          apiUrl,
-          {
-            "identifiers": [
-              {
-                type: "email",
-                id: email,
-                channels: {
-                  email: {
-                    status: "subscribed",
-                    statusDate: "2016-02-29T10:07:28Z"
-                  }
-                }
-              }
-              ]
-          }
-          ,
-            {
-                headers: { 'X-API-KEY': `${process.env.REACT_APP_OMNISEND_API_KEY}` }
-            }
-          )
+  const submitForm = async () => {
+    const apiUrl = `https://proxy-semi-aquatics.herokuapp.com/api/subscribe/${email}`;
+    try{
+      const response = await axios.post(apiUrl,{})
+      await setEmail('');
+      await closeEmailModal();
+      await console.log(response)
       
-
-        await closeEmailModal();
-        await console.log(response)
     }catch(error){
         console.log(error.message);
       }
-
-}
+  }
 return(
   open || (!open && type == 'email form') ?
   <ModalContainer  ref={ref} hasDescription={description} type={type}>
