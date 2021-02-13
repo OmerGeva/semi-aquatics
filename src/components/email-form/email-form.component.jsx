@@ -14,7 +14,7 @@ const EmailForm = ({inModal, closeEmailModal}) =>
     setText(event.target.value)
   }
   const handleSubmit = async () => {
-    const apiUrl = `/api/subscribe/${text}`;
+    const apiUrl = `https://proxy-semi-aquatics.herokuapp.com/api/subscribe/${text}`;
     try{
       const response = await axios.post(apiUrl,{})
       await setText('');

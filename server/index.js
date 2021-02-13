@@ -50,11 +50,6 @@ app.post('/api/subscribe/:email', async (req, res) => {
 
 });
 
-async function subscribeUser(email) {
-    
-    return response.data;
-}
-
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
