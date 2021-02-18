@@ -10,7 +10,7 @@ const NavbarDrop = ({title, drops, closeNavbar}) => {
   const ref = useRef();
   useOnClickOutside(ref, () => setIsOpen(false));
 
-  const closeMobileNavbar = closeNavbar ? closeNavbar : () => console.log('');
+  const closeMobileNavbar = closeNavbar ? closeNavbar : () => {};
 
   return(
   <NavbarDropContainter ref={ref}>
