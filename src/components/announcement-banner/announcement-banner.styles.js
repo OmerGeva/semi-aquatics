@@ -20,42 +20,42 @@ export const AnnouncementBannerContainer = styled.div`
   h5{
     text-transform: uppercase;
     animation-name: slide;
-    animation-duration: 23s;
+    animation-duration: 15s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: normal;
     margin: 0;
-  .spacer-banner{
-    width: 24px;
-  }
+    .spacer-banner{
+      width: 24px;
+    }
   }
 
   @keyframes slide{
-  from {
-  transform: translateX(120vw);
-  }
-  to {
-  transform: translateX(-67vw);
-   }
-  }
+    from {
+      transform: translateX(100vw);
+    }
+    to {
+      transform: translateX(-27vw);
+     }
+    }
 
 
 
   @media only screen and (max-width: 768px) {
     h5{
-      animation-duration: 15s;
-      width: 310vw;
+      animation-duration: 10s;
+      width: 100vw;
       font-size: 12px;
     }
     @keyframes slide{
-    from {
-      transform: translateX(170vw);
-    }
-    to {
-      transform: translateX(-290vw);
-     }
-    }
+      from {
+        transform: translateX(100vw);
+      }
+      to {
+        transform: translateX(-100vw);
+       }
+      }
 }
 
 `
