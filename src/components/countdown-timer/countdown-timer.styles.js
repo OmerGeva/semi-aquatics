@@ -2,11 +2,18 @@ import styled from 'styled-components';
 
 export const CountdownTimerContainer = styled.div`
 margin: auto;
-display: flex;
+margin-top: 10vh;
 width: 30%;
-justify-content: space-around;
 .time-container{
   height: auto;
+}
+img{
+  width: 100%;
+}
+.countdown-container{
+  display: flex;
+  justify-content: space-around;
+
 }
 h5{
   width: 18px;

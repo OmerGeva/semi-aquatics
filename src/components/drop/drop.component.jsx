@@ -23,6 +23,10 @@ const Drop = ({ match }) => {
       {
         return `Fall / Winter ${dropId}`
       }
+      else if(dropId == 15)
+      {
+        return `Spring / Summer 2021`
+      }
       else if(dropId >= 13)
       {
         return `Fall / Winter ${dropId - 12}`
@@ -51,12 +55,14 @@ const Drop = ({ match }) => {
           : "" }</h5>
 
         </div>
-         {/* {
-           match.params.dropId === '14' ?
+         {
+           match.params.dropId === '15' ?
+           <div className="">
             <CountdownTimer />
+           </div>
           :
             ""
-          } */}
+          }
 
         <div className='drop-products'>
         {
