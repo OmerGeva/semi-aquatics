@@ -31,7 +31,8 @@ const CountdownTimer = () =>
     setTimeLeft(calculateTimeLeft());
   }, 1000);
 
-  let days = timeLeft.days;
+  let days = timeLeft.days; 
+  
   let hours = timeLeft.hours;
   let minutes = timeLeft.minutes;
   let seconds = timeLeft.seconds;
