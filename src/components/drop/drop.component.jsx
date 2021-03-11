@@ -66,9 +66,6 @@ const Drop = ({ match }) => {
 
         <div className='drop-products'>
         {
-          match.params.dropId === '15' ?
-          ""
-          :
            currentDrop[0].products.map((product) => (
             <Link to={`${match.params.dropId}/${product.id}`} key={product.id} >
               <div onClick={() => dispatch(chooseProduct(product))}>

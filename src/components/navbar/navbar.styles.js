@@ -308,7 +308,7 @@ export const NavbarContainer = styled.div`
     }
     .new-drop{
       color: red;
-      margin: 0;
+      margin-top: 0;
     }
     h6{
       font-size: 12px;
@@ -364,6 +364,10 @@ export const NavbarContainer = styled.div`
      ${toggleButtonStyles}
     }
   }
+  .new-drop{
+    color: red;
+    margin-top: 0;
+  }
 
 `
 
@@ -372,7 +376,6 @@ export const LinkContainer = styled(Link)`
   width: 110%;
   display: block;
   margin-top: 12px;
-  margin-bottom: 22px;
   color: #ABABAB;
   font-size: 14px;
   font-weight: 500;

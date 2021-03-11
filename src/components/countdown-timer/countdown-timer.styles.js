@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const CountdownTimerContainer = styled.div`
 margin: auto;
-margin-top: 10vh;
 width: 30%;
 .time-container{
   height: auto;

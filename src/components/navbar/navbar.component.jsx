@@ -40,9 +40,12 @@ const Navbar = () =>
         CATALOG
         </LinkContainer>
         
-        <LinkContainer to="/shop/drops/15" className="">
+        <LinkContainer to="/shop/drops/15" className="spring-drop">
         SPRING/SUMMER 2021
         </LinkContainer>
+          <p className="new-drop">
+            NEW!
+          </p>
 
         <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20}/>
         <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20}/>
@@ -89,6 +92,9 @@ const Navbar = () =>
       <LinkContainer to="/shop/drops/15" onClick={() => setNavbarOpen(!navbarOpen)}>
         SPRING/SUMMER 2021
         </LinkContainer>
+        <p className="new-drop">
+            NEW!
+          </p>
 
 
       <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>

@@ -3,7 +3,7 @@ import { CountdownTimerContainer } from './countdown-timer.styles'
 
 const CountdownTimer = () =>
 {
-  const dropDate = new Date("2021/3/15 18:00:00 EST");
+  const dropDate = new Date("2021/3/15 19:00:00 EST");
   
   const calculateTimeLeft = () => {
     const startDate = new Date();
@@ -40,7 +40,6 @@ const CountdownTimer = () =>
     
     timeLeft.seconds > 0 || timeLeft.minutes > 0 || timeLeft.hours > 0 || timeLeft.days > 0?
         <CountdownTimerContainer>
-        <img  src="https://cdn.shopify.com/s/files/1/0276/3305/7867/files/big3_1410x.png?v=1575617303" alt="logo"/>
         <div className="countdown-container">
           <div className="time-container">
           <h5>{days}</h5>
