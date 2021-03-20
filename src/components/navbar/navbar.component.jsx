@@ -46,8 +46,9 @@ const Navbar = () =>
           {/* <p className="new-drop">
             NEW!
           </p> */}
+          <br/>
 
-        <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20}/>
+
         <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20}/>
 
         <NavbarDrop  title='SPRING/SUMMER 2020' drops={summerDrops20}/>
@@ -95,6 +96,7 @@ const Navbar = () =>
         {/* <p className="new-drop">
             NEW!
           </p> */}
+        <br/>
 
 
       <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
