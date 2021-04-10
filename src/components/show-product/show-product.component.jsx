@@ -166,8 +166,13 @@ return (
                   </CustomButtom>
                 :
                   <CustomButtom soldOut={true}>
+                    {
+                    product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1NTI0NTU1MTIxMzk=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1NTI0NTk0MTE1MzE=' ?
+                      'COMING SOON'
+                    :
 
-                     SOLD OUT
+                      'SOLD OUT'
+                    }
                   </CustomButtom>
               }
             </div>
