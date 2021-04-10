@@ -23,7 +23,7 @@ const Navbar = () =>
   const winterDrops19 = [1,2,3,4,5,6].reverse()
   const summerDrops20 = [7,8,10,11,12].reverse()
   const fallDrops20 = [13, 14].reverse()
-  const spring2021 = [15]
+  const spring2021 = [15, 16]
 
   const navHeight  = window.innerHeight
 
@@ -39,15 +39,13 @@ const Navbar = () =>
         <LinkContainer to="/shop/catalog">
         CATALOG
         </LinkContainer>
-        
-        <LinkContainer to="/shop/drops/15" className="spring-drop">
-        SPRING/SUMMER 2021
-        </LinkContainer>
-          {/* <p className="new-drop">
+         {/* <p className="new-drop">
             NEW!
           </p> */}
           <br/>
 
+
+        <NavbarDrop  title='SPRING/SUMMER 2021' drops={spring2021}/>
 
         <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20}/>
 
@@ -75,7 +73,7 @@ const Navbar = () =>
       </div>
 
     {
-      //////////////// MOBILE ////////////////
+      // ----------------------- Mobile ----------------------------
     }
     <div className={navbarOpen ? "mobile-toggle-btn-open" : "mobile-toggle-btn-closed"} onClick={() => setNavbarOpen(!navbarOpen)}>
       <i className="fas fa-bars"></i>

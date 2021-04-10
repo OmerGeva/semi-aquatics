@@ -19,7 +19,7 @@ width: 80vw;
 
 const emailStyles = css`
 left: 35vw;
-top: 20vh;
+top: 15vh;
 color: black;
 width: calc(20vw + 30vh);
 border-radius: 2px;
