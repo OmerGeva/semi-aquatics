@@ -25,7 +25,7 @@ const Drop = ({ match }) => {
       }
       else if(dropId >= 15)
       {
-        return `Spring / Summer 2021`
+        return `Spring / Summer 2021 `
       }
       else if(dropId >= 13)
       {

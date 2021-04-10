@@ -23,7 +23,7 @@ const Navbar = () =>
   const winterDrops19 = [1,2,3,4,5,6].reverse()
   const summerDrops20 = [7,8,10,11,12].reverse()
   const fallDrops20 = [13, 14].reverse()
-  const spring2021 = [15, 16]
+  const spring2021 = [15, 16].reverse()
 
   const navHeight  = window.innerHeight
 
@@ -88,15 +88,10 @@ const Navbar = () =>
       <LinkContainer to="/shop/catalog"  onClick={() => setNavbarOpen(!navbarOpen)}>
       CATALOG
       </LinkContainer>
-      <LinkContainer to="/shop/drops/15" onClick={() => setNavbarOpen(!navbarOpen)}>
-        SPRING/SUMMER 2021
-        </LinkContainer>
-        {/* <p className="new-drop">
-            NEW!
-          </p> */}
         <br/>
 
 
+      <NavbarDrop  title='SPRING/SUMMER 2021' drops={spring2021} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
       <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
       
       <NavbarDrop  title='SPRING/SUMMER 2020' drops={summerDrops20} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
