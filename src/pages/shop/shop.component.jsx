@@ -28,7 +28,7 @@ const ShopPage = ({ match }) => {
   const checkout = useSelector(state => state.cart.checkout)
 
   useEffect(() => {
-    dispatch(updateCheckoutAsync(checkout));
+    // dispatch(updateCheckoutAsync(checkout));
 
     dispatch(fetchProductsStartAsync());
   }, [])

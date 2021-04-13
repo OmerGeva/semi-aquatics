@@ -70,6 +70,10 @@ const Navbar = () =>
         <LinkContainer to="/info/faq">
         FAQ
       </LinkContainer>
+      <a href='https://markets.businessinsider.com/news/stocks/streetwear-startup-is-pioneering-the-slow-fashion-movement-1030160893' target='_blank' className='bi-link'>
+      Press
+      </a>
+
       </div>
 
     {
@@ -115,6 +119,9 @@ const Navbar = () =>
       <LinkContainer to="/info/faq" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
       FAQ
       </LinkContainer>
+      <a href='https://markets.businessinsider.com/news/stocks/streetwear-startup-is-pioneering-the-slow-fashion-movement-1030160893' target='_blank' className='bi-link'>
+      Press
+      </a>
       <a href="https://www.instagram.com/semiaquatics">
         <i className="fab fa-instagram footer-item" ></i>
       </a>

@@ -191,6 +191,11 @@ export const NavbarContainer = styled.div`
     }
     ${toggleMobileBackground}
   }
+  .bi-link{
+    font-size: 14px;
+    color: #ABABAB;
+    margin-top: 8px;
+  }
 
 
 @media only screen and(max-width: 768px) and (max-height: 668px) {
@@ -200,6 +205,7 @@ export const NavbarContainer = styled.div`
     font-size: 14px;  }
 }
  @media only screen and (max-width: 768px) {
+
   .summer-season{
     .mobile-nav-titles{
       font-size: 14px;

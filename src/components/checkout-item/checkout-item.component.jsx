@@ -4,13 +4,15 @@ import { connect } from 'react-redux';
 import { CheckoutItemContainer } from './checkout-item.styles';
 import { removeItemFromCartAsync } from '../../redux/cart/cart.actions'
 
-export const CheckoutItem = ({item, removeItemFromCart, checkout}) => (
-  <CheckoutItemContainer>
+export const CheckoutItem = ({item, removeItemFromCart, checkout}) =>
+{
+  return(
+    <CheckoutItemContainer>
     <div className="checkout-item-desktop">
       <div className="image-container">
         {
           item.images ?
-        <img src={item.images[0].src} alt={item.title}/>
+          <img src={item.images[0].src} alt={item.title}/>
           :
         <img src={item.image.src} alt={item.title}/>
         }
@@ -31,9 +33,9 @@ export const CheckoutItem = ({item, removeItemFromCart, checkout}) => (
       <div className="image-container">
         {
           item.images ?
-        <img src={item.images[0].src} alt={item.title}/>
+            <img src={item.images[0].src} alt={item.title}/>
           :
-        <img src={item.image.src} alt={item.title}/>
+            <img src={item.image.src} alt={item.title}/>
         }
       </div>
       <div className="checkout-item-information-mobile">
@@ -53,6 +55,7 @@ export const CheckoutItem = ({item, removeItemFromCart, checkout}) => (
     </div>
   </CheckoutItemContainer>
 )
+}
 
 const mapStateToProps = state => ({
   checkout: state.cart.checkout

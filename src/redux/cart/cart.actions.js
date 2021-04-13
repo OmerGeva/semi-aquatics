@@ -46,11 +46,11 @@ export const updateCheckoutAsync = (checkout) => {
     });
     if (checkout){
       client.checkout.fetch(checkout.id).then((checkout) => {
-        if(checkout.completedAt != null && new Date(checkout.createdAt) < new Date("2020/09/1 17:00:00 EST"))
+        if(checkout.completedAt != null && new Date(checkout.createdAt) < new Date("2021/4/15 17:00:00 EST"))
         {
-         dispatch(resetCart([]));
-         client.checkout.create().then((checkout) => {
-          dispatch(createCheckout(checkout));
+          dispatch(resetCart([]));
+          client.checkout.create().then((checkout) => {
+            dispatch(createCheckout(checkout));
           })
         }
       });
