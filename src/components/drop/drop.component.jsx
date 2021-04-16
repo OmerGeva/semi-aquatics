@@ -38,8 +38,10 @@ const Drop = ({ match }) => {
     }
 
     const currentDrop = []
-    if(products && products[0] && products[0].title){
+    if(products){
+      console.log('products ->');
       console.log(products);
+
       products.forEach((drop) => {
         if (drop.title.includes(match.params.dropId)) {
           currentDrop.push(drop)
