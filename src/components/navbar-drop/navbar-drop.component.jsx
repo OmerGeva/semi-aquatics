@@ -14,7 +14,7 @@ const NavbarDrop = ({title, drops, closeNavbar}) => {
 
   return(
   <NavbarDropContainter ref={ref}>
-     {drops[0] === 16 && !isOpen ?
+     {drops[0] === 17 && !isOpen ?
               <div className="new-drop-top">
                 NEW!
               </div>
@@ -33,7 +33,7 @@ const NavbarDrop = ({title, drops, closeNavbar}) => {
             <LinkContainer onClick={() => { setIsOpen(false); closeMobileNavbar(); }} key={drop.id} to={`/shop/drops/${drop}`}>
             DROP {drop - 14}
             </LinkContainer>
-            {drop === 16 ?
+            {drop === 17 ?
               <div className="new-drop">
                 NEW!
               </div>

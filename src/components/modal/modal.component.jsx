@@ -65,7 +65,7 @@ return(
                 < HiOutlineX />
               </IconContext.Provider>
             </div>
-            <h2>Spring 2021 drop 2 <br />will be available on April 19 at 6:00 PM EST.</h2>
+            <h2>Sold out</h2>
             <p>Shopping for new clothing everyday is causing the fashion-related environmental disaster. Shopping the right day, is part of the solution.</p>
             <p>Sign up with your email to get notified when our next collection become available.</p>
             <span className='flex-grower'></span>
