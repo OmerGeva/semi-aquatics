@@ -71,7 +71,7 @@ const Navbar = () =>
         FAQ
       </LinkContainer>
       <a href='https://markets.businessinsider.com/news/stocks/streetwear-startup-is-pioneering-the-slow-fashion-movement-1030160893' target='_blank' className='bi-link'>
-      Press
+      PRESS
       </a>
 
       </div>
@@ -120,7 +120,7 @@ const Navbar = () =>
       FAQ
       </LinkContainer>
       <a href='https://markets.businessinsider.com/news/stocks/streetwear-startup-is-pioneering-the-slow-fashion-movement-1030160893' target='_blank' className='bi-link'>
-      Press
+      PRESS
       </a>
       <a href="https://www.instagram.com/semiaquatics">
         <i className="fab fa-instagram footer-item" ></i>
