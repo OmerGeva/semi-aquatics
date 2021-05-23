@@ -65,9 +65,9 @@ return(
                 < HiOutlineX />
               </IconContext.Provider>
             </div>
-            <h2>Sold out</h2>
-            <p>Shopping for new clothing everyday is causing the fashion-related environmental disaster. Shopping the right day, is part of the solution.</p>
-            <p>Sign up with your email to get notified when our next collection become available.</p>
+            <h2>The Jimothy Harris Collection will be available on May 31st, 6:00 PM EST</h2>
+            <p>This design was created in loving memory of Will Nash. Proceeds from the drop will be donated to the William G. Nash Foundation, dedicated to promoting youth wellness and wellbeing along with providing grants for student run startups.</p>
+            <p>Sign up with your email to get notified when our next collections become available.</p>
             <span className='flex-grower'></span>
             <div className="email-form">
               <input type="text" value={email} placeholder='semi@aquatics.com' className="email-input" onChange={event => setEmail(event.target.value)}/>

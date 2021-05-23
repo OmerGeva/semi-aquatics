@@ -13,6 +13,7 @@ export const AnnouncementBannerContainer = styled.div`
   z-index: 7;
   background-color: #54a8c9;
   color: white;
+  text-transform: uppercase;
 
 
 

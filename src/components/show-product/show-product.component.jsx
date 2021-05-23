@@ -167,7 +167,7 @@ return (
                 :
                   <CustomButtom soldOut={true}>
                     {
-                    product.id === 'DZ2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1NTI0NTU1MTIxMzk=' || product.id === 'DZ2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1NTI0NTk0MTE1MzE=' ?
+                    product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1Njg1NTExNTM3Mzk=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1Njg1NTE5MDc0MDM=' ?
                       'COMING SOON'
                     :
 

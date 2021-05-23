@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 
 const descriptionStyles = css`
 width: 87%;
-top: -50vh;
 top: -12vh;
 width: 80vw;
 
@@ -19,7 +18,7 @@ width: 80vw;
 
 const emailStyles = css`
 left: 35vw;
-top: 15vh;
+top: 5vh;
 color: black;
 width: calc(20vw + 30vh);
 border-radius: 2px;
@@ -29,7 +28,7 @@ background-color: #F7F9F9;
 
 const emailMobile = css`
 top: 10vh;
-width: 96vw;
+max-width: 96vw;
 padding: 0;
 .email-modal{
   h2{
@@ -192,10 +191,13 @@ export const ModalContainer = styled.div`
 
   @media only screen and (max-width: 768px) {
 
-    width: 85vw;
+    width: 88vw;
     left: 1.5vw;
     ${isEmailForm}
     min-height: 20vh;
+    max-height: 50vh;
+    overflow: scroll;
+    padding: 1rem;
     img{
       width: 110%;
     }
