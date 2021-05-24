@@ -58,7 +58,7 @@ const Drop = ({ match }) => {
          {
            match.params.dropId === '17' ?
            <div className="">
-            {/* <CountdownTimer /> */}
+            <CountdownTimer />
            </div>
           :
             ""
