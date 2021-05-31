@@ -16,7 +16,7 @@ const ShopItem = ({ product, match, dropId }) => {
           }
 
            {
-            dropId === '17' && !availableForSale ? <p className="sold-out">COMING SOON</p> : <span></span>
+            dropId === '18' && !availableForSale ? <p className="sold-out">COMING SOON</p> : <span></span>
            }
 
           <img src={ images[0].src } alt={title}/>
