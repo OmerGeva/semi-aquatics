@@ -32,7 +32,7 @@ const App = () =>
     if(checkout && new Date(checkout.createdAt) < new Date("2021/6/15 10:00:00 EST")){
       dispatch(resetApp())
     }
-
+    
     const closeModalRedux = () => {
       dispatch(closeModal());
     }

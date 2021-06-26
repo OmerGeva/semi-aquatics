@@ -5,10 +5,9 @@ import { SpinnerOverlay, SpinnerContainer } from './with-spinner.styles';
 const WithSpinner = WrappedComponent => ({isLoading, products, ...otherProps}) => {
   if (isLoading === false && products !== null && products !== "Failed to fetch") {
     return (
-      <WrappedComponent isLoading={isLoading} {...otherProps} />
+      <WrappedComponent  {...otherProps} />
       )
   } else {
-
     return (
       <SpinnerOverlay>
         <SpinnerContainer/>

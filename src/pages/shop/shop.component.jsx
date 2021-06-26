@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {useEffect} from 'react'
@@ -12,7 +12,6 @@ import ShowProduct from '../../components/show-product/show-product.component'
 import WithSpinner from '../../components/with-spinner/with-spinner.component'
 
 import { fetchProductsStartAsync } from '../../redux/product/product.actions'
-import { updateCheckoutAsync } from '../../redux/cart/cart.actions'
 
 
 
@@ -23,15 +22,13 @@ const ShowProductWithSpinner = WithSpinner(ShowProduct);
 const ShopPage = ({ match }) => {
 
   const dispatch = useDispatch();
-  const isProductsFetching = useSelector(state => state.product.isFetching)
-  const products = useSelector(state => state.product)
-  const checkout = useSelector(state => state.cart.checkout)
+  const stableDispatch = useCallback(dispatch, []);
+  const isProductsFetching = useSelector(state => state.product.isFetching);
+  const products = useSelector(state => state.product);
 
   useEffect(() => {
-    // dispatch(updateCheckoutAsync(checkout));
-
-    dispatch(fetchProductsStartAsync());
-  }, [])
+    stableDispatch(fetchProductsStartAsync());
+  }, [stableDispatch])
 
     return(
       <ShopPageContainer>

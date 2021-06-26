@@ -35,7 +35,7 @@ const CheckoutTotal = () =>
         </div>
       </div>
       <div className="item-space"></div>
-      <div className="center-button" onClick={checkoutUrl === '/checkout' ? '' : () => handleGoToCheckout()}>
+      <div className="center-button" onClick={checkoutUrl === '/checkout' ? () => {} : () => handleGoToCheckout()}>
         <a href={checkoutUrl} >
           <CustomButtom>
           PAY NOW
