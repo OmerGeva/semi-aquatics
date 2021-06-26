@@ -53,7 +53,7 @@ const Drop = ({ match }) => {
       <div className="drop-page">
         <div className="drop-title">
           <h2>{currentDropHeader(parseInt(match.params.dropId))}</h2>
-          <h4>{currentDrop[0] ? currentDrop[0].description : ''}</h4>
+          {/* <h4>{currentDrop[0]  currentDrop[0].description : ''}</h4> */}
           <h5>{match.params.dropId === '7' &&
             "Happy Birthday, Will! 100% of profits from this drop will be donated to the William G. Nash Memorial Fund."
           }</h5>
