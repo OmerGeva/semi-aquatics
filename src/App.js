@@ -29,7 +29,7 @@ const App = () =>
     dispatch(updateCheckoutAsync(checkout, cartItems));
     
       // This checks when the user last was on the app, and resets the cached state.
-    if(checkout && new Date(checkout.createdAt) < new Date("2021/5/31 10:00:00 EST")){
+    if(checkout && new Date(checkout.createdAt) < new Date("2021/6/15 10:00:00 EST")){
       dispatch(resetApp())
     }
 
