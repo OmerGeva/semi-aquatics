@@ -14,7 +14,7 @@ const Faq = () => (
         How Long Does Shipping Take?
       </div>
       <div className="faq-answer">
-        Most orders will be shipped within 2-3 business days. However some orders may take up to a full business week to ship.
+      All orders will shipped within 1-2 days!
       </div>
       <div className="faq-question">
         What’s the Return Policy?
