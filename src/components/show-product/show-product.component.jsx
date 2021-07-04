@@ -36,6 +36,13 @@ const ShowProduct = () =>
 
   product = product && product.id === params.productId ? product : allProducts.filter(individualProduct => individualProduct[0].id === params.productId)[0][0]
 
+  const startDate = new Date();
+  const dropDate = new Date("2021/7/05 17:00:00 EST");
+
+  const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
+  const endDateInUTC = new Date(dropDate.getUTCFullYear(), dropDate.getUTCMonth(), dropDate.getUTCDate(), dropDate.getUTCHours(), dropDate.getUTCMinutes(), dropDate.getUTCSeconds());
+  const difference = Date.parse(endDateInUTC) - Date.parse(startDateInUTC);
+
   const createNotification = (product) => {
       return NotificationManager.success(`${product.title} was added to cart!`);
       };
@@ -167,7 +174,7 @@ return (
                 :
                   <CustomButtom soldOut={true}>
                     {
-                    product.id === 'Z2lkOi8evc2hvcGlmeS9Qcm9kdWN0LzY1Njg1NTExNTM3Mzk=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcme9kdWN0LzY1Njg1NTE5MDc0MDM=' ?
+                    (product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4Njc1NTg0NzU=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4NjgzMTIxMzk=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4Njc5MTg5MjM=') && difference > 0 ?
                       'COMING SOON'
                     :
 
