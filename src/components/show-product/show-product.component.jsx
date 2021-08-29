@@ -37,7 +37,7 @@ const ShowProduct = () =>
   product = product && product.id === params.productId ? product : allProducts.filter(individualProduct => individualProduct[0].id === params.productId)[0][0]
 
   const startDate = new Date();
-  const dropDate = new Date("2021/7/05 17:00:00 EST");
+  const dropDate = new Date("2021/9/16 17:00:00 EST");
 
   const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
   const endDateInUTC = new Date(dropDate.getUTCFullYear(), dropDate.getUTCMonth(), dropDate.getUTCDate(), dropDate.getUTCHours(), dropDate.getUTCMinutes(), dropDate.getUTCSeconds());
@@ -174,7 +174,9 @@ return (
                 :
                   <CustomButtom soldOut={true}>
                     {
-                    (product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4Njc1NTg0NzU=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4NjgzMTIxMzk=' || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4Njc5MTg5MjM=') && difference > 0 ?
+                    (product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDUwMzE1Mzg3NjM=' 
+                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4Njc1NTg0NzU=' 
+                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDUwMzI1MjE4MDM=') && difference > 0 ?
                       'COMING SOON'
                     :
 

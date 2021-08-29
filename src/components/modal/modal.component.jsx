@@ -65,7 +65,7 @@ return(
                 < HiOutlineX />
               </IconContext.Provider>
             </div>
-            <h2>Sold out. </h2>
+            <h2>Next Drop on 9/16/21 </h2>
             <p>Shopping for new clothing every day is causing the fashion-related environmental disaster. Shopping the right day, is part of the solution.</p>
             <p>Sign up with your email to get notified when our next collections become available.</p>
             <span className='flex-grower'></span>

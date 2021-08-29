@@ -17,6 +17,7 @@ const dispatch = useDispatch();
 const [chosenFilter, setChosenFilter] = useState("")
 const [isModalOpen, setModalOpen] = useState(false);
 const ref = useRef();
+
 const currentProducts = chosenFilter === "" ? products : products.filter(product => product[0].productType === chosenFilter)
 
 useOnClickOutside(ref, () => setModalOpen(false));
@@ -26,7 +27,7 @@ return(
       <div className="drop-title">
         <h2>CATALOG</h2>
       </div>
-      <div className="product-filter-container"  ref={ref}>
+      {/* <div className="product-filter-container"  ref={ref}>
         <div className={isModalOpen ? 'filter-tab-active' : 'filter-tab'} onClick={() => setModalOpen(!isModalOpen)}>Filter</div>
         <div className={isModalOpen ? 'product-filters' : 'product-filters-closed'}>
           <h5 className={chosenFilter === '' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter(''); setModalOpen(false)}}>ALL</h5>
@@ -40,7 +41,7 @@ return(
           <h5 className={chosenFilter === 'Organic Cotton Face Masks' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('Organic Cotton Face Masks'); setModalOpen(false)}}>Organic Cotton Face Masks</h5>
           <h5 className={chosenFilter === 'Skate Decks' ? 'product-filter-active' : 'product-filter'} onClick={() => {setChosenFilter('Skate Decks'); setModalOpen(false)}}>Skate Decks</h5>
         </div>
-      </div>
+      </div> */}
 
 
       <div className="drop-products">
@@ -49,7 +50,9 @@ return(
             <Link to={`/shop/drops/${product[1].title[product[1].title.length-1]}/${product[0].id}`} key={product[0].id} >
             <div onClick={() => dispatch(chooseProduct(product[0]))}>
               <ShopItem  product={product[0]} key={product[0].id}  
-              dropId={product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4Njc1NTg0NzU=' || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4NjgzMTIxMzk=' || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4Njc5MTg5MjM=' ? '18' : '1'} />
+              dropId={product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4Njc1NTg0NzU=' 
+              || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDUwMzI1MjE4MDM=' 
+              || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDUwMzE1Mzg3NjM=' ? '19' : '1'} />
             </div>
             </Link>
             )
