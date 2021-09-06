@@ -52,7 +52,7 @@ return(
               <ShopItem  product={product[0]} key={product[0].id}  
               dropId={product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4Njc1NTg0NzU=' 
               || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDUwMzI1MjE4MDM=' 
-              || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDUwMzE1Mzg3NjM=' ? '19' : '1'} />
+              || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDUwMzE1Mzg3NjM=' ? '20' : '1'} />
             </div>
             </Link>
             )
