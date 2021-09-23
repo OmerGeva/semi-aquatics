@@ -155,9 +155,9 @@ return (
               }
             </div>
             :
-            <div onClick={() =>  (variantProduct && variantProduct.available) ? handleAddToCart(variantProduct, product, checkout, inventoryQuantity): ''} className="addToCartButton">
+            <div onClick={() =>  (variantProduct && variantProduct.available && false) ? handleAddToCart(variantProduct, product, checkout, inventoryQuantity): ''} className="addToCartButton">
               {
-                product.availableForSale ?
+                product.availableForSale && false ?
                 (!variantProduct) ?
                   <CustomButtom soldOut={true}>
                      PICK SIZE
