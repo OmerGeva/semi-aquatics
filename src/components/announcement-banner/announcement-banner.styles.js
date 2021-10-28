@@ -21,7 +21,7 @@ export const AnnouncementBannerContainer = styled.div`
   h5{
     text-transform: uppercase;
     animation-name: slide;
-    animation-duration: 23s;
+    animation-duration: 21s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -45,7 +45,7 @@ export const AnnouncementBannerContainer = styled.div`
 
   @media only screen and (max-width: 768px) {
     h5{
-      animation-duration: 15s;
+      animation-duration: 13s;
       width: 310vw;
       font-size: 12px;
     }
@@ -54,7 +54,7 @@ export const AnnouncementBannerContainer = styled.div`
         transform: translateX(170vw);
       }
       to {
-        transform: translateX(-290vw);
+        transform: translateX(-260vw);
        }
       }
 }

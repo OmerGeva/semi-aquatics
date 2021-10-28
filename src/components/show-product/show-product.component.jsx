@@ -37,7 +37,7 @@ const ShowProduct = () =>
   product = product && product.id === params.productId ? product : allProducts.filter(individualProduct => individualProduct[0].id === params.productId)[0][0]
 
   const startDate = new Date();
-  const dropDate = new Date("2021/9/06 17:00:00 EST");
+  const dropDate = new Date("2021/11/08 18:00:00 EST");
 
   const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
   const endDateInUTC = new Date(dropDate.getUTCFullYear(), dropDate.getUTCMonth(), dropDate.getUTCDate(), dropDate.getUTCHours(), dropDate.getUTCMinutes(), dropDate.getUTCSeconds());
@@ -155,9 +155,9 @@ return (
               }
             </div>
             :
-            <div onClick={() =>  (variantProduct && variantProduct.available && false) ? handleAddToCart(variantProduct, product, checkout, inventoryQuantity): ''} className="addToCartButton">
+            <div onClick={() =>  (variantProduct && variantProduct.available) ? handleAddToCart(variantProduct, product, checkout, inventoryQuantity): ''} className="addToCartButton">
               {
-                product.availableForSale && false ?
+                product.availableForSale ?
                 (!variantProduct) ?
                   <CustomButtom soldOut={true}>
                      PICK SIZE
@@ -174,9 +174,13 @@ return (
                 :
                   <CustomButtom soldOut={true}>
                     {
-                    (product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDUwMzE1Mzg3NjM=' 
-                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4Njc1NTg0NzU=' 
-                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDUwMzI1MjE4MDM=') && difference > 0 ?
+                    (product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTY2Njk1MTU=' 
+                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTYyMTA3NjM=' 
+                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTU1ODgxNzE='
+                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTQ1NzIzNjM='
+                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTM3NTMxNjM=' 
+                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTI4Njg0Mjc=' 
+                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTMxMzA1NzE=') && difference > 0 ?
                       'COMING SOON'
                     :
 

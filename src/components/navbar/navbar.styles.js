@@ -65,7 +65,11 @@ const setNavHeight = ({navHeight}) => {
 }
 
 export const NavbarContainer = styled.div`
-
+.new-drop-top{
+  color: red;
+  margin: 0;
+  font-size: 14px;
+}
 -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
