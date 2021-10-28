@@ -24,6 +24,10 @@ const Drop = ({ match }) => {
       {
         return `Fall / Winter ${dropId}`
       }
+      else if(dropId === 20)
+      {
+        return `Fall 2021`
+      }
       else if(dropId >= 15)
       {
         return `Spring / Summer 2021`

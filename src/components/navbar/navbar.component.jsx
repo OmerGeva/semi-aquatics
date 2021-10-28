@@ -99,7 +99,7 @@ const Navbar = () =>
           NEW!
         </div>
       <LinkContainer to="/shop/drops/20" onClick={() => setNavbarOpen(!navbarOpen)}>
-          Fall 2021
+          FALL 2021
       </LinkContainer>
       <br/>
       <NavbarDrop  title='SPRING/SUMMER 2021' drops={spring2021} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
