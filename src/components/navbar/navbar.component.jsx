@@ -30,6 +30,7 @@ const Navbar = () =>
   return(
     <NavbarContainer isDark={isDark} navHeight = {navHeight} ref={ref}>
       <div className="nav-desktop">
+      <br/>
         <LinkContainer to="/" className="home-link">
         HOME
         </LinkContainer>
@@ -60,15 +61,19 @@ const Navbar = () =>
         <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => dispatch(toggleDarkTheme())}>
           <span></span>
         </label>
+      <br/>
         <LinkContainer to="/info/sizing">
         SIZING
         </LinkContainer>
         <LinkContainer to="/story">
+      <br/>
         STORY
         </LinkContainer>
+      <br/>
         <LinkContainer to="/info/sustainability">
         SUSTAINABILITY
         </LinkContainer>
+      <br/>
         <LinkContainer to="/info/faq">
         FAQ
       </LinkContainer>
@@ -85,6 +90,8 @@ const Navbar = () =>
       <i className="fas fa-bars"></i>
     </div>
     <div className={navbarOpen ? "nav-mobile-open" : "nav-mobile-closed"}>
+    <br/>
+    <br/>
       <LinkContainer to="/" className="home-link"  onClick={() => setNavbarOpen(!navbarOpen)}>
       HOME
       </LinkContainer>
@@ -114,18 +121,24 @@ const Navbar = () =>
       <label htmlFor="themeSwitch" className="theme-switch__label" onClick={() => dispatch(toggleDarkTheme())}>
         <span></span>
       </label>
+      <br/>
       <LinkContainer to="/info/sizing" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
       SIZING
       </LinkContainer>
+      <br/>
       <LinkContainer to="/story" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
       STORY
       </LinkContainer>
+      <br/>
       <LinkContainer to="/info/sustainability" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
       SUSTAINABILITY
       </LinkContainer>
+      
+      <br/>
       <LinkContainer to="/info/faq" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
       FAQ
       </LinkContainer>
+      <br/>
       <a href='https://markets.businessinsider.com/news/stocks/streetwear-startup-is-pioneering-the-slow-fashion-movement-1030160893' target='_blank' className='bi-link'>
       PRESS
       </a>

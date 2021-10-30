@@ -80,7 +80,9 @@ export const NavbarContainer = styled.div`
 
 
   .nav-desktop{
-
+    #non-drop-page{
+      margin-top: 12px;
+    }
     width: 10vw;
     height: 95vh;
     padding: 16px;
@@ -328,7 +330,7 @@ export const NavbarContainer = styled.div`
       margin-bottom: 50px;
     }
 
-    .non-drop-page{
+    #non-drop-page{
       font-size: 12px;
       margin-bottom: 1vh;
       margin-top: 12px;
@@ -401,7 +403,6 @@ export const LinkContainer = styled(Link)`
     .mobile-dropdown-drop{
       display: block;
     }
-
 }
 
   @media only screen and (max-height: 668px) {
