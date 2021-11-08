@@ -45,7 +45,7 @@ const Navbar = () =>
           NEW!
         </div>
         <LinkContainer to="/shop/drops/20">
-          Fall 2021
+          FALL 2021
         </LinkContainer>
         <br/>
         <NavbarDrop  title='SPRING/SUMMER 2021' drops={spring2021}/>
