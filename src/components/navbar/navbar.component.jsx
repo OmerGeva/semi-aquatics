@@ -41,9 +41,9 @@ const Navbar = () =>
         CATALOG
         </LinkContainer>
           <br/>
-        <div className="new-drop-top">
+        {/* <div className="new-drop-top">
           NEW!
-        </div>
+        </div> */}
         <LinkContainer to="/shop/drops/20">
           FALL 2021
         </LinkContainer>
@@ -102,9 +102,9 @@ const Navbar = () =>
       CATALOG
       </LinkContainer>
         <br/>
-        <div className="new-drop-top">
+        {/* <div className="new-drop-top">
           NEW!
-        </div>
+        </div> */}
       <LinkContainer to="/shop/drops/20" onClick={() => setNavbarOpen(!navbarOpen)}>
           FALL 2021
       </LinkContainer>
