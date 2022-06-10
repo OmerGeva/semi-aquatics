@@ -2,6 +2,9 @@
   "name": "semi-aquatics",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.15.0"
+  },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.19.14",
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
