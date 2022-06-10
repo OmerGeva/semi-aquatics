@@ -173,19 +173,19 @@ return (
                   </CustomButtom>
                 :
                   <CustomButtom soldOut={true}>
-                    {/* {
-                    (product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTY2Njk1MTU=' 
-                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTYyMTA3NjM=' 
+                    {
+                    (product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTY2Njk1MTU='
+                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTYyMTA3NjM='
                     || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTU1ODgxNzE='
                     || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTQ1NzIzNjM='
-                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTM3NTMxNjM=' 
-                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTI4Njg0Mjc=' 
+                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTM3NTMxNjM='
+                    || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTI4Njg0Mjc='
                     || product.id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTMxMzA1NzE=') && difference > 0 ?
                       'COMING SOON'
                     :
 
                       'SOLD OUT'
-                    } */}
+                    }
                   </CustomButtom>
               }
             </div>
