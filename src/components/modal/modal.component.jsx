@@ -49,7 +49,7 @@ const Modal = ({open, setOpen, type, description, closeEmailModal}) =>
       await setEmail('');
       await closeEmailModal();
       await console.log(response)
-      
+
     }catch(error){
         console.log(error.message);
       }
@@ -65,7 +65,7 @@ return(
                 < HiOutlineX />
               </IconContext.Provider>
             </div>
-            <h2>Working on the Next Drop</h2>
+            <h2>Next drop is on 10/5/20 at 6:00 PM EST</h2>
             <p>Shopping for new clothing every day is causing the fashion-related environmental disaster. Shopping the right day, is part of the solution.</p>
             <p>Sign up with your email to get notified when our next collections become available.</p>
             <span className='flex-grower'></span>
