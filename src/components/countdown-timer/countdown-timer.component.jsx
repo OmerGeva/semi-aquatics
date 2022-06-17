@@ -3,17 +3,17 @@ import { CountdownTimerContainer } from './countdown-timer.styles'
 
 const CountdownTimer = () =>
 {
-  const dropDate = new Date("2021/11/08 18:00:00 EST");
-  
+  const dropDate = new Date("2022/06/20 18:00:00 EST");
+
   const calculateTimeLeft = () => {
     const startDate = new Date();
 
     const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
     const endDateInUTC = new Date(dropDate.getUTCFullYear(), dropDate.getUTCMonth(), dropDate.getUTCDate(), dropDate.getUTCHours(), dropDate.getUTCMinutes(), dropDate.getUTCSeconds());
     const difference = Date.parse(endDateInUTC) - Date.parse(startDateInUTC);
-    
+
     let timeLeft = {};
-    
+
     if (difference > 0) {
       timeLeft = {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -22,7 +22,7 @@ const CountdownTimer = () =>
         seconds: Math.floor((difference / 1000) % 60)
       };
     }
-    
+
     return timeLeft;
   };
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -31,13 +31,13 @@ const CountdownTimer = () =>
     setTimeLeft(calculateTimeLeft());
   }, 1000);
 
-  let days = timeLeft.days; 
-  
+  let days = timeLeft.days;
+
   let hours = timeLeft.hours;
   let minutes = timeLeft.minutes;
   let seconds = timeLeft.seconds;
   return(
-    
+
     timeLeft.seconds > 0 || timeLeft.minutes > 0 || timeLeft.hours > 0 || timeLeft.days > 0?
         <CountdownTimerContainer>
         <div className="countdown-container">
@@ -58,7 +58,7 @@ const CountdownTimer = () =>
           <h4>SECONDS</h4>
           </div>
         </div>
-        
+
         </CountdownTimerContainer>
       :
         <div></div>

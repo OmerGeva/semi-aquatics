@@ -27,12 +27,12 @@ const App = () =>
     const checkout = useSelector(state => state.cart.checkout)
     const cartItems = useSelector(state => state.cart.cartItems)
     dispatch(updateCheckoutAsync(checkout, cartItems));
-    
+
     // This checks when the user last was on the app, and resets the cached state.
-    if(checkout && new Date(checkout.createdAt) < new Date("2021/6/15 10:00:00 EST")){
+    if(checkout && new Date(checkout.createdAt) < new Date("2022/01/15 10:00:00 EST")){
       dispatch(resetApp());
     }
-    
+
     const closeModalRedux = () => {
       dispatch(closeModal());
     }

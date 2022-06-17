@@ -41,9 +41,13 @@ const Navbar = () =>
         CATALOG
         </LinkContainer>
           <br/>
-        {/* <div className="new-drop-top">
+        <LinkContainer to="/shop/drops/21">
+          SUMMER
+        </LinkContainer>
+        <div className="new-drop-top">
           NEW!
-        </div> */}
+        </div>
+          <br/>
         <LinkContainer to="/shop/drops/20">
           FALL 2021
         </LinkContainer>
@@ -102,16 +106,20 @@ const Navbar = () =>
       CATALOG
       </LinkContainer>
         <br/>
-        {/* <div className="new-drop-top">
+      <LinkContainer to="/shop/drops/21" onClick={() => setNavbarOpen(!navbarOpen)}>
+        SUMMER
+      </LinkContainer>
+        <div className="new-drop-top">
           NEW!
-        </div> */}
+        </div>
+        <br/>
       <LinkContainer to="/shop/drops/20" onClick={() => setNavbarOpen(!navbarOpen)}>
           FALL 2021
       </LinkContainer>
       <br/>
       <NavbarDrop  title='SPRING/SUMMER 2021' drops={spring2021} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
       <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
-      
+
       <NavbarDrop  title='SPRING/SUMMER 2020' drops={summerDrops20} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
 
       <NavbarDrop  title='FALL/WINTER 2019/20' drops={winterDrops19} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
@@ -133,7 +141,7 @@ const Navbar = () =>
       <LinkContainer to="/info/sustainability" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
       SUSTAINABILITY
       </LinkContainer>
-      
+
       <br/>
       <LinkContainer to="/info/faq" className="non-drop-page" onClick={() => setNavbarOpen(!navbarOpen)}>
       FAQ

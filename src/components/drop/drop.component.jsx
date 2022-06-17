@@ -16,7 +16,7 @@ const Drop = ({ match }) => {
     const products = useSelector(state => state.product.products);
     const isProductsFetching = useSelector(state => state.product.isFetching);
     const [currentDrop, setCurrentDrop] = useState({products: []});
-    
+
     const dropId = match.params.dropId;
 
     const currentDropHeader = (dropId) => {
@@ -27,6 +27,9 @@ const Drop = ({ match }) => {
       else if(dropId === 20)
       {
         return `Fall 2021`
+      }
+      else if (dropId === 21) {
+        return `Summer`
       }
       else if(dropId >= 15)
       {
@@ -44,15 +47,16 @@ const Drop = ({ match }) => {
     useEffect(() => {
       if(!isProductsFetching){
         products.forEach((drop) => {
+          console.log(drop.title)
           if (drop.title.includes(dropId)) {
             setCurrentDrop({products: drop.products});
           }
         })
       }
       },[dropId, products, isProductsFetching])
-      
-      
-    
+
+
+
     return (
       <div className="drop-page">
         <div className="drop-title">
@@ -64,14 +68,14 @@ const Drop = ({ match }) => {
 
         </div>
          {
-           match.params.dropId === '20' &&
+           match.params.dropId === '21' &&
            <div className="">
             <CountdownTimer />
            </div>
          }
 
         <div className='drop-products'>
-        { 
+        {
            currentDrop.products.map((product) => (
             <Link to={`${match.params.dropId}/${product.id}`} key={product.id} >
               <div onClick={() => dispatch(chooseProduct(product))}>
