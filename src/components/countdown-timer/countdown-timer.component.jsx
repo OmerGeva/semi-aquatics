@@ -3,7 +3,7 @@ import { CountdownTimerContainer } from './countdown-timer.styles'
 
 const CountdownTimer = () =>
 {
-  const dropDate = new Date("2022/06/20 18:00:00 EST");
+  const dropDate = new Date("2022/06/20 17:00:00 EST");
 
   const calculateTimeLeft = () => {
     const startDate = new Date();

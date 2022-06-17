@@ -42,7 +42,7 @@ const Navbar = () =>
         </LinkContainer>
           <br/>
         <LinkContainer to="/shop/drops/21">
-          SUMMER
+          SUMMER 2022
         </LinkContainer>
         <div className="new-drop-top">
           NEW!
@@ -107,7 +107,7 @@ const Navbar = () =>
       </LinkContainer>
         <br/>
       <LinkContainer to="/shop/drops/21" onClick={() => setNavbarOpen(!navbarOpen)}>
-        SUMMER
+        SUMMER 2022
       </LinkContainer>
         <div className="new-drop-top">
           NEW!

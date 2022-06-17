@@ -29,7 +29,7 @@ const Drop = ({ match }) => {
         return `Fall 2021`
       }
       else if (dropId === 21) {
-        return `Summer`
+        return `Summer 2022`
       }
       else if(dropId >= 15)
       {
