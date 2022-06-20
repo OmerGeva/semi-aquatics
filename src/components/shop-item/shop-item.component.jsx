@@ -14,9 +14,9 @@ const ShopItem = ({ product, match, dropId }) => {
           {
             !availableForSale && <p className="sold-out">SOLD OUT</p>
           }
-           {
+           {/* {
             dropId === '21' && <p className="sold-out">COMING SOON</p>
-           }
+           } */}
           <img src={ images[0].src } alt={title}/>
           <h5>{title}</h5>
         </div>
