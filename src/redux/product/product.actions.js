@@ -40,7 +40,7 @@ export const fetchProductsFailure = errorMessage  => ({
 export const fetchProductsStartAsync = () =>{
   return dispatch => {
     dispatch(fetchProductsStart());
-    client.collection.fetchAllWithProducts({ first: 21 }).then((collections) => {
+    client.collection.fetchAllWithProducts({ first: 22 }).then((collections) => {
       dispatch(fetchProductsSuccess(collections));
     }).catch(error =>
       dispatch(fetchProductsFailure(error.message))

@@ -19,10 +19,10 @@ const EmailForm = ({inModal, closeEmailModal}) =>
       const response = await axios.post(apiUrl,{})
       await setText('');
       await console.log(response)
-      
+
     }catch(error){
-        console.log(error.message);
-      }
+      console.log(error.message);
+    }
 
   }
 

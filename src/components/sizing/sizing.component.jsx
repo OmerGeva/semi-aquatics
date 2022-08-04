@@ -9,6 +9,7 @@ import hoodie from '../../assets/sizing-chart-hoodie.png';
 import longSleeve from '../../assets/sizing-chart-long-sleeve.png';
 
 import { SizingContainer } from './sizing.styles'
+// TODO: CHANGE FROM PNG TO JPG
 
 export const Sizing = () => (
   <SizingContainer>
