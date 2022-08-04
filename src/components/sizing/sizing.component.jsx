@@ -1,7 +1,7 @@
 import React from 'react';
 
-import crewneck from '../../assets/sizing-chart-crewneck.png'
-import boxyTee from '../../assets/sizing-boxy.png';
+import crewneck from '../../assets/sizing-chart-crewneck.jpg'
+import boxyTee from '../../assets/sizing-boxy.jpg';
 import sweatpants from '../../assets/sweatpants-chart.png';
 import shorts from '../../assets/sizing-chart-shorts.png';
 import tShirt from '../../assets/sizing-chart-tshirt.png';
