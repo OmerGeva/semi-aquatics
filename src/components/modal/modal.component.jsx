@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import crewneck from '../../assets/sizing-chart-crewneck.png'
-import boxyTee from '../../assets/sizing-boxy.png';
+import crewneck from '../../assets/sizing-chart-crewneck.jpg'
+import boxyTee from '../../assets/sizing-boxy.jpg';
 import sweatpants from '../../assets/sweatpants-chart.png';
 import shorts from '../../assets/sizing-chart-shorts.png';
 import tShirt from '../../assets/sizing-chart-tshirt.png';
-import longSleeve from '../../assets/sizing-chart-long-sleeve.png';
 import hoodie from '../../assets/sizing-chart-hoodie.png';
+import longSleeve from '../../assets/sizing-chart-long-sleeve.png';
 import { IconContext } from "react-icons";
 import { HiOutlineX  } from 'react-icons/hi';
 import { CgArrowLongRight  } from 'react-icons/cg';
