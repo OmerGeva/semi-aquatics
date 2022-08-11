@@ -28,8 +28,8 @@ const Drop = ({ match }) => {
       {
         return `Fall 2021`
       }
-      else if (dropId === 21) {
-        return `Summer 2022`
+      else if (dropId === 21 || dropId === 22) {
+        return `Summer 2022 - ${dropId - 20}`
       }
       else if(dropId >= 15)
       {
@@ -47,14 +47,12 @@ const Drop = ({ match }) => {
     useEffect(() => {
       if(!isProductsFetching){
         products.forEach((drop) => {
-          console.log(drop.title)
           if (drop.title.includes(dropId)) {
             setCurrentDrop({products: drop.products});
           }
         })
       }
       },[dropId, products, isProductsFetching])
-
 
 
     return (
@@ -68,7 +66,7 @@ const Drop = ({ match }) => {
 
         </div>
          {
-           match.params.dropId === '21' &&
+           match.params.dropId === '22' &&
            <div className="">
             <CountdownTimer />
            </div>

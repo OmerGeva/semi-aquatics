@@ -49,14 +49,12 @@ return(
           currentProducts.map((product) => (
             <Link to={`/shop/drops/${product[1].title[product[1].title.length-1]}/${product[0].id}`} key={product[0].id} >
             <div onClick={() => dispatch(chooseProduct(product[0]))}>
-              <ShopItem  product={product[0]} key={product[0].id}  
-              dropId={product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTY2Njk1MTU=' 
-                      || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTYyMTA3NjM=' 
-                      || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTU1ODgxNzE='
-                      || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTQ1NzIzNjM='
-                      || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTM3NTMxNjM=' 
-                      || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTI4Njg0Mjc=' 
-                      || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTMxMzA1NzE=' ? '20' : '1'} />
+              <ShopItem  product={product[0]} key={product[0].id}
+                  dropId={product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5Nzc3OTEwNTE='
+                    || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5Nzc5MjIxMjM='
+                    || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5NzgwNTMxOTU='
+                    || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5NzgxODQyNjc='
+                      || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTM3NTMxNjM=' ? '22' : '1'} />
             </div>
             </Link>
             )

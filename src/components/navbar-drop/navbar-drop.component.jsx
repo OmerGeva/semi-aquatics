@@ -27,7 +27,7 @@ const NavbarDrop = ({title, drops, closeNavbar}) => {
     {
       isOpen ?
       title=='SPRING/SUMMER 2021'
-        ? 
+        ?
         drops.map(drop =>
           <div key={drop}>
             <LinkContainer onClick={() => { setIsOpen(false); closeMobileNavbar(); }} key={drop.id} to={`/shop/drops/${drop}`}>
@@ -43,20 +43,20 @@ const NavbarDrop = ({title, drops, closeNavbar}) => {
           </div>
         )
         :
-      title==='FALL/WINTER 2020/21'
-        ? 
+      title==='SUMMER 2022'
+        ?
         drops.map(drop =>
           <div className="">
             <LinkContainer onClick={() => { setIsOpen(false); closeMobileNavbar(); }} key={drop.id} to={`/shop/drops/${drop}`}>
-            DROP {drop - 12}
+            DROP {drop - 20}
             </LinkContainer>
-            {/* {drop === 14 ?
+            {drop === 22 ?
               <div className="new-drop">
                 NEW!
               </div>
               :
               ''
-            } */}
+            }
           </div>
         )
         :

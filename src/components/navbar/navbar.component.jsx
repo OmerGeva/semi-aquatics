@@ -24,6 +24,7 @@ const Navbar = () =>
   const summerDrops20 = [7,8,10,11,12].reverse()
   const fallDrops20 = [13, 14].reverse()
   const spring2021 = [15, 16, 17, 18, 19].reverse()
+  const summer2022 = [21, 22].reverse()
 
   const navHeight  = window.innerHeight
 
@@ -41,24 +42,23 @@ const Navbar = () =>
         CATALOG
         </LinkContainer>
           <br/>
-        <LinkContainer to="/shop/drops/21">
-          SUMMER 2022
-        </LinkContainer>
-        {/* <div className="new-drop-top">
+        <div className="new-drop-top">
           NEW!
-        </div> */}
+        </div>
+        <NavbarDrop title='SUMMER 2022' drops={summer2022} closeNavbar={() => setNavbarOpen(!navbarOpen)} />
+
           <br/>
-        <LinkContainer to="/shop/drops/20">
+        {/* <LinkContainer to="/shop/drops/20">
           FALL 2021
         </LinkContainer>
         <br/>
-        <NavbarDrop  title='SPRING/SUMMER 2021' drops={spring2021}/>
+        <NavbarDrop  title='SPRING/SUMMER 2021' drops={spring2021}/> */}
 
-        <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20}/>
+        {/* <NavbarDrop  title='FALL/WINTER 2020/21' drops={fallDrops20}/>
 
         <NavbarDrop  title='SPRING/SUMMER 2020' drops={summerDrops20}/>
 
-        <NavbarDrop  title='FALL/WINTER 2019/20' drops={winterDrops19}/>
+        <NavbarDrop  title='FALL/WINTER 2019/20' drops={winterDrops19}/> */}
 
         <div className="pages-space"></div>
         <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
@@ -106,14 +106,15 @@ const Navbar = () =>
       CATALOG
       </LinkContainer>
         <br/>
-      <LinkContainer to="/shop/drops/21" onClick={() => setNavbarOpen(!navbarOpen)}>
+      {/* <LinkContainer to="/shop/drops/21" onClick={() => setNavbarOpen(!navbarOpen)}>
         SUMMER 2022
-      </LinkContainer>
-        {/* <div className="new-drop-top">
+      </LinkContainer> */}
+        <div className="new-drop-top">
           NEW!
-        </div> */}
+        </div>
+        <NavbarDrop title='SUMMER 2022' drops={summer2022} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
         <br/>
-      <LinkContainer to="/shop/drops/20" onClick={() => setNavbarOpen(!navbarOpen)}>
+      {/* <LinkContainer to="/shop/drops/20" onClick={() => setNavbarOpen(!navbarOpen)}>
           FALL 2021
       </LinkContainer>
       <br/>
@@ -122,7 +123,7 @@ const Navbar = () =>
 
       <NavbarDrop  title='SPRING/SUMMER 2020' drops={summerDrops20} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
 
-      <NavbarDrop  title='FALL/WINTER 2019/20' drops={winterDrops19} closeNavbar={() => setNavbarOpen(!navbarOpen)}/>
+      <NavbarDrop  title='FALL/WINTER 2019/20' drops={winterDrops19} closeNavbar={() => setNavbarOpen(!navbarOpen)}/> */}
 
       <div className="pages-space"></div>
       <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" />
