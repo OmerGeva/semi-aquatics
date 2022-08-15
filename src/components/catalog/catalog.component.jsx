@@ -53,8 +53,7 @@ return(
                   dropId={product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5Nzc3OTEwNTE='
                     || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5Nzc5MjIxMjM='
                     || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5NzgwNTMxOTU='
-                    || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5NzgxODQyNjc='
-                      || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTM3NTMxNjM=' ? '22' : '1'} />
+                    || product[0].id === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5NzgxODQyNjc=' ? '21' : '1'} />
             </div>
             </Link>
             )
