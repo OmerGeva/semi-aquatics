@@ -16,7 +16,7 @@
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "canvas-scrolling-background": "^0.2.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-pino-logger": "^6.0.0",
     "koa-router": "^8.0.8",
     "mailchimp-api-v3": "^1.14.0",
